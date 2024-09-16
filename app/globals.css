@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #03061c;
+    --foreground: #ffffff;
+    --muted: #aca0e4;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  body {
+    @apply w-full min-h-screen flex flex-col overflow-x-hidden bg-background text-foreground font-quicksand;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-generalSans;
+  }
+
+  h2 {
+    @apply text-[32px] lg:text-[42px] font-bold capitalize;
+  }
+}
+
+@keyframes spin {
+  to {
+      transform: rotate(360deg);
+  }
+}
+.animate-spin {
+  animation: spin 15s linear infinite;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    @apply px-[1.5rem];
+  }
+}
