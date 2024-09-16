@@ -32,7 +32,7 @@ export default function Header() {
         ].map((item, index) => (
           <li key={index}>
             <Link href={item.link}>
-              <Image src={item.img} alt="img" className="w-12 h-auto" />
+              <Image src={item.img} alt="img" className="w-12 h-auto" priority/>
             </Link>
           </li>
         ))}

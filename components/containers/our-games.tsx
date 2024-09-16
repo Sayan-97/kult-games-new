@@ -8,10 +8,13 @@ import Image from "next/image";
 import Button from "../shared/button";
 import { FaRegCirclePlay } from "react-icons/fa6";
 import { CiGlobe, CiMobile1 } from "react-icons/ci";
+import GradImg from "@/public/imgs/our-games-grad.png";
+import Link from "next/link";
 
 export default function OurGames() {
   return (
-    <section className="py-16">
+    <section className="relative py-16">
+      <Image src={GradImg} alt="img" className="absolute left-0" />
       <div className="container space-y-12">
         <h2>Experience our games</h2>
         <Carousel opts={{ loop: true }}>
@@ -36,10 +39,12 @@ export default function OurGames() {
                           <p className="text-muted">{item.des}</p>
                           <Image src={item.plat} alt="alt" />
                         </div>
-                        <Button>
-                          <FaRegCirclePlay />
-                          Play Demo
-                        </Button>
+                        <Link href={item.link}>
+                          <Button>
+                            <FaRegCirclePlay />
+                            Play Demo
+                          </Button>
+                        </Link>
                       </div>
                     </div>
                     <div className="relative h-[166px] bg-[#191934] rounded-2xl max-lg:hidden">

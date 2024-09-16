@@ -24,6 +24,7 @@ export const games = [
     plat: BNBImg,
     mobile: true,
     web: true,
+    link: "https://cybernetic.kult.games/",
   },
   {
     image: Game2Img,
@@ -32,6 +33,7 @@ export const games = [
     plat: BotanixImg,
     mobile: true,
     web: true,
+    link: "https://satoshiheads.kult.games/",
   },
   {
     image: Game3Img,
@@ -40,6 +42,7 @@ export const games = [
     plat: TroveImg,
     mobile: true,
     web: true,
+    link: "https://anny.kult.games/",
   },
   {
     image: Game4Img,
@@ -48,6 +51,7 @@ export const games = [
     plat: TroveImg,
     mobile: true,
     web: true,
+    link: "https://scaryrun.kult.games/",
   },
 ];
 

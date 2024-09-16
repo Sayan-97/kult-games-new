@@ -5,11 +5,13 @@ import Image from "next/image";
 import { useState } from "react";
 import Button from "../shared/button";
 import { FaRegCirclePlay } from "react-icons/fa6";
+import GradImg from "@/public/imgs/offers-grad.png"
 
 export default function Upcoming() {
   const [show, setShow] = useState<number | null>(null);
   return (
-    <section className="py-16">
+    <section className="relative py-16">
+      <Image src={GradImg} alt="img" className="absolute right-0"/>
       <div className="container space-y-12">
         <h2>Upcoming big titles</h2>
         <div className="grid lg:grid-cols-4 gap-8">
