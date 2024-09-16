@@ -11,7 +11,7 @@ export default function OurCommunity() {
     <section className="py-16">
       <div className="container space-y-12">
         <h2>Join our community</h2>
-        <div className="w-full grid lg:grid-cols-2 gap-6">
+        <div className="w-full max-lg:flex max-lg:flex-col-reverse lg:grid lg:grid-cols-2 gap-6">
           <div className="space-y-6">
             <div className="bg-[radial-gradient(172.27%_145.85%_at_-4.55%_-1.7%,rgba(89,106,197,0.30)0%,rgba(89,106,197,0.00)100%)] flex gap-4 rounded-2xl overflow-hidden">
               <div className="p-4 space-y-4">
@@ -25,18 +25,18 @@ export default function OurCommunity() {
                 height={256}
               />
             </div>
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-3 gap-2 lg:gap-6">
               <div className="bg-[radial-gradient(172.27%_145.85%_at_-4.55%_-1.7%,rgba(89,106,197,0.30)0%,rgba(89,106,197,0.00)100%)] p-4 rounded-2xl flex flex-col items-center justify-between gap-2">
                 <Image src={TelegramImg} alt="img" />
-                <p>Telegram</p>
+                <p className="text-sm lg:text-base">Telegram</p>
               </div>
               <div className="bg-[radial-gradient(172.27%_145.85%_at_-4.55%_-1.7%,rgba(89,106,197,0.30)0%,rgba(89,106,197,0.00)100%)] p-4 rounded-2xl flex flex-col items-center justify-between gap-2">
                 <Image src={InstagramImg} alt="img" />
-                <p>Instagram</p>
+                <p className="text-sm lg:text-base">Instagram</p>
               </div>
               <div className="bg-[radial-gradient(172.27%_145.85%_at_-4.55%_-1.7%,rgba(89,106,197,0.30)0%,rgba(89,106,197,0.00)100%)] p-4 rounded-2xl flex flex-col items-center justify-between gap-2">
                 <Image src={AnnouncementImg} alt="img" />
-                Announcement
+                <p className="text-sm lg:text-base">Announcement</p>
               </div>
             </div>
           </div>
