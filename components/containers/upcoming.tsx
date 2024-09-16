@@ -25,6 +25,7 @@ export default function Upcoming() {
                   alt="img"
                   fill
                   className="object-cover"
+                  priority
                 />
                 <div
                   className={`absolute inset-x-0 flex justify-center ${

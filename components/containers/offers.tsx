@@ -17,16 +17,27 @@ export default function KultOffers() {
             width={1240}
             height={912.54}
             className=""
+            priority
           />
-          <Image src={KultLogo} alt="img" className="absolute animate-spin" />
+          <Image
+            src={KultLogo}
+            alt="img"
+            className="absolute animate-spin"
+            priority
+          />
         </div>
 
         <div className="lg:hidden space-y-5">
           <div className="relative flex items-center justify-center">
-            <Image src={OffersImgSm1} alt="img" />
-            <Image src={KultLogo} alt="img" className="w-[50%] absolute animate-spin" />
+            <Image src={OffersImgSm1} alt="img" priority />
+            <Image
+              src={KultLogo}
+              alt="img"
+              className="w-[50%] absolute animate-spin"
+              priority
+            />
           </div>
-          <Image src={OffersImgSm2} alt="img" />
+          <Image src={OffersImgSm2} alt="img" priority />
         </div>
       </div>
     </section>

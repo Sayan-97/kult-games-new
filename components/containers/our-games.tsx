@@ -25,6 +25,7 @@ export default function OurGames() {
                       alt="img"
                       fill
                       className="object-cover"
+                      priority
                     />
                   </div>
                   <div className="flex-grow flex flex-col gap-8">
