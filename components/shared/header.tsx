@@ -13,36 +13,10 @@ import { TfiMenu } from "react-icons/tfi";
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 
 export default function Header() {
-  const NavMenus = () => {
-    return (
-      <ul className="flex flex-col lg:flex-row lg:items-center gap-5">
-        {[
-          { label: "Home", link: "/" },
-          { label: "Our Games", link: "#ourgames" },
-          {
-            label: "Live Poker",
-            link: "https://madmaxpoker.aistechnolabs.info/guestWebgl/",
-          },
-          { label: "Kult Offers", link: "#kultoffers" },
-          { label: "Roadmap", link: "#roadmap" },
-          { label: "Team", link: "#team" },
-          { label: "Community", link: "#community" },
-        ].map((item, index) => (
-          <li key={index}>
-            <Link href={item.link}>{item.label}</Link>
-          </li>
-        ))}
-      </ul>
-    );
-  };
-
   const SocialLinks = () => {
     return (
       <ul className="flex items-center gap-5">
