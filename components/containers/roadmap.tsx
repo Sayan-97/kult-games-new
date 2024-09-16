@@ -7,7 +7,7 @@ import { roadmap } from "@/constants";
 
 export default function Roadmap() {
   return (
-    <section className="py-16">
+    <section className="py-10 lg:py-16">
       <div className="container space-y-12">
         <h2>Roadmap</h2>
         <Carousel opts={{ dragFree: true }} className="mt-10">

@@ -15,7 +15,7 @@ import { MdMonitor } from "react-icons/md";
 
 export default function OurGames() {
   return (
-    <section className="relative py-16">
+    <section className="relative py-10 lg:py-16">
       <Image src={GradImg} alt="img" className="absolute left-0 -z-10" />
       <div className="container space-y-12">
         <h2>Experience our games</h2>

@@ -8,7 +8,7 @@ import Button from "../shared/button";
 
 export default function OurCommunity() {
   return (
-    <section className="py-16">
+    <section className="py-10 lg:py-16">
       <div className="container space-y-12">
         <h2>Join our community</h2>
         <div className="w-full max-lg:flex max-lg:flex-col-reverse lg:grid lg:grid-cols-2 gap-6">

@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export default function OurTeams() {
   return (
-    <section id="team" className="container space-y-10 py-12 lg:py-20">
+    <section id="team" className="container space-y-10 py-10 lg:py-16">
       <div className="flex flex-col items-center gap-6 text-center">
         <h2>Our Team</h2>
       </div>

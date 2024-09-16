@@ -4,7 +4,7 @@ import WaitlistForm from "./form";
 
 export default function EarlyAccess() {
   return (
-    <section className="py-16">
+    <section className="py-10 lg:py-16">
       <div className="container">
         <div className="relative">
           <Image src={BgImg} alt="img" className="max-lg:hidden" priority/>

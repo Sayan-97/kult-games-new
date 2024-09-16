@@ -12,7 +12,7 @@ import { HiOutlineDevicePhoneMobile } from "react-icons/hi2";
 export default function Upcoming() {
   const [show, setShow] = useState<number | null>(null);
   return (
-    <section className="relative py-16">
+    <section className="relative py-10 lg:py-16">
       <Image src={GradImg} alt="img" className="absolute right-0 -z-10" />
       <div className="container space-y-12">
         <h2>Upcoming big titles</h2>

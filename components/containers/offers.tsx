@@ -8,7 +8,7 @@ import OffersGrad from "@/public/imgs/offers-grad.png";
 
 export default function KultOffers() {
   return (
-    <section className="relative py-16">
+    <section className="relative py-10 lg:py-16">
       <div className="container space-y-12">
         <h2 className="text-center">Kult Offers</h2>
         <div className="relative flex items-center justify-center max-lg:hidden">
