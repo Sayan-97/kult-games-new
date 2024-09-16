@@ -21,7 +21,7 @@ export default function OurGames() {
           <CarouselContent className="-ml-8">
             {games.map((item, index) => (
               <CarouselItem key={index} className="pl-8 w-full">
-                <div className="flex flex-col lg:flex-row items-stretch gap-8">
+                <div className="flex flex-col lg:flex-row items-stretch gap-4 lg:gap-8">
                   <div className="relative lg:w-2/3 h-[279px] lg:h-[579px] rounded-3xl overflow-hidden">
                     <Image
                       src={item.image}
