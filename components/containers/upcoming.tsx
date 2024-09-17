@@ -65,7 +65,7 @@ export default function Upcoming() {
                     </div>
                   )}
                 </div>
-                <Button>
+                <Button className="lg:hidden">
                   <FaRegCirclePlay />
                   Watch Teaser
                 </Button>
