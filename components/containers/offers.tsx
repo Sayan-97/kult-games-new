@@ -9,7 +9,6 @@ import Image from "next/image";
 import OffersGrad from "@/public/imgs/offers-grad.png";
 import Button from "../shared/button";
 import { SlArrowRightCircle } from "react-icons/sl";
-import { Cross } from "lucide-react";
 import { CgClose } from "react-icons/cg";
 
 export default function KultOffers() {
