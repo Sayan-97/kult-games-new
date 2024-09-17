@@ -40,6 +40,6 @@
 
 @media (max-width: 1024px) {
   .container {
-    @apply px-[1.5rem];
+    @apply px-[1rem];
   }
 }
