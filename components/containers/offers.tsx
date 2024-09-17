@@ -81,7 +81,7 @@ export default function KultOffers() {
 
           <Button
             onClick={() => setOpen(true)}
-            className="absolute right-10 bottom-[110px] py-3"
+            className="absolute max-xs:right-7 right-10 max-xs:bottom-[100px] bottom-[110px] py-3"
           >
             <SlArrowRightCircle />
             Discover Kult
