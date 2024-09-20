@@ -62,6 +62,8 @@ export const upcomingGames = [
     types: ["Action", "AAA", "RPG"],
     mobile: true,
     web: true,
+    trailer: true,
+    trailerVid: "/videos/bloodline.mp4",
   },
   {
     image: UpcomingGameImg2,
@@ -69,6 +71,8 @@ export const upcomingGames = [
     types: ["Racing", "Formula 1"],
     mobile: false,
     web: true,
+    trailer: true,
+    trailerVid: "/videos/f1 x.mp4",
   },
   {
     image: UpcomingGameImg3,
@@ -76,6 +80,8 @@ export const upcomingGames = [
     types: ["Racing", "Futuristic", "Metaverse", "AAA"],
     mobile: true,
     web: false,
+    trailer: true,
+    trailerVid: "/videos/L2d Trailer 4K.mp4",
   },
   {
     image: UpcomingGameImg4,
@@ -83,6 +89,8 @@ export const upcomingGames = [
     types: ["P2E", "Racing", "Prediction"],
     mobile: true,
     web: true,
+    trailer: true,
+    trailerVid: "/videos/CamelRun_Trailer-b249e70a.mp4",
   },
   {
     image: UpcomingGameImg5,
@@ -90,6 +98,7 @@ export const upcomingGames = [
     types: ["Endless Runner"],
     mobile: true,
     web: true,
+    comingSoon: true,
   },
   {
     image: UpcomingGameImg6,
@@ -97,6 +106,8 @@ export const upcomingGames = [
     types: ["Slot Machine"],
     mobile: true,
     web: true,
+    demo: true,
+    demoUrl: "https://zeustreasures.kult.games/",
   },
   {
     image: UpcomingGameImg7,
@@ -104,6 +115,7 @@ export const upcomingGames = [
     types: ["Action", "RPG", "Futuristic", "AAA"],
     mobile: false,
     web: true,
+    comingSoon: true,
   },
   {
     image: UpcomingGameImg8,
@@ -111,6 +123,8 @@ export const upcomingGames = [
     types: ["Casino"],
     mobile: true,
     web: true,
+    demo: true,
+    demoUrl: "https://trexmine.kult.games/",
   },
 ];
 
