@@ -16,12 +16,13 @@ export default function OurCommunity() {
         <div className="w-full max-lg:flex max-lg:flex-col-reverse lg:grid lg:grid-cols-2 gap-6">
           <div className="space-y-6">
             <div className="bg-[radial-gradient(172.27%_145.85%_at_-4.55%_-1.7%,rgba(89,106,197,0.30)0%,rgba(89,106,197,0.00)100%)] flex gap-4 rounded-2xl overflow-hidden">
-              <div className="p-4 flex flex-col justify-between gap-4">
+              <div className="p-4 lg:p-8 flex flex-col justify-between gap-4">
                 <h5 className="text-xl lg:text-[27px] font-bold">
                   Discord Community
                 </h5>
-                <p className="text-sm lg:text-base">
-                  Explore an ultimate marketplace designed for gamers.
+                <p className="text-sm lg:text-base text-muted">
+                  Join our discord today to engage with our vibrant community of
+                  gamers
                 </p>
                 <Link href="https://discord.com/invite/2duGeatqtp">
                   <Button>
@@ -76,7 +77,7 @@ export default function OurCommunity() {
             <div className="flex flex-col lg:flex-row items-start lg:items-end max-lg:gap-4 justify-between">
               <div className="lg:w-2/3 space-y-5">
                 <h5 className="text-[27px] font-bold">Follow us on Twitter</h5>
-                <p>
+                <p className="text-muted">
                   Follow us on twitter to get latest updates and announcements
                 </p>
               </div>
