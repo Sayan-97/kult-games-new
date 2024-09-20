@@ -60,7 +60,7 @@ export default function Upcoming() {
                               playsInline
                               data-wf-ignore="true"
                               data-object-fit="cover"
-                              className=""
+                              className="w-full"
                             >
                               <source
                                 src={item.trailerVid}
@@ -115,8 +115,11 @@ export default function Upcoming() {
                 <div className="lg:hidden">
                   {item.trailer ? (
                     <>
-                      <Button className="w-full" onClick={() => setTeaserPlay(index)}>
-                        <FaRegCirclePlay  />
+                      <Button
+                        className="w-full"
+                        onClick={() => setTeaserPlay(index)}
+                      >
+                        <FaRegCirclePlay />
                         Watch Teaser
                       </Button>
 
