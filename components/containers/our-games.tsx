@@ -1,3 +1,5 @@
+"use client"
+
 import {
   Carousel,
   CarouselContent,
@@ -12,6 +14,8 @@ import { HiOutlineDevicePhoneMobile } from "react-icons/hi2";
 import GradImg from "@/public/imgs/our-games-grad.png";
 import Link from "next/link";
 import { MdMonitor } from "react-icons/md";
+import ButtonSecondary from "../shared/button-secondary";
+import Autoplay from "embla-carousel-autoplay"
 
 export default function OurGames() {
   return (
@@ -19,7 +23,11 @@ export default function OurGames() {
       <Image src={GradImg} alt="img" className="absolute left-0 -z-10" />
       <div className="container space-y-12">
         <h2>Experience our games</h2>
-        <Carousel opts={{ loop: true }}>
+        <Carousel opts={{ loop: true }} plugins={[
+        Autoplay({
+          delay: 4000,
+        }),
+      ]}>
           <CarouselContent className="-ml-8">
             {games.map((item, index) => (
               <CarouselItem key={index} className="pl-8 w-full">
@@ -67,16 +75,12 @@ export default function OurGames() {
                       <div className="absolute inset-0 bg-[radial-gradient(383.94%_338.14%_at_213.36%_-151.22%,rgba(127,139,210,0.30)0%,rgba(89,106,197,0.00)100%)] p-6 flex flex-col justify-between">
                         <p className="text-[27px] font-bold">Platform</p>
                         <div className="flex items-center gap-4">
-                          <div className="bg-[radial-gradient(66.67%_103.95%_at_50%_-42.76%,#BBA5F4_0%,#5F33D6_100%)] p-[1px] rounded-full">
-                            <div className="bg-[#191934] px-4 py-1 rounded-full flex items-center gap-2">
-                              <CiGlobe /> Web
-                            </div>
-                          </div>
-                          <div className="bg-[radial-gradient(66.67%_103.95%_at_50%_-42.76%,#BBA5F4_0%,#5F33D6_100%)] p-[1px] rounded-full">
-                            <div className="bg-[#191934] px-4 py-1 rounded-full flex items-center gap-2">
-                              <HiOutlineDevicePhoneMobile /> Mobile
-                            </div>
-                          </div>
+                          <ButtonSecondary>
+                            <CiGlobe /> Web
+                          </ButtonSecondary>
+                          <ButtonSecondary>
+                            <HiOutlineDevicePhoneMobile /> Mobile
+                          </ButtonSecondary>
                         </div>
                       </div>
                     </div>

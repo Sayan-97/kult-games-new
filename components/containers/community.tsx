@@ -98,33 +98,30 @@ export default function OurCommunity() {
           </div>
 
           <CardContainer className="w-full inter-var">
-            <CardBody className="w-full h-auto group/card">
-              <div className="lg:h-[464px] rounded-2xl max-lg:space-y-4 bg-[radial-gradient(172.27%_145.85%_at_-4.55%_-1.7%,rgba(89,106,197,0.30)0%,rgba(89,106,197,0.00)100%)] p-4 flex flex-col justify-between">
-                <div className="flex flex-col lg:flex-row items-start lg:items-end max-lg:gap-4 justify-between">
-                  <div className="lg:w-2/3 space-y-5">
-                    <CardItem
-                      as="p"
-                      translateZ="50"
-                      className="text-[27px] font-bold"
-                    >
-                      Follow us on Twitter
-                    </CardItem>
-                    <p className="text-muted">
-                      Follow us on twitter to get latest updates and
-                      announcements
-                    </p>
-                  </div>
-                  <CardItem translateZ="50">
-                    <Link href="https://twitter.com/_KultGames">
-                      <Button>
-                        <HiOutlineArrowRightCircle />
-                        Follow Now
-                      </Button>
-                    </Link>
+            <CardBody className="relative group/card w-full lg:h-[464px] rounded-2xl max-lg:space-y-4 bg-[radial-gradient(172.27%_145.85%_at_-4.55%_-1.7%,rgba(89,106,197,0.30)0%,rgba(89,106,197,0.00)100%)] p-4 flex flex-col justify-between">
+              <div className="flex flex-col lg:flex-row items-start lg:items-end max-lg:gap-4 justify-between">
+                <div className="lg:w-2/3 space-y-5">
+                  <CardItem
+                    as="h5"
+                    translateZ="100"
+                    className="text-[27px] font-bold"
+                  >
+                    Follow us on Twitter
                   </CardItem>
+                  <p className="text-muted">
+                    Follow us on twitter to get latest updates and announcements
+                  </p>
                 </div>
-                <Image src={TwitterImg} alt="img" className="w-full" />
+                <CardItem translateZ="50">
+                  <Link href="https://twitter.com/_KultGames">
+                    <Button>
+                      <HiOutlineArrowRightCircle />
+                      Follow Now
+                    </Button>
+                  </Link>
+                </CardItem>
               </div>
+              <Image src={TwitterImg} alt="img" className="w-full" />
             </CardBody>
           </CardContainer>
         </div>
