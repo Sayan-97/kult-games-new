@@ -5,6 +5,7 @@ import Team4 from "@/public/imgs/team4.png";
 import Team5 from "@/public/imgs/team5.png";
 import Team6 from "@/public/imgs/team6.png";
 import Image from "next/image";
+import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 
 export default function OurTeams() {
   return (
@@ -14,14 +15,86 @@ export default function OurTeams() {
       </div>
       <div className="flex flex-col gap-5">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-5">
-          <Image src={Team1} alt="img" width={365} height={450} priority />
-          <Image src={Team2} alt="img" width={365} height={450} priority />
-          <Image src={Team3} alt="img" width={365} height={450} priority />
+          <CardContainer>
+            <CardBody>
+              <CardItem>
+                <Image
+                  src={Team1}
+                  alt="img"
+                  width={365}
+                  height={450}
+                  priority
+                />
+              </CardItem>
+            </CardBody>
+          </CardContainer>
+          <CardContainer>
+            <CardBody>
+              <CardItem>
+                <Image
+                  src={Team2}
+                  alt="img"
+                  width={365}
+                  height={450}
+                  priority
+                />
+              </CardItem>
+            </CardBody>
+          </CardContainer>
+          <CardContainer>
+            <CardBody>
+              <CardItem>
+                <Image
+                  src={Team3}
+                  alt="img"
+                  width={365}
+                  height={450}
+                  priority
+                />
+              </CardItem>
+            </CardBody>
+          </CardContainer>
         </div>
         <div className="flex flex-col lg:flex-row items-center justify-center gap-5">
-          <Image src={Team4} alt="img" width={365} height={450} priority />
-          <Image src={Team5} alt="img" width={365} height={450} priority />
-          <Image src={Team6} alt="img" width={365} height={450} priority />
+          <CardContainer>
+            <CardBody>
+              <CardItem>
+                <Image
+                  src={Team4}
+                  alt="img"
+                  width={365}
+                  height={450}
+                  priority
+                />
+              </CardItem>
+            </CardBody>
+          </CardContainer>
+          <CardContainer>
+            <CardBody>
+              <CardItem>
+                <Image
+                  src={Team5}
+                  alt="img"
+                  width={365}
+                  height={450}
+                  priority
+                />
+              </CardItem>
+            </CardBody>
+          </CardContainer>
+          <CardContainer>
+            <CardBody>
+              <CardItem>
+                <Image
+                  src={Team6}
+                  alt="img"
+                  width={365}
+                  height={450}
+                  priority
+                />
+              </CardItem>
+            </CardBody>
+          </CardContainer>
         </div>
       </div>
     </section>

@@ -24,11 +24,10 @@ export default function Partners() {
             priority
           />
           <Image
-            src={PartnersImg2}
+            src={PartnersImg10}
             alt="img"
             width={220.159}
             height={68.716}
-            priority
           />
           <Image
             src={PartnersImg3}
@@ -59,6 +58,13 @@ export default function Partners() {
             priority
           />
           <Image
+            src={PartnersImg2}
+            alt="img"
+            width={220.159}
+            height={68.716}
+            priority
+          />
+          <Image
             src={PartnersImg7}
             alt="img"
             width={220.159}
@@ -78,12 +84,6 @@ export default function Partners() {
             width={220.159}
             height={68.716}
             priority
-          />
-          <Image
-            src={PartnersImg10}
-            alt="img"
-            width={220.159}
-            height={68.716}
           />
         </div>
       </div>
