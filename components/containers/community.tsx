@@ -8,6 +8,8 @@ import Button from "../shared/button";
 import { HiOutlineArrowRightCircle } from "react-icons/hi2";
 import Link from "next/link";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
+import Tweets from "./tweets";
+import { ScrollArea } from "../ui/scroll-area";
 
 export default function OurCommunity() {
   return (
@@ -98,7 +100,7 @@ export default function OurCommunity() {
           </div>
 
           <CardContainer className="w-full inter-var">
-            <CardBody className="relative group/card w-full lg:h-[464px] rounded-2xl max-lg:space-y-4 bg-[radial-gradient(172.27%_145.85%_at_-4.55%_-1.7%,rgba(89,106,197,0.30)0%,rgba(89,106,197,0.00)100%)] p-4 flex flex-col justify-between">
+            <CardBody className="relative group/card w-full lg:h-[464px] rounded-2xl max-lg:space-y-4 bg-[radial-gradient(172.27%_145.85%_at_-4.55%_-1.7%,rgba(89,106,197,0.30)0%,rgba(89,106,197,0.00)100%)] p-6 flex flex-col justify-between">
               <div className="flex flex-col lg:flex-row items-start lg:items-end max-lg:gap-4 justify-between">
                 <div className="lg:w-2/3 space-y-5">
                   <CardItem
@@ -121,7 +123,12 @@ export default function OurCommunity() {
                   </Link>
                 </CardItem>
               </div>
-              <Image src={TwitterImg} alt="img" className="w-full" />
+              {/* <Image src={TwitterImg} alt="img" className="w-full" /> */}
+              <CardItem translateZ="50">
+                <ScrollArea className="mt-5 w-full h-[280px]">
+                  <Tweets />
+                </ScrollArea>
+              </CardItem>
             </CardBody>
           </CardContainer>
         </div>

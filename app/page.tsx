@@ -7,6 +7,7 @@ import Partners from "@/components/containers/partners";
 import EarlyAccess from "@/components/containers/early-access";
 import Hero from "@/components/containers/hero";
 import KultOffers from "@/components/containers/offers";
+import Tweets from "@/components/containers/tweets";
 
 export default function Home() {
   return (
