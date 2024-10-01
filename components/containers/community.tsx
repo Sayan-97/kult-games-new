@@ -3,7 +3,6 @@ import DiscordImg from "@/public/imgs/discord-image.png";
 import TelegramImg from "@/public/imgs/telegram-icon.png";
 import InstagramImg from "@/public/imgs/instagram-icon.png";
 import AnnouncementImg from "@/public/imgs/announcement-icon.png";
-import TwitterImg from "@/public/imgs/twitter-img-2.png";
 import Button from "../shared/button";
 import { HiOutlineArrowRightCircle } from "react-icons/hi2";
 import Link from "next/link";
