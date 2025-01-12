@@ -17,15 +17,15 @@ import UpcomingGameImg7 from "@/public/imgs/upcoming7.png";
 import UpcomingGameImg8 from "@/public/imgs/upcoming8.png";
 
 export const games = [
-  {
-    image: Game1Img,
-    name: "Cybernetic Commando",
-    des: "Explore an ultimate marketplace designed for gamers.",
-    plat: BNBImg,
-    mobile: true,
-    web: true,
-    link: "https://cybernetic.kult.games/",
-  },
+  // {
+  //   image: Game1Img,
+  //   name: "Cybernetic Commando",
+  //   des: "Explore an ultimate marketplace designed for gamers.",
+  //   plat: BNBImg,
+  //   mobile: true,
+  //   web: true,
+  //   link: "https://cybernetic.kult.games/",
+  // },
   {
     image: Game2Img,
     name: "Satoshi Heads",
