@@ -8,15 +8,11 @@ import Link from "next/link";
 export default function BulletStormBanner() {
   return (
     <section className="container">
-      <div className="relative">
-        <Image
-          src={BgImg}
-          alt="img"
-          className="w-full h-[342px] lg:h-[452px] object-cover object-left rounded-2xl"
-        />
-        <div className="absolute left-8 inset-y-8 flex flex-col justify-between">
+      <div className="relative rounded-2xl overflow-hidden">
+        <Image src={BgImg} alt="img" fill className="object-cover max-md:object-left" />
+        <div className="relative flex flex-col justify-between gap-8 p-8">
           <Image src={GroupImg} alt="img" className="w-72 lg:w-96" />
-          <p className="text-3xl lg:text-5xl font-bold leading-normal lg:leading-normal capitalize">
+          <p className="text-3xl lg:text-4xl leading-normal lg:leading-normal capitalize font-generalSans">
             Beta Testing and
             <br /> Giveaway is <span className="text-[#BFF009]">live</span>
           </p>
