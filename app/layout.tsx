@@ -4,7 +4,6 @@ import GeneralSans from "next/font/local";
 import "./globals.css";
 import Footer from "@/components/shared/footer";
 import Header from "@/components/shared/header";
-import TopBar from "@/components/shared/top-bar";
 
 const generalSans = GeneralSans({
   src: "../public/fonts/GeneralSans-Bold.otf",
