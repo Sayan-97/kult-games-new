@@ -48,7 +48,7 @@ export default function Footer() {
               <Link href="https://t.me/KultGamesOfficial">
                 <Image src={TelegramImg} alt="img" className="w-12"/>
               </Link>
-              <Link href="https://discord.com/invite/2duGeatqtp">
+              <Link href="https://discord.gg/Fsb2m5rFE3">
                 <Image src={DiscordImg} alt="img" className="w-12"/>
               </Link>
               <Link href="https://www.instagram.com/kult_games_/?igsh=dzAxNnJ3eWQ4NmUz&utm_source=qr">

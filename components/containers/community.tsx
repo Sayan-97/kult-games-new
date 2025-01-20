@@ -36,7 +36,7 @@ export default function OurCommunity() {
                     of gamers
                   </CardItem>
                   <CardItem translateZ="50">
-                    <Link href="https://discord.com/invite/2duGeatqtp">
+                    <Link href="https://discord.gg/Fsb2m5rFE3">
                       <Button>
                         <HiOutlineArrowRightCircle />
                         Join Now

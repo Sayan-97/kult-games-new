@@ -23,7 +23,7 @@ export default function Header() {
       <ul className="flex items-center gap-5">
         {[
           { img: TelegramImg, link: "https://t.me/KultGamesOfficial" },
-          { img: DiscordImg, link: "https://discord.com/invite/2duGeatqtp" },
+          { img: DiscordImg, link: "https://discord.gg/Fsb2m5rFE3" },
           {
             img: InstagramImg,
             link: "https://www.instagram.com/kult_games_/?igsh=dzAxNnJ3eWQ4NmUz&utm_source=qr",
