@@ -7,7 +7,7 @@ import Button from "../shared/button";
 import { HiOutlineArrowRightCircle } from "react-icons/hi2";
 import Link from "next/link";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
-import Tweets from "./tweets";
+// import Tweets from "./tweets";
 import { ScrollArea } from "../ui/scroll-area";
 import TwitterPostImg from "@/public/imgs/twitter-post.png";
 
