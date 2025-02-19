@@ -1,5 +1,6 @@
 import React from "react";
 import BgImg from "@/public/imgs/bulletstorm-bg.png";
+import BgImgSm from "@/public/imgs/bulletstorm-bg-sm.png";
 import GroupImg from "@/public/imgs/bulletstorm-group.png";
 import Image from "next/image";
 import Button from "../shared/button";
@@ -13,13 +14,18 @@ export default function BulletStormBanner() {
           src={BgImg}
           alt="img"
           fill
-          className="object-cover max-md:object-left"
+          className="object-cover max-md:hidden brightness-75"
+        />
+        <Image
+          src={BgImgSm}
+          alt="img"
+          fill
+          className="object-cover md:hidden brightness-50"
         />
         <div className="relative flex flex-col justify-between gap-8 p-8">
           <Image src={GroupImg} alt="img" className="w-72 lg:w-96" />
-          <p className="text-3xl lg:text-4xl leading-normal lg:leading-normal capitalize font-generalSans">
-            hero&apos;s Assemble - Bullet
-            <br /> Storm is now live
+          <p className="lg:w-[40%] text-3xl lg:text-4xl leading-normal lg:leading-normal capitalize font-generalSans">
+            hero&apos;s Assemble - Bullet Storm is now live
           </p>
           <div className="flex items-center gap-8">
             <Link href="https://bulletstorm.xyz/">
