@@ -9,6 +9,7 @@ import Link from "next/link";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 import Tweets from "./tweets";
 import { ScrollArea } from "../ui/scroll-area";
+import TwitterPostImg from "@/public/imgs/twitter-post.png";
 
 export default function OurCommunity() {
   return (
@@ -125,7 +126,13 @@ export default function OurCommunity() {
               {/* <Image src={TwitterImg} alt="img" className="w-full" /> */}
               <CardItem translateZ="50">
                 <ScrollArea className="mt-5 w-full h-[280px]">
-                  <Tweets />
+                  {/* <Tweets /> */}
+                  <Image
+                    src={TwitterPostImg}
+                    alt="img"
+                    className="w-full h-auto bg-black rounded-xl"
+                    priority
+                  />
                 </ScrollArea>
               </CardItem>
             </CardBody>
