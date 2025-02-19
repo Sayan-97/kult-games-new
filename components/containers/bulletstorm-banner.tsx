@@ -18,7 +18,7 @@ export default function BulletStormBanner() {
         <div className="relative flex flex-col justify-between gap-8 p-8">
           <Image src={GroupImg} alt="img" className="w-72 lg:w-96" />
           <p className="text-3xl lg:text-4xl leading-normal lg:leading-normal capitalize font-generalSans">
-            hero's Assemble - Bullet
+            hero&apos;s Assemble - Bullet
             <br /> Storm is now live
           </p>
           <div className="flex items-center gap-8">
