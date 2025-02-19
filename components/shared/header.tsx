@@ -44,7 +44,7 @@ export default function Header() {
   return (
     <>
     <header className="absolute inset-x-0 z-40 bg-[linear-gradient(180deg,#040719_0%,rgba(4,7,25,0.00)100%)]">
-    <TopBar />
+    {/* <TopBar /> */}
       <nav className="container flex items-center justify-between py-6">
         <Link href="/" className="lg:hidden">
           <Image src={AppLogo2} alt="img" className="w-14" />
