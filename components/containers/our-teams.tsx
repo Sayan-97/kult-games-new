@@ -4,6 +4,7 @@ import Team3 from "@/public/imgs/team3.png";
 import Team4 from "@/public/imgs/team4.png";
 import Team5 from "@/public/imgs/team5.png";
 import Team6 from "@/public/imgs/team6.png";
+import Team7 from "@/public/imgs/team7.png";
 import Image from "next/image";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 
@@ -22,17 +23,17 @@ export default function OurTeams() {
     {
       img: Team2,
       name: "Avi Shaini",
-      des: "Lead Blockchain Developer",
+      des: "Blockchain Expert",
     },
     {
-      img: Team4,
-      name: "Sayan Dey",
-      des: "Full Stack Developer",
+      img: Team7,
+      name: "Sonakshi",
+      des: "Marketing Lead",
     },
     {
       img: Team5,
-      name: "MUKESH MOHAPATRA",
-      des: "Adviser",
+      name: "Sayan Dey",
+      des: "Full Stack Developer",
     },
     {
       img: Team6,
