@@ -84,6 +84,7 @@ export default function Partners() {
             width={220.159}
             height={68.716}
             priority
+            className="w-32 justify-self-center place-self-center"
           />
         </div>
       </div>

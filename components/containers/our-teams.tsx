@@ -4,6 +4,7 @@ import Team3 from "@/public/imgs/team3.png";
 import Team4 from "@/public/imgs/team4.png";
 import Team5 from "@/public/imgs/team5.png";
 import Team6 from "@/public/imgs/team6.png";
+import Team7 from "@/public/imgs/team7.png";
 import Image from "next/image";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 
@@ -15,29 +16,29 @@ export default function OurTeams() {
       des: "CEO",
     },
     {
-      img: Team2,
-      name: "Christian Chalfoun",
-      des: "Adviser",
+      img: Team3,
+      name: "Sidhant Mahato",
+      des: "Project Lead",
     },
     {
-      img: Team3,
+      img: Team2,
+      name: "Avi Shaini",
+      des: "Lead Blockchain Developer",
+    },
+    {
+      img: Team4,
+      name: "Sayan Dey",
+      des: "Full Stack Developer",
+    },
+    {
+      img: Team5,
       name: "MUKESH MOHAPATRA",
       des: "Adviser",
     },
     {
-      img: Team4,
-      name: "TOPOBAR LAYEK",
-      des: "PROJECT LEAD",
-    },
-    {
-      img: Team5,
-      name: "SIDHANT MAHATO",
-      des: "LEAD GAME DESIGNER",
-    },
-    {
       img: Team6,
-      name: "Ehtisham Ul Haq",
-      des: "Blockchain Expert",
+      name: "Christian Chalfoun",
+      des: "Adviser",
     },
   ];
 
@@ -58,7 +59,7 @@ export default function OurTeams() {
                 }}
               >
                 <CardItem translateZ="50" className="absolute bottom-14">
-                  <Image src={item.img} alt="img" />
+                  <Image src={item.img} alt="img" priority />
                 </CardItem>
                 <CardItem translateZ="50">
                   <h5 className="text-2xl uppercase">{item.name}</h5>
