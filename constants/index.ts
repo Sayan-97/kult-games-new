@@ -3,7 +3,7 @@ import Game2Img from "@/public/imgs/game2.png";
 import Game3Img from "@/public/imgs/game3.png";
 import Game4Img from "@/public/imgs/game4.png";
 
-import BNBImg from "@/public/imgs/bnb.png";
+// import BNBImg from "@/public/imgs/bnb.png";
 import BotanixImg from "@/public/imgs/botanix.png";
 import TroveImg from "@/public/imgs/trove.png";
 
@@ -84,12 +84,11 @@ export const upcomingGames = [
   },
   {
     image: UpcomingGameImg4,
-    name: "Camel Run",
-    types: ["P2E", "Racing", "Prediction"],
+    name: "Rage Roads",
+    types: ["P2E", "Racing"],
     mobile: true,
     web: true,
-    trailer: true,
-    trailerVid: "/videos/CamelRun_Trailer-b249e70a.mp4",
+    comingSoon: true,
   },
   {
     image: UpcomingGameImg5,
