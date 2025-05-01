@@ -34,7 +34,7 @@ export default function GamePopup() {
           🏆 Unlock true glory with the Exclusive Pass
           </p>
           <div className="flex items-center gap-8">
-            <Link href="/">
+            <Link href="https://sooshpad.xyz/project-detail/xtreme-stunt">
               <Button className="w-24 lg:w-32 h-9 outline-none">
                 <p className="text-xs lg:text-sm">Mint NFT</p>
               </Button>

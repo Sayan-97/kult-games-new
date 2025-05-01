@@ -29,7 +29,7 @@ export default function BulletStormBanner() {
             🏆 Unlock true glory with the Exclusive Pass
           </p>
           <div className="flex items-center gap-8">
-            <Link href="/">
+            <Link href="https://sooshpad.xyz/project-detail/xtreme-stunt">
               <Button className="w-32 lg:w-40 h-11">
                 <p className="text-xs lg:text-sm">Mint NFT</p>
               </Button>
