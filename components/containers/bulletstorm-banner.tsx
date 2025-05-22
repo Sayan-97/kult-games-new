@@ -10,7 +10,7 @@ import roadRagesLogo from '@/public/imgs/rage-roads.png';
 import sophandLogo from '@/public/imgs/Sophon_Logo_Main.png';
 import roadRagesSmBg from '@/public/imgs/rage-roads-sm.png';
 
-import XtremeBgSm from "@/public/imgs/xtremestuntbg-SM.png";
+// import XtremeBgSm from "@/public/imgs/xtremestuntbg-SM.png";
 
 
 export default function BulletStormBanner() {

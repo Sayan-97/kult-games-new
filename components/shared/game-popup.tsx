@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 // import PopupImg from "@/public/imgs/popup.png";
-import PopupImg from "@/public/imgs/xtremestuntbg.png";
+// import PopupImg from "@/public/imgs/xtremestuntbg.png";
 import Button from "./button";
 import Link from "next/link";
-import XtremeLogo from "@/public/imgs/xtremelogo.png"
+// import XtremeLogo from "@/public/imgs/xtremelogo.png"
 import rageRoadsBg from '@/public/imgs/xtreme-new-image.png';
 import roadRagesLogo from '@/public/imgs/rage-roads.png';
 import sophandLogo from '@/public/imgs/Sophon_Logo_Main.png';
