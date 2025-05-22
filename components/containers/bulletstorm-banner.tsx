@@ -16,7 +16,7 @@ import roadRagesSmBg from '@/public/imgs/rage-roads-sm.png';
 export default function BulletStormBanner() {
   return (
     <section className="container">
-      <div className="relative rounded-2xl overflow-hidden bg-[#04080C] lg:min-h-[540px] min-h-[220px]  flex flex-col justify-end">
+      <div className="relative rounded-2xl overflow-hidden bg-[#04080C] lg:min-h-[540px] min-h-[210px]  flex flex-col justify-end">
         <Image
           src={rageRoadsBg}
           alt="img"
