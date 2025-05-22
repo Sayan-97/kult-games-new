@@ -2,20 +2,26 @@ import React from "react";
 import Image from "next/image";
 import Button from "../shared/button";
 import Link from "next/link";
-import XtremeBg from "@/public/imgs/xtremestuntbg.png";
+// import XtremeBg from "@/public/imgs/xtremestuntbg.png";
+// import XtremeLogo from "@/public/imgs/xtremelogo.png";
+
+import rageRoadsBg from '@/public/imgs/xtreme-new-image.png';
+import roadRagesLogo from '@/public/imgs/rage-roads.png';
+import sophandLogo from '@/public/imgs/Sophon_Logo_Main.png';
+
 import XtremeBgSm from "@/public/imgs/xtremestuntbg-SM.png";
-import XtremeLogo from "@/public/imgs/xtremelogo.png";
+
 
 export default function BulletStormBanner() {
   return (
     <section className="container">
-      <div className="relative rounded-2xl overflow-hidden bg-[#04080C]">
+      <div className="relative rounded-2xl overflow-hidden bg-[#04080C] min-h-[540px] flex flex-col justify-end">
         <Image
-          src={XtremeBg}
+          src={rageRoadsBg}
           alt="img"
           // fill
           priority
-          className="bottom-0 w-[60%] right-0 max-md:hidden brightness-75 absolute"
+          className="bottom-0 w-[100%] h-[100%] right-0 max-md:hidden brightness-75 absolute"
         />
         <Image
           src={XtremeBgSm}
@@ -23,23 +29,21 @@ export default function BulletStormBanner() {
           priority
           className="absolute bottom-0 md:hidden"
         />
-        <div className="relative flex flex-col justify-between gap-2 lg:gap-8 p-8 max-md:pb-32">
-          <Image src={XtremeLogo} alt="img" className="w-52 lg:w-96" />
-          <p className="lg:w-[40%] text-xl lg:text-4xl leading-normal lg:leading-normal capitalize font-generalSans">
-            🏆 Unlock true glory with the Exclusive Pass
-          </p>
+        <div className="top-14 relative flex flex-row justify-between gap-2 lg:gap-8 p-8 max-md:pb-32">
+          <Image src={roadRagesLogo} alt="img" className="w-52 lg:w-40" />
           <div className="flex items-center gap-8">
-            <Link href="https://sooshpad.xyz/project-detail/xtreme-stunt">
+            <Link href="https://mintify.xyz/launchpad/sophonriderspass">
               <Button className="w-32 lg:w-40 h-11">
                 <p className="text-xs lg:text-sm">Mint NFT</p>
               </Button>
             </Link>
-            {/* <Link href="https://discord.gg/Z5mkgXHs">
+            {/* <Link href="https://mintify.xyz/launchpad/sophonriderspass">
               <Button className="w-32 lg:w-40 h-11">
                 <p className="text-xs lg:text-sm">Join Discord</p>
               </Button>
             </Link> */}
           </div>
+          <Image src={sophandLogo} alt="img" className="w-52 lg:w-40" />
         </div>
       </div>
     </section>
