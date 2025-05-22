@@ -30,7 +30,7 @@ export default function GamePopup() {
             src={rageRoadsBg}
             alt="img"
             priority
-            className="block max-w-[48rem] rounded-xl"
+            className="block lg:max-w-[48rem] sm:max-w-[42rem] rounded-xl"
           />
           <button
             onClick={() => setOpen(false)}
