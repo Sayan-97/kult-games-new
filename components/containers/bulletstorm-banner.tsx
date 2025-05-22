@@ -8,6 +8,7 @@ import Link from "next/link";
 import rageRoadsBg from '@/public/imgs/xtreme-new-image.png';
 import roadRagesLogo from '@/public/imgs/rage-roads.png';
 import sophandLogo from '@/public/imgs/Sophon_Logo_Main.png';
+import roadRagesSmBg from '@/public/imgs/rage-roads-sm.png';
 
 import XtremeBgSm from "@/public/imgs/xtremestuntbg-SM.png";
 
@@ -15,7 +16,7 @@ import XtremeBgSm from "@/public/imgs/xtremestuntbg-SM.png";
 export default function BulletStormBanner() {
   return (
     <section className="container">
-      <div className="relative rounded-2xl overflow-hidden bg-[#04080C] min-h-[540px] flex flex-col justify-end">
+      <div className="relative rounded-2xl overflow-hidden bg-[#04080C] lg:min-h-[540px] flex flex-col justify-end">
         <Image
           src={rageRoadsBg}
           alt="img"
@@ -24,13 +25,13 @@ export default function BulletStormBanner() {
           className="bottom-0 w-[100%] h-[100%] right-0 max-md:hidden brightness-75 absolute"
         />
         <Image
-          src={XtremeBgSm}
+          src={roadRagesSmBg}
           alt="img"
           priority
-          className="absolute bottom-0 md:hidden"
+          className="absolute bottom-0 md:hidden w-[100%] h-[100%]"
         />
-        <div className="top-14 relative flex flex-row justify-between gap-2 lg:gap-8 p-8 max-md:pb-32">
-          <Image src={roadRagesLogo} alt="img" className="w-52 lg:w-40" />
+        <div className="top-14 relative flex flex-row justify-between gap-2 lg:gap-8 md:pb-8 max-md:pb-32 max-sm:pb-10">
+          <Image src={roadRagesLogo} alt="img" className="w-52 lg:w-40 " />
           <div className="flex items-center gap-8">
             <Link href="https://mintify.xyz/launchpad/sophonriderspass">
               <Button className="w-32 lg:w-40 h-11">
