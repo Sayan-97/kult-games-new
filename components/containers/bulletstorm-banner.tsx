@@ -16,7 +16,7 @@ import roadRagesSmBg from '@/public/imgs/rage-roads-sm.png';
 export default function BulletStormBanner() {
   return (
     <section className="container">
-      <div className="relative rounded-2xl overflow-hidden bg-[#04080C] lg:min-h-[540px] min-h-[240px]  flex flex-col justify-end">
+      <div className="relative rounded-2xl overflow-hidden bg-[#04080C] lg:min-h-[540px] min-h-[220px]  flex flex-col justify-end">
         <Image
           src={rageRoadsBg}
           alt="img"
@@ -28,7 +28,7 @@ export default function BulletStormBanner() {
           src={roadRagesSmBg}
           alt="img"
           priority
-          className="absolute bottom-0 h-[100%] w-[100%]"
+          className="absolute inset-0 w-full h-full object-cover md:hidden"
         />
         <div className="top-14 relative flex flex-row justify-between gap-2 lg:gap-8 md:pb-8 max-md:pb-32 max-sm:pb-10">
           <Image src={roadRagesLogo} alt="img" className="w-52 lg:w-40 " />
