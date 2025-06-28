@@ -30,22 +30,26 @@ export default function BulletStormBanner() {
           alt="img"
           priority
         />
-        <div className="absolute right-10 top-10 flex flex-col gap-4 hidden sm:hidden md:block">
-          <div className="flex items-center gap-8 ">
-            <Link href="https://app.mintify.com/launchpad/morphspeedlegends">
-              <Button className="w-32 lg:w-60 h-11">
-                <p className="text-xs lg:text-sm">Mint NFT</p>
-              </Button>
-            </Link>
-          </div>
-          <div className="flex items-center gap-8 mt-4">
-            <Link href="https://highwayhustle.xyz/">
-              <Button className="w-32 lg:w-60 h-11 ">
-                <p className="text-xs lg:text-sm">Start Game</p>
-              </Button>
-            </Link>
-          </div>
+      <div className="absolute flex flex-row justify-center align-center w-full gap-4 hidden sm:hidden md:block">
+        <div className="flex items-center gap-8 justify-around mb-10">
+         
+          <Link href="https://app.mintify.com/launchpad/morphspeedlegends">
+            <Button className="w-32 lg:w-40 h-11">
+              <p className="text-xs lg:text-sm">Mint NFT</p>
+            </Button>
+          </Link>
+          <Link href="https://highwayhustle.xyz/">
+            <Button className="w-32 lg:w-40 h-11">
+              <p className="text-xs lg:text-sm">Start Game</p>
+            </Button>
+          </Link>
+          <Link href="https://highwayhustle.xyz/assets/manual-DGLaa-n1.pdf">
+            <Button className="w-32 lg:w-40 h-11">
+              <p className="text-xs lg:text-sm">Game Manual</p>
+            </Button>
+          </Link>
         </div>
+      </div>
 
         <div className="absolute flex w-full bottom-1 flex flex-row justify-center  gap-4  md:hidden">
           <div className="flex items-center gap-8 ">
