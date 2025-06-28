@@ -5,11 +5,11 @@ import Link from "next/link";
 // import XtremeBg from "@/public/imgs/xtremestuntbg.png";
 // import XtremeLogo from "@/public/imgs/xtremelogo.png";
 
-import rageRoadsBg from '@/public/imgs/xtreme-new-image.png';
+// import rageRoadsBg from '@/public/imgs/xtreme-new-image.png';
 import bg from '@/public/imgs/bg.png';
-import roadRagesLogo from '@/public/imgs/rage-roads.png';
-import sophandLogo from '@/public/imgs/Sophon_Logo_Main.png';
-import roadRagesSmBg from '@/public/imgs/rage-roads-sm.png';
+// import roadRagesLogo from '@/public/imgs/rage-roads.png';
+// import sophandLogo from '@/public/imgs/Sophon_Logo_Main.png';
+// import roadRagesSmBg from '@/public/imgs/rage-roads-sm.png';
 
 // import XtremeBgSm from "@/public/imgs/xtremestuntbg-SM.png";
 

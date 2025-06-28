@@ -8,11 +8,11 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import Button from "./button";
 import Link from "next/link";
 // import XtremeLogo from "@/public/imgs/xtremelogo.png"
-import rageRoadsBg from '@/public/imgs/xtreme-new-image.png';
+// import rageRoadsBg from '@/public/imgs/xtreme-new-image.png';
 import bg from '@/public/imgs/bg.png';
 import kultLogo from '@/public/imgs/kult-games-logo.png';
-import roadRagesLogo from '@/public/imgs/rage-roads.png';
-import sophandLogo from '@/public/imgs/Sophon_Logo_Main.png';
+// import roadRagesLogo from '@/public/imgs/rage-roads.png';
+// import sophandLogo from '@/public/imgs/Sophon_Logo_Main.png';
 
 
 export default function GamePopup() {
