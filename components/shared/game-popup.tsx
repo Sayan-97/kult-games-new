@@ -43,9 +43,9 @@ export default function GamePopup() {
           </button>
           <div className="w-full flex lg:pb-8 flex-row justify-center items-center gap-4 z-10 absolute bottom-0 left-0 ">
             <Image src={kultLogo} alt="img" className="w-8 lg:w-16" />
-            <div className="flex items-center gap-8">
+            <div className="flex items-center gap-8 pb-1 sm:">
               <Link href="https://highwayhustle.xyz/">
-                <Button className="w-33 lg:w-34 h-9 outline-none">
+                <Button className="w-33 lg:w-34 h-9 pb-2 outline-none">
                   <p className="text-xs lg:text-sm color-red-302">Play Games</p>
                 </Button>
               </Link>
