@@ -33,7 +33,7 @@ export const games = [
     plat: BotanixImg,
     mobile: true,
     web: true,
-    link: "https://satoshiheads.kult.games/",
+    link: "https://satoshiheads.xyz/",
   },
   {
     image: Game3Img,

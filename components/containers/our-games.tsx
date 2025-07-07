@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   Carousel,
@@ -15,7 +15,7 @@ import GradImg from "@/public/imgs/our-games-grad.png";
 import Link from "next/link";
 import { MdMonitor } from "react-icons/md";
 import ButtonSecondary from "../shared/button-secondary";
-import Autoplay from "embla-carousel-autoplay"
+import Autoplay from "embla-carousel-autoplay";
 
 export default function OurGames() {
   return (
@@ -23,11 +23,14 @@ export default function OurGames() {
       <Image src={GradImg} alt="img" className="absolute left-0 -z-10" />
       <div className="container space-y-12">
         <h2>Experience our games</h2>
-        <Carousel opts={{ loop: true }} plugins={[
-        Autoplay({
-          delay: 4000,
-        }),
-      ]}>
+        <Carousel
+          opts={{ loop: true }}
+          plugins={[
+            Autoplay({
+              delay: 4000,
+            }),
+          ]}
+        >
           <CarouselContent className="-ml-8">
             {games.map((item, index) => (
               <CarouselItem key={index} className="pl-8 w-full">
@@ -44,7 +47,7 @@ export default function OurGames() {
                   <div className="flex-grow flex flex-col gap-8">
                     <div className="relative max-lg:h-[320px] bg-[#191934] flex-grow rounded-2xl overflow-hidden">
                       <div className="absolute inset-0 bg-[radial-gradient(217.24%_242.87%_at_217.75%_107.58%,rgba(127,139,210,0.30)0%,rgba(89,106,197,0.00)100%)] p-6 flex flex-col justify-between items-start">
-                        <div className="space-y-6">
+                        <div className="space-y-2">
                           <p className="text-[27px] font-bold">{item.name}</p>
                           <p className="text-muted">{item.des}</p>
                           <Image src={item.plat} alt="alt" />
@@ -53,7 +56,7 @@ export default function OurGames() {
                           <Link href={item.link}>
                             <Button>
                               <FaRegCirclePlay />
-                              Play Demo
+                              Play Game
                             </Button>
                           </Link>
                           <div className="flex items-center gap-2 lg:hidden">

@@ -75,7 +75,7 @@ export default function Upcoming() {
                   ) : item.comingSoon ? (
                     <Button>
                       <FaRegCirclePlay />
-                      Coming Soon
+                      Play Game
                     </Button>
                   ) : item.demo ? (
                     <Link href={item.demoUrl}>
@@ -152,7 +152,7 @@ export default function Upcoming() {
                   ) : item.comingSoon ? (
                     <Button className="w-full">
                       <FaRegCirclePlay />
-                      Coming Soon
+                      Play Game
                     </Button>
                   ) : item.demo ? (
                     <Link href={item.demoUrl}>
