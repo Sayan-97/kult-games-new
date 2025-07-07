@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   Carousel,
@@ -15,7 +15,7 @@ import GradImg from "@/public/imgs/our-games-grad.png";
 import Link from "next/link";
 import { MdMonitor } from "react-icons/md";
 import ButtonSecondary from "../shared/button-secondary";
-import Autoplay from "embla-carousel-autoplay"
+import Autoplay from "embla-carousel-autoplay";
 
 export default function OurGames() {
   return (
@@ -23,11 +23,14 @@ export default function OurGames() {
       <Image src={GradImg} alt="img" className="absolute left-0 -z-10" />
       <div className="container space-y-12">
         <h2>Experience our games</h2>
-        <Carousel opts={{ loop: true }} plugins={[
-        Autoplay({
-          delay: 4000,
-        }),
-      ]}>
+        <Carousel
+          opts={{ loop: true }}
+          plugins={[
+            Autoplay({
+              delay: 4000,
+            }),
+          ]}
+        >
           <CarouselContent className="-ml-8">
             {games.map((item, index) => (
               <CarouselItem key={index} className="pl-8 w-full">
