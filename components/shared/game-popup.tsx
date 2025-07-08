@@ -26,7 +26,7 @@ export default function GamePopup() {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent className="pt-0 max-w-[48rem] border-none flex flex-col items-center justify-center bg-transparent shadow-none [&>button.absolute]:hidden">
-        <div className="relative w-full flex justify-center max-w-[80%] sm:max-w-[99%]">
+        <div className="relative w-full flex justify-center max-w-[100%] sm:max-w-[80%]">
           <Image
             src={bg}
             alt="img"

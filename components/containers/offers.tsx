@@ -34,10 +34,10 @@ export default function KultOffers() {
           />
           <Button
             onClick={() => setOpen(true)}
-            className="absolute left-16 bottom-16 py-3"
+            className="absolute left-5 bottom-5 font-medium px-1 py-1 text-xs sm:text-sm"
           >
             <SlArrowRightCircle />
-            Discover Kult
+            Discover <br /> Kult
           </Button>
 
           {open && (

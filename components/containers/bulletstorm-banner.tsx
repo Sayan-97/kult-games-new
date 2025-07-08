@@ -47,16 +47,16 @@ export default function BulletStormBanner() {
 
         <div className="absolute flex w-full bottom-1 flex flex-row justify-center  gap-4  md:hidden">
           <div className="flex items-center gap-8 ">
+            <div className="flex items-center gap-8">
+              <Link href="https://highwayhustle.xyz/">
+                <Button className="w-32 lg:w-40 h-11 ">
+                  <p className="text-xs lg:text-sm">Start Game</p>
+                </Button>
+              </Link>
+            </div>
             <Link href="https://app.mintify.com/launchpad/morphspeedlegends">
               <Button className="w-32 lg:w-40 h-11">
-                <p className="text-xs lg:text-sm">Mint NFT</p>
-              </Button>
-            </Link>
-          </div>
-          <div className="flex items-center gap-8">
-            <Link href="https://highwayhustle.xyz/">
-              <Button className="w-32 lg:w-40 h-11 ">
-                <p className="text-xs lg:text-sm">Start Game</p>
+                <p className="text-xs lg:text-sm">Game Manual</p>
               </Button>
             </Link>
           </div>
