@@ -106,24 +106,24 @@ export const upcomingGames = [
     web: true,
     demo: true,
     demoUrl: "https://zeustreasures.kult.games/",
-  },
-  {
-    image: UpcomingGameImg7,
-    name: "Octavium",
-    types: ["Action", "RPG", "Futuristic", "AAA"],
-    mobile: false,
-    web: true,
-    comingSoon: true,
-  },
-  {
-    image: UpcomingGameImg8,
-    name: "Warzone Warriors",
-    types: ["Action"],
-    mobile: true,
-    web: true,
-    comingSoon: true,
-  },
+  }
 ];
+// {
+  //   image: UpcomingGameImg7,
+  //   name: "Octavium",
+  //   types: ["Action", "RPG", "Futuristic", "AAA"],
+  //   mobile: false,
+  //   web: true,
+  //   comingSoon: true,
+  // },
+  // {
+  //   image: UpcomingGameImg8,
+  //   name: "Warzone Warriors",
+  //   types: ["Action"],
+  //   mobile: true,
+  //   web: true,
+  //   comingSoon: true,
+  // },
 
 export const roadmap = [
   {
