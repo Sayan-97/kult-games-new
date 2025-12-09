@@ -32,12 +32,12 @@ export default function BulletStormBanner() {
                 <p className="text-xs lg:text-sm">Mint NFT</p>
               </Button>
             </Link> */}
-            <Link href="https://highwayhustle.xyz/">
+            <Link href="https://zerogpool.xyz/">
               <Button className="w-32 lg:w-40 h-11">
                 <p className="text-xs lg:text-sm">Start Game</p>
               </Button>
             </Link>
-            <Link href="https://highwayhustle.xyz/assets/manual-DGLaa-n1.pdf">
+            <Link href="https://zerogpool.xyz/rules">
               <Button className="w-32 lg:w-40 h-11">
                 <p className="text-xs lg:text-sm">Game Manual</p>
               </Button>
