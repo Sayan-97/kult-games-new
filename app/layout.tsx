@@ -4,7 +4,7 @@ import GeneralSans from "next/font/local";
 import "./globals.css";
 import Footer from "@/components/shared/footer";
 import Header from "@/components/shared/header";
-import GamePopup from "@/components/shared/game-popup";
+// import GamePopup from "@/components/shared/game-popup";
 
 const generalSans = GeneralSans({
   src: "../public/fonts/GeneralSans-Bold.otf",
@@ -36,7 +36,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
-        <GamePopup />
+        {/* <GamePopup /> */}
       </body>
     </html>
   );
