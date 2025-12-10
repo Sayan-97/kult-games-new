@@ -9,7 +9,7 @@ import GradImg from "@/public/imgs/offers-grad.png";
 import { MdMonitor } from "react-icons/md";
 import { HiOutlineDevicePhoneMobile } from "react-icons/hi2";
 import { CgClose } from "react-icons/cg";
-import Link from "next/link";
+// import Link from "next/link";
 
 export default function Upcoming() {
   const [show, setShow] = useState<number | null>(null);
@@ -77,14 +77,15 @@ export default function Upcoming() {
                       <FaRegCirclePlay />
                       Play Game
                     </Button>
-                  ) : item.demo ? (
-                    <Link href={item.demoUrl}>
-                      <Button>
-                        <FaRegCirclePlay />
-                        Play Demo
-                      </Button>
-                    </Link>
-                  ) : (
+                   ) //: item.demo ? (
+                  //   <Link href={item.demoUrl}>
+                  //     <Button>
+                  //       <FaRegCirclePlay />
+                  //       Play Demo
+                  //     </Button>
+                  //   </Link>
+                  // )
+                   : (
                     <></>
                   )}
                 </div>
@@ -154,14 +155,16 @@ export default function Upcoming() {
                       <FaRegCirclePlay />
                       Play Game
                     </Button>
-                  ) : item.demo ? (
-                    <Link href={item.demoUrl}>
-                      <Button className="w-full">
-                        <FaRegCirclePlay />
-                        Play Demo
-                      </Button>
-                    </Link>
-                  ) : (
+                  ) 
+                  // : item.demo ? (
+                  //   <Link href={item.demoUrl}>
+                  //     <Button className="w-full">
+                  //       <FaRegCirclePlay />
+                  //       Play Demo
+                  //     </Button>
+                  //   </Link>
+                  // ) 
+                  : (
                     <></>
                   )}
                 </div>
