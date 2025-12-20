@@ -34,11 +34,11 @@ export default function OurTeams() {
       name: "Raunak Jha",
       des: "Brand Advocate",
     },
-    {
-      img: Team6,
-      name: "Sambhav",
-      des: "Full Stack Developer",
-    },
+    // {
+    //   img: Team6,
+    //   name: "Sambhav",
+    //   des: "Full Stack Developer",
+    // },
   ];
 
   return (
