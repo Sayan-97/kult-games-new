@@ -7,7 +7,7 @@ export default function WaitlistForm() {
     >
       <input
         type="text"
-        className="bg-[rgba(217,217,217,0.06)] backdrop-blur-[11px] w-[280px] lg:w-[400px] px-6 max-lg:py-3 rounded-[63px] placeholder:text-white border-[0.5px]"
+        className="bg-[rgba(217,217,217,0.06)] backdrop-blur-[11px] w-[280px] lg:w-[400px] px-6 max-lg:py-3 rounded-[63px] placeholder:text-white border-[0.5px] cursor-pointer"
         placeholder="Enter Your email here...."
         name="email"
       />
