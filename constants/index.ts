@@ -6,6 +6,7 @@ import Game4Img from "@/public/imgs/game4.png";
 // import BNBImg from "@/public/imgs/bnb.png";
 import BotanixImg from "@/public/imgs/botanix.png";
 import TroveImg from "@/public/imgs/trove.png";
+import OGImg from "@/public/imgs/OG.png";
 
 import UpcomingGameImg1 from "@/public/imgs/upcoming1.png";
 import UpcomingGameImg2 from "@/public/imgs/upcoming2.png";
@@ -21,41 +22,50 @@ export const games = [
     image: Game1Img,
     name: "Zero G Pool",
     des: "Your favorite 8-ball, now with a cosmic twist.",
-   plat: TroveImg,
+    plat: TroveImg,
     mobile: true,
     web: true,
     link: "https://zerogpool.xyz/",
   },
-  // {
-  //   image: Game2Img,
-  //   name: "Satoshi Heads",
-  //   des: "Explore an ultimate head soccer experience in Web 3",
-  //   plat: BotanixImg,
-  //   mobile: true,
-  //   web: true,
-  //   link: "https://satoshiheads.xyz/",
-  // },
-  // {
-  //   image: Game3Img,
-  //   name: "Cuddle Quest",
-  //   des: "Explore an ultimate tickle to earn concept with cute furry animals",
-  //   plat: TroveImg,
-  //   mobile: true,
-  //   web: true,
-  //   link: "https://anny.kult.games/",
-  // },
-  // {
-  //   image: Game4Img,
-  //   name: "Scary Run",
-  //   des: "Experience an thrilling adventure escaping obstacles and ghosts on the way",
-  //   plat: TroveImg,
-  //   mobile: true,
-  //   web: true,
-  //   link: "https://scaryrun.kult.games/",
-  // },
+  {
+    image: Game2Img,
+    name: "Guess The AI",
+    des: "Challenge your mind, Beat the AI",
+    plat: TroveImg,
+    mobile: true,
+    web: true,
+    link: "https://guesstheai.xyz/",
+  },
+  {
+    image: Game3Img,
+    name: "Warzone Warriors",
+    des: "Enter the war,prove your skill. Show what you're made of",
+    plat: TroveImg,
+    mobile: true,
+    web: true,
+    link: "https://warzonewarriors.xyz/",
+  },
+  {
+    image: Game4Img,
+    name: "Highway Hustle",
+    des: "Race through chaos, dodge traffic, and own the streets",
+    plat: TroveImg,
+    mobile: true,
+    web: true,
+    link: "https://highwayhustle.xyz/",
+  },
 ];
 
 export const upcomingGames = [
+
+  {
+    image: UpcomingGameImg6,
+    name: "Zero Dash",
+    types: ["Run", "Escape", "Don't Look Back"],
+    mobile: true,
+    web: true,
+    demo: false,
+  },
   {
     image: UpcomingGameImg1,
     name: "Robo War",
@@ -65,6 +75,7 @@ export const upcomingGames = [
     trailer: false,
     trailerVid: "/videos/bloodline.mp4",
   },
+
   {
     image: UpcomingGameImg2,
     name: "The Last Shot",
@@ -77,7 +88,7 @@ export const upcomingGames = [
   {
     image: UpcomingGameImg3,
     name: "Highway Hustle",
-    types: ["P2E","Racing"],
+    types: ["P2E", "Racing"],
     mobile: true,
     web: true,
     trailer: false,
@@ -86,45 +97,28 @@ export const upcomingGames = [
   {
     image: UpcomingGameImg4,
     name: "Formula Speed Thrills",
-    types: ["Racing","Formula 1"],
+    types: ["Racing", "Formula 1"],
     mobile: true,
     web: true,
     comingSoon: false,
-  },
-  {
-    image: UpcomingGameImg5,
-    name: "Guess The Ai",
-    types: ["Intelligence"],
-    mobile: true,
-    web: true,
-    comingSoon: false,
-  },
-  {
-    image: UpcomingGameImg6,
-    name: "Zero Dash",
-    types: ["Run","Escape","Don't Look Back"],
-    mobile: true,
-    web: true,
-    demo: false,
-    // demoUrl: "https://zeustreasures.kult.games/",
   },
 ];
 // {
-  //   image: UpcomingGameImg7,
-  //   name: "Octavium",
-  //   types: ["Action", "RPG", "Futuristic", "AAA"],
-  //   mobile: false,
-  //   web: true,
-  //   comingSoon: true,
-  // },
-  // {
-  //   image: UpcomingGameImg8,
-  //   name: "Warzone Warriors",
-  //   types: ["Action"],
-  //   mobile: true,
-  //   web: true,
-  //   comingSoon: true,
-  // },
+//   image: UpcomingGameImg7,
+//   name: "Octavium",
+//   types: ["Action", "RPG", "Futuristic", "AAA"],
+//   mobile: false,
+//   web: true,
+//   comingSoon: true,
+// },
+// {
+//   image: UpcomingGameImg8,
+//   name: "Warzone Warriors",
+//   types: ["Action"],
+//   mobile: true,
+//   web: true,
+//   comingSoon: true,
+// },
 
 export const roadmap = [
   {
