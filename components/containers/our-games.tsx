@@ -95,8 +95,8 @@ export default function OurGames() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="-left-4 lg:-left-12 bg-[#191934] border-[#5F33D6] hover:bg-[#191934]/80" />
-          <CarouselNext className="-right-4 lg:-right-12 bg-[#191934] border-[#5F33D6] hover:bg-[#191934]/80" />
+          <CarouselPrevious className="hidden lg:flex -left-4 lg:-left-12 bg-[#191934] border-[#5F33D6] hover:bg-[#191934]/80" />
+          <CarouselNext className="hidden lg:flex -right-4 lg:-right-12 bg-[#191934] border-[#5F33D6] hover:bg-[#191934]/80" />
         </Carousel>
       </div>
     </section>
