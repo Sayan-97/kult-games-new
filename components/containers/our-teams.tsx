@@ -58,7 +58,7 @@ export default function OurTeams() {
                 }}
               >
                 <CardItem translateZ="50" className="absolute bottom-14">
-                  <Image src={item.img} alt="img" priority />
+                  <Image src={item.img} alt="img" priority draggable={false} />
                 </CardItem>
                 <CardItem translateZ="50">
                   <h5 className="text-2xl uppercase">{item.name}</h5>

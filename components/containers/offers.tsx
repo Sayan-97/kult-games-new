@@ -25,12 +25,14 @@ export default function KultOffers() {
             height={912.54}
             className=""
             priority
+            draggable={false}
           />
           <Image
             src={KultLogo}
             alt="img"
             className="absolute animate-spin"
             priority
+            draggable={false}
           />
           <Button
             onClick={() => setOpen(true)}
@@ -69,15 +71,16 @@ export default function KultOffers() {
 
         <div className="lg:hidden space-y-5">
           <div className="relative flex items-center justify-center">
-            <Image src={OffersImgSm1} alt="img" priority />
+            <Image src={OffersImgSm1} alt="img" priority draggable={false} />
             <Image
               src={KultLogo}
               alt="img"
               className="w-[50%] absolute animate-spin"
               priority
+              draggable={false}
             />
           </div>
-          <Image src={OffersImgSm2} alt="img" priority />
+          <Image src={OffersImgSm2} alt="img" priority draggable={false} />
 
           <Button
             onClick={() => setOpen(true)}
@@ -118,6 +121,7 @@ export default function KultOffers() {
         src={OffersGrad}
         alt="img"
         className="absolute right-0 -bottom-80 -z-10"
+        draggable={false}
       />
     </section>
   );

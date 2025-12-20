@@ -22,12 +22,14 @@ export default function Partners() {
             width={220.159}
             height={68.716}
             priority
+            draggable={false}
           />
           <Image
             src={PartnersImg10}
             alt="img"
             width={220.159}
             height={68.716}
+            draggable={false}
           />
           <Image
             src={PartnersImg3}
@@ -35,6 +37,7 @@ export default function Partners() {
             width={220.159}
             height={68.716}
             priority
+            draggable={false}
           />
           <Image
             src={PartnersImg4}
@@ -42,6 +45,7 @@ export default function Partners() {
             width={220.159}
             height={68.716}
             priority
+            draggable={false}
           />
           <Image
             src={PartnersImg5}
@@ -49,6 +53,7 @@ export default function Partners() {
             width={220.159}
             height={68.716}
             priority
+            draggable={false}
           />
           <Image
             src={PartnersImg6}
@@ -56,6 +61,7 @@ export default function Partners() {
             width={220.159}
             height={68.716}
             priority
+            draggable={false}
           />
           <Image
             src={PartnersImg2}
@@ -63,6 +69,7 @@ export default function Partners() {
             width={220.159}
             height={68.716}
             priority
+            draggable={false}
           />
           <Image
             src={PartnersImg7}
@@ -70,6 +77,7 @@ export default function Partners() {
             width={220.159}
             height={68.716}
             priority
+            draggable={false}
           />
           <Image
             src={PartnersImg8}
@@ -77,6 +85,7 @@ export default function Partners() {
             width={220.159}
             height={68.716}
             priority
+            draggable={false}
           />
           <Image
             src={PartnersImg9}
@@ -85,6 +94,7 @@ export default function Partners() {
             height={68.716}
             priority
             className="w-32 justify-self-center place-self-center"
+            draggable={false}
           />
         </div>
       </div>

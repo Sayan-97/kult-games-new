@@ -33,6 +33,7 @@ export default function Footer() {
           width={101}
           height={101}
           className="w-20 lg:mt-5"
+          draggable={false}
         />
         <div className="flex-grow space-y-10">
           <div className="flex flex-col lg:flex-row gap-8 lg:items-center justify-between">
@@ -46,19 +47,19 @@ export default function Footer() {
             </div>
             <div className="flex items-center gap-5">
               <Link href="https://t.me/KultGamesOfficial">
-                <Image src={TelegramImg} alt="img" className="w-12"/>
+                <Image src={TelegramImg} alt="img" className="w-12" draggable={false} />
               </Link>
               <Link href="https://discord.gg/Fsb2m5rFE3">
-                <Image src={DiscordImg} alt="img" className="w-12"/>
+                <Image src={DiscordImg} alt="img" className="w-12" draggable={false} />
               </Link>
               <Link href="https://www.instagram.com/kult_games_/?igsh=dzAxNnJ3eWQ4NmUz&utm_source=qr">
-                <Image src={InstagramImg} alt="img" className="w-12"/>
+                <Image src={InstagramImg} alt="img" className="w-12" draggable={false} />
               </Link>
               <Link href="https://twitter.com/_KultGames">
-                <Image src={TwitterImg} alt="img" className="w-12"/>
+                <Image src={TwitterImg} alt="img" className="w-12" draggable={false} />
               </Link>
               <Link href="https://medium.com/@kult_games">
-                <Image src={MediumImg} alt="img" className="w-12"/>
+                <Image src={MediumImg} alt="img" className="w-12" draggable={false} />
               </Link>
             </div>
           </div>

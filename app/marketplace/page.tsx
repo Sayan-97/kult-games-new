@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Marketplace() {
   return (
     <div>
-      <Image src={MarketplaceImg} alt="img" />
+      <Image src={MarketplaceImg} alt="img" draggable={false} />
     </div>
   );
 }

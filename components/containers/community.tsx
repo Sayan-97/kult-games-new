@@ -51,6 +51,7 @@ export default function OurCommunity() {
                   width={266}
                   height={256}
                   className="max-lg:w-[35%] object-cover object-center"
+                  draggable={false}
                 />
               </CardBody>
             </CardContainer>
@@ -64,6 +65,7 @@ export default function OurCommunity() {
                         src={TelegramImg}
                         alt="img"
                         className="max-lg:w-[70%]"
+                        draggable={false}
                       />
                       <CardItem
                         as="p"
@@ -82,6 +84,7 @@ export default function OurCommunity() {
                     src={InstagramImg}
                     alt="img"
                     className="max-lg:w-[70%]"
+                    draggable={false}
                   />
                   <p className="text-xs lg:text-base">Instagram</p>
                 </div>
@@ -92,6 +95,7 @@ export default function OurCommunity() {
                     src={AnnouncementImg}
                     alt="img"
                     className="max-lg:w-[40%]"
+                    draggable={false}
                   />
                   <p className="text-xs lg:text-base">Announcement</p>
                 </div>
@@ -132,6 +136,7 @@ export default function OurCommunity() {
                     alt="img"
                     className="w-full h-auto bg-black rounded-xl"
                     priority
+                    draggable={false}
                   />
                 </ScrollArea>
               </CardItem>

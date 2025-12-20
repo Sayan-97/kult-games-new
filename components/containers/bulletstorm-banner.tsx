@@ -17,14 +17,18 @@ export default function BulletStormBanner() {
   return (
     <section className="container ">
       <div className="relative rounded-2xl overflow-hidden bg-[#04080C] lg:min-h-[800px] sm:h-[200px] md:h-[510px]  flex flex-col justify-end">
-        <Image
-          src={bg}
-          alt="img"
-          // fill
-          priority
-          className="bottom-0 w-[100%] h-[100%] right-0 max-md:hidden brightness-75 absolute"
-        />
-        <Image src={bg} alt="img" priority />
+        <Link href="https://zerogpool.xyz/" draggable={false} className="bottom-0 w-[100%] h-[100%] right-0 max-md:hidden absolute cursor-pointer hover:opacity-90 transition-opacity">
+          <Image
+            src={bg}
+            alt="img"
+            priority
+            className="w-full h-full brightness-75"
+            draggable={false}
+          />
+        </Link>
+        <Link href="https://highwayhustle.xyz/" draggable={false} className="md:hidden cursor-pointer hover:opacity-90 transition-opacity">
+          <Image src={bg} alt="img" priority draggable={false} />
+        </Link>
         <div className="absolute flex flex-row justify-center align-center w-full gap-4 hidden sm:hidden md:block">
           <div className="flex items-center gap-4 justify-evenly mb-10">
             {/* <Link href="https://app.mintify.com/launchpad/morphspeedlegends">
