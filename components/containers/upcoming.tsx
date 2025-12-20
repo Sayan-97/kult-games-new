@@ -18,7 +18,7 @@ export default function Upcoming() {
     <section className="relative py-10 lg:py-16">
       <Image src={GradImg} alt="img" className="absolute right-0 -z-10" draggable={false} />
       <div className="container space-y-12">
-        <h2>Upcoming big titles</h2>
+        <h2>Building the future of on-chain gaming</h2>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
           {upcomingGames.map((item, index) => (
             <div key={index} className="space-y-4">
