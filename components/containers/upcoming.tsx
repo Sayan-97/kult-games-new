@@ -10,6 +10,14 @@ import { MdMonitor } from "react-icons/md";
 import { HiOutlineDevicePhoneMobile } from "react-icons/hi2";
 import { CgClose } from "react-icons/cg";
 import Link from "next/link";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 export default function Upcoming() {
   const [show, setShow] = useState<number | null>(null);
@@ -19,7 +27,8 @@ export default function Upcoming() {
       <Image src={GradImg} alt="img" className="absolute right-0 -z-10" draggable={false} />
       <div className="container space-y-12">
         <h2>Building the future of on-chain gaming</h2>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
+        {/* Mobile Grid View */}
+        <div className="grid grid-cols-2 gap-4 lg:hidden">
           {upcomingGames.map((item, index) => (
             <div key={index} className="space-y-4">
               <Link
@@ -180,6 +189,76 @@ export default function Upcoming() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Desktop Carousel View */}
+        <div className="hidden lg:block">
+          <Carousel
+            opts={{ loop: true, align: "start" }}
+            plugins={[
+              Autoplay({
+                delay: 4000,
+              }),
+            ]}
+          >
+            <CarouselContent>
+              {upcomingGames.map((item, index) => (
+                <CarouselItem key={index} className="basis-1/4">
+                  <div className="space-y-4">
+                    <Link
+                      href={item.link || "#"}
+                      target="_blank"
+                      className="block cursor-pointer hover:opacity-90 transition-opacity"
+                    >
+                      <div
+                        onMouseEnter={() => setShow(index + 100)}
+                        onMouseLeave={() => setShow(null)}
+                        className="relative w-full h-[327px] overflow-hidden rounded-2xl"
+                      >
+                        <Image
+                          src={item.image}
+                          alt="img"
+                          fill
+                          className="object-cover"
+                          priority
+                          draggable={false}
+                        />
+                        <div className="absolute bottom-0 left-0 bg-black/70 px-3 py-1.5 rounded-lg">
+                          <span className="text-sm font-medium text-white">Coming Soon...</span>
+                        </div>
+                      </div>
+                    </Link>
+                    <div className="flex flex-col gap-3">
+                      <p className="text-2xl font-bold leading-none truncate">
+                        {item.name}
+                      </p>
+                      <p className="text-sm text-muted whitespace-nowrap truncate">
+                        {item.types.join(", ")}
+                      </p>
+                      <div className="flex items-center gap-4">
+                        {item.web && (
+                          <div className="bg-[radial-gradient(66.67%_103.95%_at_50%_-42.76%,#BBA5F4_0%,#5F33D6_100%)] p-[1px] rounded-lg">
+                            <div className="bg-[#191934] px-4 py-2 rounded-lg flex items-center gap-2">
+                              <MdMonitor />
+                            </div>
+                          </div>
+                        )}
+                        {item.mobile && (
+                          <div className="bg-[radial-gradient(66.67%_103.95%_at_50%_-42.76%,#BBA5F4_0%,#5F33D6_100%)] p-[1px] rounded-lg">
+                            <div className="bg-[#191934] px-4 py-2 rounded-lg flex items-center gap-2">
+                              <HiOutlineDevicePhoneMobile />
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="-left-12 bg-[#191934] border-[#5F33D6] hover:bg-[#191934]/80" />
+            <CarouselNext className="-right-12 bg-[#191934] border-[#5F33D6] hover:bg-[#191934]/80" />
+          </Carousel>
         </div>
       </div>
     </section >
