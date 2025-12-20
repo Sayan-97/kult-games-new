@@ -8,6 +8,8 @@ import PartnersImg7 from "@/public/imgs/partners-7.png";
 import PartnersImg8 from "@/public/imgs/partners-8.png";
 import PartnersImg9 from "@/public/imgs/partners-9.png";
 import PartnersImg10 from "@/public/imgs/partners-10.png";
+import PartnersImg11 from "@/public/imgs/partners-11.png";
+import PartnersImg12 from "@/public/imgs/partners-12.png";
 import Image from "next/image";
 
 export default function Partners() {
@@ -15,7 +17,21 @@ export default function Partners() {
     <section className="py-10 lg:py-16">
       <div className="container space-y-12">
         <h2 className="text-center">Partners & Backers</h2>
-        <div className="grid grid-cols-2 lg:grid-cols-5 gap-y-8">
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-y-8 gap-x-4 place-items-center">
+          <Image
+            src={PartnersImg11}
+            alt="img"
+            width={225.159}
+            height={68.716}
+            draggable={false}
+          />
+          <Image
+            src={PartnersImg12}
+            alt="img"
+            width={110}
+            height={68}
+            draggable={false}
+          />
           <Image
             src={PartnersImg1}
             alt="img"

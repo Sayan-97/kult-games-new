@@ -65,6 +65,7 @@ export const upcomingGames = [
     mobile: true,
     web: true,
     demo: false,
+    link: "https://x.com/_kultgames/status/2001590900666044928?s=46",
   },
   {
     image: UpcomingGameImg1,
@@ -74,6 +75,7 @@ export const upcomingGames = [
     web: true,
     trailer: false,
     trailerVid: "/videos/bloodline.mp4",
+    link: "https://x.com/_kultgames/status/1973666321738113233?s=46",
   },
 
   {
@@ -84,6 +86,7 @@ export const upcomingGames = [
     web: true,
     trailer: false,
     trailerVid: "/videos/f1 x.mp4",
+    link: "https://x.com/_kultgames/status/1973666321738113233?s=46",
   },
   {
     image: UpcomingGameImg3,
@@ -93,6 +96,7 @@ export const upcomingGames = [
     web: true,
     trailer: false,
     trailerVid: "/videos/L2d Trailer 4K.mp4",
+    link: "https://x.com/_kultgames/status/1973666321738113233?s=46",
   },
   {
     image: UpcomingGameImg4,
@@ -101,24 +105,9 @@ export const upcomingGames = [
     mobile: true,
     web: true,
     comingSoon: false,
+    link: "https://x.com/_kultgames/status/1973666321738113233?s=46",
   },
 ];
-// {
-//   image: UpcomingGameImg7,
-//   name: "Octavium",
-//   types: ["Action", "RPG", "Futuristic", "AAA"],
-//   mobile: false,
-//   web: true,
-//   comingSoon: true,
-// },
-// {
-//   image: UpcomingGameImg8,
-//   name: "Warzone Warriors",
-//   types: ["Action"],
-//   mobile: true,
-//   web: true,
-//   comingSoon: true,
-// },
 
 export const roadmap = [
   {
