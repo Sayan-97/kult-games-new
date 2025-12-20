@@ -9,6 +9,7 @@ export default function TopBar() {
         <p className="font-medium">Bullet Storm Beta testing is live,</p>
         <Link
           href="https://forms.gle/nJJCJTM2D9c5GR2n8"
+          target="_blank"
           className="font-bold"
         >
           Join Now

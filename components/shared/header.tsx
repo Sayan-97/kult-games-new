@@ -23,7 +23,7 @@ export default function Header() {
       <ul className="flex items-center gap-5">
         {[
           { img: TelegramImg, link: "https://t.me/KultGamesOfficial" },
-          { img: DiscordImg, link: "https://discord.gg/Fsb2m5rFE3" },
+          { img: DiscordImg, link: "https://discord.gg/Cge7rrCyUB" },
           {
             img: InstagramImg,
             link: "https://www.instagram.com/kult_games_/?igsh=dzAxNnJ3eWQ4NmUz&utm_source=qr",
@@ -32,8 +32,8 @@ export default function Header() {
           { img: MediumImg, link: "https://medium.com/@kult_games" },
         ].map((item, index) => (
           <li key={index}>
-            <Link href={item.link}>
-              <Image src={item.img} alt="img" className="w-12 h-auto" priority/>
+            <Link href={item.link} target="_blank">
+              <Image src={item.img} alt="img" className="w-12 h-auto" priority draggable={false} />
             </Link>
           </li>
         ))}
@@ -43,33 +43,33 @@ export default function Header() {
 
   return (
     <>
-    <header className="absolute inset-x-0 z-40 bg-[linear-gradient(180deg,#040719_0%,rgba(4,7,25,0.00)100%)]">
-    {/* <TopBar /> */}
-      <nav className="container flex items-center justify-between py-6">
-        <Link href="/" className="lg:hidden">
-          <Image src={AppLogo2} alt="img" className="w-14" />
-        </Link>
-        <div className="max-lg:hidden flex items-center gap-20">
-          <Image src={AppLogo} alt="img" className="max-w-32 h-auto" />
-          {/* <NavMenus /> */}
-        </div>
-        <div className="max-lg:hidden">
-          <SocialLinks />
-        </div>
-
-        <Sheet>
-          <SheetTrigger className="lg:hidden">
-            <TfiMenu className="text-2xl" />
-          </SheetTrigger>
-          <SheetContent className="lg:hidden bg-violet-950 border-none flex flex-col gap-8 pt-14">
+      <header className="absolute inset-x-0 z-40 bg-[linear-gradient(180deg,#040719_0%,rgba(4,7,25,0.00)100%)]">
+        {/* <TopBar /> */}
+        <nav className="container flex items-center justify-between py-6">
+          <Link href="/" className="lg:hidden">
+            <Image src={AppLogo2} alt="img" className="w-14" draggable={false} />
+          </Link>
+          <div className="max-lg:hidden flex items-center gap-20">
+            <Image src={AppLogo} alt="img" className="max-w-32 h-auto" draggable={false} />
             {/* <NavMenus /> */}
+          </div>
+          <div className="max-lg:hidden">
             <SocialLinks />
-          </SheetContent>
-        </Sheet>
-      </nav>
+          </div>
 
-      {/* <Newsletter /> */}
-    </header>
+          <Sheet>
+            <SheetTrigger className="lg:hidden">
+              <TfiMenu className="text-2xl" />
+            </SheetTrigger>
+            <SheetContent className="lg:hidden bg-violet-950 border-none flex flex-col gap-8 pt-14">
+              {/* <NavMenus /> */}
+              <SocialLinks />
+            </SheetContent>
+          </Sheet>
+        </nav>
+
+        {/* <Newsletter /> */}
+      </header>
     </>
   );
 }

@@ -20,7 +20,7 @@ import Autoplay from "embla-carousel-autoplay";
 export default function OurGames() {
   return (
     <section className="relative py-10 lg:py-16">
-      <Image src={GradImg} alt="img" className="absolute left-0 -z-10" />
+      <Image src={GradImg} alt="img" className="absolute left-0 -z-10" draggable={false} />
       <div className="container space-y-12">
         <h2>Experience our games</h2>
         <Carousel
@@ -35,25 +35,26 @@ export default function OurGames() {
             {games.map((item, index) => (
               <CarouselItem key={index} className="pl-8 w-full">
                 <div className="flex flex-col lg:flex-row items-stretch gap-4 lg:gap-8">
-                  <div className="relative lg:w-2/3 h-[279px] lg:h-[579px] rounded-3xl overflow-hidden">
+                  <Link href={item.link} target="_blank" className="relative lg:w-2/3 h-[279px] lg:h-[579px] rounded-3xl overflow-hidden block cursor-pointer hover:opacity-90 transition-opacity">
                     <Image
                       src={item.image}
                       alt="img"
                       fill
                       className="object-cover"
+                      draggable={false}
                       priority
                     />
-                  </div>
+                  </Link>
                   <div className="flex-grow flex flex-col gap-8">
                     <div className="relative max-lg:h-[320px] bg-[#191934] flex-grow rounded-2xl overflow-hidden">
                       <div className="absolute inset-0 bg-[radial-gradient(217.24%_242.87%_at_217.75%_107.58%,rgba(127,139,210,0.30)0%,rgba(89,106,197,0.00)100%)] p-6 flex flex-col justify-between items-start">
                         <div className="space-y-2">
                           <p className="text-[27px] font-bold">{item.name}</p>
                           <p className="text-muted">{item.des}</p>
-                          <Image src={item.plat} alt="alt" />
+                          <Image src={item.plat} alt="alt" draggable={false} />
                         </div>
                         <div className="w-full flex items-center justify-between">
-                          <Link href={item.link}>
+                          <Link href={item.link} target="_blank">
                             <Button>
                               <FaRegCirclePlay />
                               Play Game

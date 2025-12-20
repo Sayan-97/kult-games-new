@@ -16,7 +16,7 @@ export default function Upcoming() {
   const [teaserPlay, setTeaserPlay] = useState<number | null>(null);
   return (
     <section className="relative py-10 lg:py-16">
-      <Image src={GradImg} alt="img" className="absolute right-0 -z-10" />
+      <Image src={GradImg} alt="img" className="absolute right-0 -z-10" draggable={false} />
       <div className="container space-y-12">
         <h2>Upcoming big titles</h2>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
@@ -33,11 +33,11 @@ export default function Upcoming() {
                   fill
                   className="object-cover"
                   priority
+                  draggable={false}
                 />
                 <div
-                  className={`max-lg:hidden absolute inset-x-0 flex justify-center ${
-                    show === index ? "bottom-4" : "-bottom-[100%]"
-                  } transition-all ease-in-out`}
+                  className={`max-lg:hidden absolute inset-x-0 flex justify-center ${show === index ? "bottom-4" : "-bottom-[100%]"
+                    } transition-all ease-in-out`}
                 >
                   {item.trailer ? (
                     <>
@@ -77,17 +77,17 @@ export default function Upcoming() {
                       <FaRegCirclePlay />
                       Play Game
                     </Button>
-                   ) //: item.demo ? (
-                  //   <Link href={item.demoUrl}>
-                  //     <Button>
-                  //       <FaRegCirclePlay />
-                  //       Play Demo
-                  //     </Button>
-                  //   </Link>
-                  // )
-                   : (
-                    <></>
-                  )}
+                  ) //: item.demo ? (
+                    //   <Link href={item.demoUrl}>
+                    //     <Button>
+                    //       <FaRegCirclePlay />
+                    //       Play Demo
+                    //     </Button>
+                    //   </Link>
+                    // )
+                    : (
+                      <></>
+                    )}
                 </div>
               </div>
               <div className="flex flex-col gap-3">
@@ -155,18 +155,18 @@ export default function Upcoming() {
                       <FaRegCirclePlay />
                       Play Game
                     </Button>
-                  ) 
-                  // : item.demo ? (
-                  //   <Link href={item.demoUrl}>
-                  //     <Button className="w-full">
-                  //       <FaRegCirclePlay />
-                  //       Play Demo
-                  //     </Button>
-                  //   </Link>
-                  // ) 
-                  : (
-                    <></>
-                  )}
+                  )
+                    // : item.demo ? (
+                    //   <Link href={item.demoUrl}>
+                    //     <Button className="w-full">
+                    //       <FaRegCirclePlay />
+                    //       Play Demo
+                    //     </Button>
+                    //   </Link>
+                    // ) 
+                    : (
+                      <></>
+                    )}
                 </div>
               </div>
             </div>

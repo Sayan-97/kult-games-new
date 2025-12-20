@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Details() {
   return (
     <div>
-      <Image src={Img} alt="img" />
+      <Image src={Img} alt="img" draggable={false} />
     </div>
   );
 }

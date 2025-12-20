@@ -17,14 +17,18 @@ export default function BulletStormBanner() {
   return (
     <section className="container ">
       <div className="relative rounded-2xl overflow-hidden bg-[#04080C] lg:min-h-[800px] sm:h-[200px] md:h-[510px]  flex flex-col justify-end">
-        <Image
-          src={bg}
-          alt="img"
-          // fill
-          priority
-          className="bottom-0 w-[100%] h-[100%] right-0 max-md:hidden brightness-75 absolute"
-        />
-        <Image src={bg} alt="img" priority />
+        <Link href="https://zerogpool.xyz/" target="_blank" draggable={false} className="bottom-0 w-[100%] h-[100%] right-0 max-md:hidden absolute cursor-pointer hover:opacity-90 transition-opacity">
+          <Image
+            src={bg}
+            alt="img"
+            priority
+            className="w-full h-full brightness-75"
+          // draggable={false}
+          />
+        </Link>
+        <Link href="https://highwayhustle.xyz/" target="_blank" draggable={false} className="md:hidden cursor-pointer hover:opacity-90 transition-opacity">
+          <Image src={bg} alt="img" priority draggable={false} />
+        </Link>
         <div className="absolute flex flex-row justify-center align-center w-full gap-4 hidden sm:hidden md:block">
           <div className="flex items-center gap-4 justify-evenly mb-10">
             {/* <Link href="https://app.mintify.com/launchpad/morphspeedlegends">
@@ -32,12 +36,12 @@ export default function BulletStormBanner() {
                 <p className="text-xs lg:text-sm">Mint NFT</p>
               </Button>
             </Link> */}
-            <Link href="https://zerogpool.xyz/">
+            <Link href="https://zerogpool.xyz/" target="_blank">
               <Button className="w-32 lg:w-40 h-11">
                 <p className="text-xs lg:text-sm">Start Game</p>
               </Button>
             </Link>
-            <Link href="https://zerogpool.xyz/rules">
+            <Link href="https://zerogpool.xyz/rules" target="_blank">
               <Button className="w-32 lg:w-40 h-11">
                 <p className="text-xs lg:text-sm">Game Manual</p>
               </Button>
@@ -48,13 +52,13 @@ export default function BulletStormBanner() {
         <div className="absolute flex w-full bottom-1 flex flex-row justify-center  gap-4  md:hidden">
           <div className="flex items-center gap-8 ">
             <div className="flex items-center gap-8">
-              <Link href="https://highwayhustle.xyz/">
+              <Link href="https://highwayhustle.xyz/" target="_blank">
                 <Button className="w-32 lg:w-40 h-11 ">
                   <p className="text-xs lg:text-sm">Start Game</p>
                 </Button>
               </Link>
             </div>
-            <Link href="https://app.mintify.com/launchpad/morphspeedlegends">
+            <Link href="https://app.mintify.com/launchpad/morphspeedlegends" target="_blank">
               <Button className="w-32 lg:w-40 h-11">
                 <p className="text-xs lg:text-sm">Game Manual</p>
               </Button>
