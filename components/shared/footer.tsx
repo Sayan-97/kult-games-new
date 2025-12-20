@@ -46,19 +46,19 @@ export default function Footer() {
               </p>
             </div>
             <div className="flex items-center gap-5">
-              <Link href="https://t.me/KultGamesOfficial">
+              <Link href="https://t.me/KultGamesOfficial" target="_blank">
                 <Image src={TelegramImg} alt="img" className="w-12" draggable={false} />
               </Link>
-              <Link href="https://discord.gg/Fsb2m5rFE3">
+              <Link href="https://discord.gg/Cge7rrCyUB" target="_blank">
                 <Image src={DiscordImg} alt="img" className="w-12" draggable={false} />
               </Link>
-              <Link href="https://www.instagram.com/kult_games_/?igsh=dzAxNnJ3eWQ4NmUz&utm_source=qr">
+              <Link href="https://www.instagram.com/kult_games_/?igsh=dzAxNnJ3eWQ4NmUz&utm_source=qr" target="_blank">
                 <Image src={InstagramImg} alt="img" className="w-12" draggable={false} />
               </Link>
-              <Link href="https://twitter.com/_KultGames">
+              <Link href="https://twitter.com/_KultGames" target="_blank">
                 <Image src={TwitterImg} alt="img" className="w-12" draggable={false} />
               </Link>
-              <Link href="https://medium.com/@kult_games">
+              <Link href="https://medium.com/@kult_games" target="_blank">
                 <Image src={MediumImg} alt="img" className="w-12" draggable={false} />
               </Link>
             </div>

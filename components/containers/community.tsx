@@ -37,7 +37,7 @@ export default function OurCommunity() {
                     of gamers
                   </CardItem>
                   <CardItem translateZ="50">
-                    <Link href="https://discord.gg/Cge7rrCyUB">
+                    <Link href="https://discord.gg/Cge7rrCyUB" target="_blank">
                       <Button>
                         <HiOutlineArrowRightCircle />
                         Join Now
@@ -59,7 +59,7 @@ export default function OurCommunity() {
             <div className="grid grid-cols-3 gap-2 lg:gap-6">
               <CardContainer className="inter-var w-full py-0">
                 <CardBody className="w-full h-auto group/card">
-                  <Link href="https://t.me/KultGamesOfficial">
+                  <Link href="https://t.me/KultGamesOfficial" target="_blank">
                     <div className="bg-[radial-gradient(172.27%_145.85%_at_-4.55%_-1.7%,rgba(89,106,197,0.30)0%,rgba(89,106,197,0.00)100%)] p-4 rounded-2xl flex flex-col items-center justify-between gap-2">
                       <Image
                         src={TelegramImg}
@@ -78,7 +78,7 @@ export default function OurCommunity() {
                   </Link>
                 </CardBody>
               </CardContainer>
-              <Link href="https://www.instagram.com/kult_games_/?igsh=dzAxNnJ3eWQ4NmUz&utm_source=qr">
+              <Link href="https://www.instagram.com/kult_games_/?igsh=dzAxNnJ3eWQ4NmUz&utm_source=qr" target="_blank">
                 <div className="bg-[radial-gradient(172.27%_145.85%_at_-4.55%_-1.7%,rgba(89,106,197,0.30)0%,rgba(89,106,197,0.00)100%)] p-4 rounded-2xl flex flex-col items-center justify-between gap-2">
                   <Image
                     src={InstagramImg}
@@ -89,7 +89,7 @@ export default function OurCommunity() {
                   <p className="text-xs lg:text-base">Instagram</p>
                 </div>
               </Link>
-              <Link href="https://medium.com/@kult_games">
+              <Link href="https://medium.com/@kult_games" target="_blank">
                 <div className="bg-[radial-gradient(172.27%_145.85%_at_-4.55%_-1.7%,rgba(89,106,197,0.30)0%,rgba(89,106,197,0.00)100%)] p-4 rounded-2xl flex flex-col items-center justify-between gap-2">
                   <Image
                     src={AnnouncementImg}
@@ -119,7 +119,7 @@ export default function OurCommunity() {
                   </p>
                 </div>
                 <CardItem translateZ="50">
-                  <Link href="https://twitter.com/_KultGames">
+                  <Link href="https://twitter.com/_KultGames" target="_blank">
                     <Button>
                       <HiOutlineArrowRightCircle />
                       Follow Now

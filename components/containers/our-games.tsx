@@ -35,7 +35,7 @@ export default function OurGames() {
             {games.map((item, index) => (
               <CarouselItem key={index} className="pl-8 w-full">
                 <div className="flex flex-col lg:flex-row items-stretch gap-4 lg:gap-8">
-                  <Link href={item.link} className="relative lg:w-2/3 h-[279px] lg:h-[579px] rounded-3xl overflow-hidden block cursor-pointer hover:opacity-90 transition-opacity">
+                  <Link href={item.link} target="_blank" className="relative lg:w-2/3 h-[279px] lg:h-[579px] rounded-3xl overflow-hidden block cursor-pointer hover:opacity-90 transition-opacity">
                     <Image
                       src={item.image}
                       alt="img"
@@ -54,7 +54,7 @@ export default function OurGames() {
                           <Image src={item.plat} alt="alt" draggable={false} />
                         </div>
                         <div className="w-full flex items-center justify-between">
-                          <Link href={item.link}>
+                          <Link href={item.link} target="_blank">
                             <Button>
                               <FaRegCirclePlay />
                               Play Game

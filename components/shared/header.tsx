@@ -23,7 +23,7 @@ export default function Header() {
       <ul className="flex items-center gap-5">
         {[
           { img: TelegramImg, link: "https://t.me/KultGamesOfficial" },
-          { img: DiscordImg, link: "https://discord.gg/Fsb2m5rFE3" },
+          { img: DiscordImg, link: "https://discord.gg/Cge7rrCyUB" },
           {
             img: InstagramImg,
             link: "https://www.instagram.com/kult_games_/?igsh=dzAxNnJ3eWQ4NmUz&utm_source=qr",
@@ -32,7 +32,7 @@ export default function Header() {
           { img: MediumImg, link: "https://medium.com/@kult_games" },
         ].map((item, index) => (
           <li key={index}>
-            <Link href={item.link}>
+            <Link href={item.link} target="_blank">
               <Image src={item.img} alt="img" className="w-12 h-auto" priority draggable={false} />
             </Link>
           </li>
