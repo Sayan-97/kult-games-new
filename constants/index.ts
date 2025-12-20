@@ -103,22 +103,6 @@ export const upcomingGames = [
     comingSoon: false,
   },
 ];
-// {
-//   image: UpcomingGameImg7,
-//   name: "Octavium",
-//   types: ["Action", "RPG", "Futuristic", "AAA"],
-//   mobile: false,
-//   web: true,
-//   comingSoon: true,
-// },
-// {
-//   image: UpcomingGameImg8,
-//   name: "Warzone Warriors",
-//   types: ["Action"],
-//   mobile: true,
-//   web: true,
-//   comingSoon: true,
-// },
 
 export const roadmap = [
   {

@@ -54,7 +54,7 @@ export default function Email() {
                     </Link>
                   </Column>
                   <Column className="pl-4">
-                    <Link href="https://discord.gg/Cge7rrCyUB">
+                      <Link href="https://discord.com/invite/2duGeatqtp">
                       <Img
                         src="https://www.kult.games/imgs/discord.png"
                         alt="img"
