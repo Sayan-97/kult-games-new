@@ -16,21 +16,21 @@ import bg from "@/public/imgs/bg.png";
 export default function BulletStormBanner() {
   return (
     <section className="container ">
-      <div className="relative rounded-2xl overflow-hidden bg-[#04080C] lg:min-h-[800px] sm:h-[200px] md:h-[510px]  flex flex-col justify-end">
+      <div draggable={false} className="relative rounded-2xl overflow-hidden bg-[#04080C] lg:min-h-[800px] sm:h-[200px] md:h-[510px]  flex flex-col justify-end">
         <Link href="https://zerogpool.xyz/" target="_blank" draggable={false} className="bottom-0 w-[100%] h-[100%] right-0 max-md:hidden absolute cursor-pointer hover:opacity-90 transition-opacity">
           <Image
             src={bg}
             alt="img"
             priority
             className="w-full h-full brightness-75"
-          // draggable={false}
+            draggable={false}
           />
         </Link>
         <Link href="https://highwayhustle.xyz/" target="_blank" draggable={false} className="md:hidden cursor-pointer hover:opacity-90 transition-opacity">
           <Image src={bg} alt="img" priority draggable={false} />
         </Link>
         <div className="absolute flex justify-center w-full bottom-10 hidden md:flex">
-          <Link href="https://zerogpool.xyz/" target="_blank">
+          <Link href="https://zerogpool.xyz/" target="_blank" draggable={false}>
             <Button className="w-32 lg:w-40 h-11">
               <p className="text-xs lg:text-sm">Start Game</p>
             </Button>
@@ -38,7 +38,7 @@ export default function BulletStormBanner() {
         </div>
 
         <div className="absolute flex justify-center w-full bottom-1 md:hidden">
-          <Link href="https://zerogpool.xyz/" target="_blank">
+          <Link href="https://zerogpool.xyz/" target="_blank" draggable={false}>
             <Button className="w-32 lg:w-40 h-11">
               <p className="text-xs lg:text-sm">Start Game</p>
             </Button>
