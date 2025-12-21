@@ -12,7 +12,7 @@ import SomniaImg from "@/public/imgs/somnia.png";
 
 import UpcomingGameImg1 from "@/public/imgs/upcoming1.png";
 import UpcomingGameImg2 from "@/public/imgs/upcoming2.png";
-import UpcomingGameImg3 from "@/public/imgs/upcoming3.png";
+// import UpcomingGameImg3 from "@/public/imgs/upcoming3.png";
 import UpcomingGameImg4 from "@/public/imgs/upcoming4.png";
 // import UpcomingGameImg5 from "@/public/imgs/upcoming5.png";
 // import UpcomingGameImg6 from "@/public/imgs/upcoming6.png";
@@ -110,16 +110,16 @@ export const upcomingGames = [
     trailerVid: "/videos/f1 x.mp4",
     link: "https://x.com/_kultgames/status/1973666321738113233?s=46",
   },
-  {
-    image: UpcomingGameImg3,
-    name: "Highway Hustle",
-    types: ["P2E", "Racing"],
-    mobile: true,
-    web: true,
-    trailer: false,
-    trailerVid: "/videos/L2d Trailer 4K.mp4",
-    link: "https://x.com/_kultgames/status/1973666321738113233?s=46",
-  },
+  // {
+  //   image: UpcomingGameImg3,
+  //   name: "Highway Hustle",
+  //   types: ["P2E", "Racing"],
+  //   mobile: true,
+  //   web: true,
+  //   trailer: false,
+  //   trailerVid: "/videos/L2d Trailer 4K.mp4",
+  //   link: "https://x.com/_kultgames/status/1973666321738113233?s=46",
+  // },
   {
     image: UpcomingGameImg4,
     name: "Formula Speed Thrills",
