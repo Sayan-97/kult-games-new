@@ -53,7 +53,7 @@ export default function OurGames() {
                         <div className="space-y-2">
                           <p className="text-[27px] font-bold">{item.name}</p>
                           <p className="text-muted">{item.des}</p>
-                          <Image src={item.plat} alt="alt" draggable={false} width={item.width || 110} height={item.height || 30} />
+                          <Image src={item.plat} alt="alt" draggable={false} width={110} height={30} />
                         </div>
                         <div className="w-full flex items-center justify-between">
                           <Link href={item.link} target="_blank">
