@@ -7,14 +7,14 @@ import { roadmap } from "@/constants";
 
 export default function Roadmap() {
   return (
-    <section className="py-10 lg:py-16">
+    <section className="py-10 md:py-16">
       <div className="container space-y-12">
         <h2>Roadmap</h2>
         <Carousel opts={{ dragFree: true }} className="mt-10">
           <div className="w-full h-1 bg-[linear-gradient(90deg,#FFE0FC_2.92%,#E064F7_11.58%,#8C16E9_44.58%)] absolute top-14"></div>
           <CarouselContent className="-ml-8 mt-16">
             {roadmap.map((item, index) => (
-              <CarouselItem key={index} className="pl-8 lg:basis-1/4 select-none">
+              <CarouselItem key={index} className="pl-8 md:basis-1/4 select-none">
                 <div className="relative bg-[linear-gradient(18deg,rgba(48,42,42,0.12)0%,rgba(185,185,185,0.12)100%)] h-[377px] rounded-b-2xl backdrop-blur-[25px]">
                   <div className="relative flex items-center justify-center -top-12">
                     <svg

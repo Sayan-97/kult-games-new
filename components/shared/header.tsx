@@ -46,22 +46,22 @@ export default function Header() {
       <header className="absolute inset-x-0 z-40 bg-[linear-gradient(180deg,#040719_0%,rgba(4,7,25,0.00)100%)]">
         {/* <TopBar /> */}
         <nav className="container flex items-center justify-between py-6">
-          <Link href="/" className="lg:hidden">
+          <Link href="/" className="md:hidden">
             <Image src={AppLogo2} alt="img" className="w-14" draggable={false} />
           </Link>
-          <div className="max-lg:hidden flex items-center gap-20">
+          <div className="max-md:hidden flex items-center gap-20">
             <Image src={AppLogo} alt="img" className="max-w-32 h-auto" draggable={false} />
             {/* <NavMenus /> */}
           </div>
-          <div className="max-lg:hidden">
+          <div className="max-md:hidden">
             <SocialLinks />
           </div>
 
           <Sheet>
-            <SheetTrigger className="lg:hidden">
+            <SheetTrigger className="md:hidden">
               <TfiMenu className="text-2xl" />
             </SheetTrigger>
-            <SheetContent className="lg:hidden bg-violet-950 border-none flex flex-col gap-8 pt-14">
+            <SheetContent className="md:hidden bg-violet-950 border-none flex flex-col gap-8 pt-14">
               {/* <NavMenus /> */}
               <SocialLinks />
             </SheetContent>

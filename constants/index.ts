@@ -2,6 +2,7 @@ import Game1Img from "@/public/imgs/game1.png";
 import Game2Img from "@/public/imgs/game2.png";
 import Game3Img from "@/public/imgs/game3.png";
 import Game4Img from "@/public/imgs/game4.png";
+import Game5Img from "@/public/imgs/game5.png";
 
 // import BNBImg from "@/public/imgs/bnb.png";
 import BotanixImg from "@/public/imgs/botanix.png";
@@ -13,8 +14,8 @@ import UpcomingGameImg1 from "@/public/imgs/upcoming1.png";
 import UpcomingGameImg2 from "@/public/imgs/upcoming2.png";
 import UpcomingGameImg3 from "@/public/imgs/upcoming3.png";
 import UpcomingGameImg4 from "@/public/imgs/upcoming4.png";
-import UpcomingGameImg5 from "@/public/imgs/upcoming5.png";
-import UpcomingGameImg6 from "@/public/imgs/upcoming6.png";
+// import UpcomingGameImg5 from "@/public/imgs/upcoming5.png";
+// import UpcomingGameImg6 from "@/public/imgs/upcoming6.png";
 // import UpcomingGameImg7 from "@/public/imgs/upcoming7.png";
 // import UpcomingGameImg8 from "@/public/imgs/upcoming8.png";
 
@@ -24,6 +25,8 @@ export const games = [
     name: "Zero G Pool",
     des: "Your favorite 8-ball, now with a cosmic twist.",
     plat: OGImg,
+    platWidth: 70,
+    platHeight: 25,
     mobile: true,
     web: true,
     link: "https://zerogpool.xyz/",
@@ -33,6 +36,8 @@ export const games = [
     name: "Guess The AI",
     des: "Challenge your mind, Beat the AI",
     plat: OGImg,
+    platWidth: 70,
+    platHeight: 25,
     mobile: true,
     web: true,
     link: "https://guesstheai.xyz/",
@@ -42,6 +47,8 @@ export const games = [
     name: "Warzone Warriors",
     des: "Enter the war,prove your skill. Show what you're made of",
     plat: SomniaImg,
+    platWidth: 110,
+    platHeight: 30,
     mobile: true,
     web: true,
     link: "https://warzonewarriors.xyz/",
@@ -50,24 +57,38 @@ export const games = [
     image: Game4Img,
     name: "Highway Hustle",
     des: "Race through chaos, dodge traffic, and own the streets",
-    plat: SomniaImg,
+    plat: OGImg,
+    platWidth: 70,
+    platHeight: 25,
     mobile: true,
     web: true,
     link: "https://highwayhustle.xyz/",
   },
+  {
+    image: Game5Img,
+    name: "Zero Dash",
+    des: "Run,Escape,Don't Look Back",
+    plat: OGImg,
+    platWidth: 70,
+    platHeight: 25,
+    mobile: true,
+    web: true,
+    link: "https://Zerodashgame.xyz/",
+  },
+
 ];
 
 export const upcomingGames = [
 
-  {
-    image: UpcomingGameImg6,
-    name: "Zero Dash",
-    types: ["Run", "Escape", "Don't Look Back"],
-    mobile: true,
-    web: true,
-    demo: false,
-    link: "https://x.com/_kultgames/status/2001590900666044928?s=46",
-  },
+  // {
+  //   image: UpcomingGameImg6,
+  //   name: "Zero Dash",
+  //   types: ["Run", "Escape", "Don't Look Back"],
+  //   mobile: true,
+  //   web: true,
+  //   demo: false,
+  //   link: "https://x.com/_kultgames/status/2001590900666044928?s=46",
+  // },
   {
     image: UpcomingGameImg1,
     name: "Robo War",

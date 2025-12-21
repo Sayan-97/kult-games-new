@@ -13,25 +13,25 @@ import TwitterPostImg from "@/public/imgs/twitter-post.png";
 
 export default function OurCommunity() {
   return (
-    <section className="py-10 lg:py-16">
+    <section className="py-10 md:py-16">
       <div className="container space-y-12">
         <h2>Join our community</h2>
-        <div className="w-full max-lg:flex max-lg:flex-col-reverse lg:grid lg:grid-cols-2 gap-6">
+        <div className="w-full max-md:flex max-md:flex-col-reverse md:grid md:grid-cols-2 gap-6">
           <div className="space-y-6">
             <CardContainer className="inter-var py-0">
-              <CardBody className="w-full h-[220px] lg:h-[280px] bg-[radial-gradient(172.27%_145.85%_at_-4.55%_-1.7%,rgba(89,106,197,0.30)0%,rgba(89,106,197,0.00)100%)] flex gap-4 rounded-2xl">
-                <div className="p-4 lg:p-8 flex flex-col justify-between gap-4">
+              <CardBody className="w-full h-[220px] md:h-[280px] bg-[radial-gradient(172.27%_145.85%_at_-4.55%_-1.7%,rgba(89,106,197,0.30)0%,rgba(89,106,197,0.00)100%)] flex gap-4 rounded-2xl">
+                <div className="p-4 md:p-8 flex flex-col justify-between gap-4">
                   <CardItem
                     as="h5"
                     translateZ="50"
-                    className="text-xl lg:text-[27px] font-bold"
+                    className="text-xl md:text-[27px] font-bold"
                   >
                     Discord Community
                   </CardItem>
                   <CardItem
                     as="p"
                     translateZ="50"
-                    className="text-sm lg:text-base text-muted"
+                    className="text-sm md:text-base text-muted"
                   >
                     Join our discord today to engage with our vibrant community
                     of gamers
@@ -50,13 +50,13 @@ export default function OurCommunity() {
                   alt="DiscordImg"
                   width={266}
                   height={256}
-                  className="max-lg:w-[35%] object-cover object-center"
+                  className="max-md:w-[35%] object-cover object-center"
                   draggable={false}
                 />
               </CardBody>
             </CardContainer>
 
-            <div className="grid grid-cols-3 gap-2 lg:gap-6">
+            <div className="grid grid-cols-3 gap-2 md:gap-6">
               <CardContainer className="inter-var w-full py-0">
                 <CardBody className="w-full h-auto group/card">
                   <Link href="https://t.me/KultGamesOfficial" target="_blank">
@@ -64,13 +64,13 @@ export default function OurCommunity() {
                       <Image
                         src={TelegramImg}
                         alt="img"
-                        className="max-lg:w-[70%]"
+                        className="max-md:w-[70%]"
                         draggable={false}
                       />
                       <CardItem
                         as="p"
                         translateZ="50"
-                        className="text-xs lg:text-base"
+                        className="text-xs md:text-base"
                       >
                         Telegram
                       </CardItem>
@@ -83,10 +83,10 @@ export default function OurCommunity() {
                   <Image
                     src={InstagramImg}
                     alt="img"
-                    className="max-lg:w-[70%]"
+                    className="max-md:w-[70%]"
                     draggable={false}
                   />
-                  <p className="text-xs lg:text-base">Instagram</p>
+                  <p className="text-xs md:text-base">Instagram</p>
                 </div>
               </Link>
               <Link href="https://medium.com/@kult_games" target="_blank">
@@ -94,19 +94,19 @@ export default function OurCommunity() {
                   <Image
                     src={AnnouncementImg}
                     alt="img"
-                    className="max-lg:w-[40%]"
+                    className="max-md:w-[40%]"
                     draggable={false}
                   />
-                  <p className="text-xs lg:text-base">Announcement</p>
+                  <p className="text-xs md:text-base">Announcement</p>
                 </div>
               </Link>
             </div>
           </div>
 
           <CardContainer className="w-full inter-var">
-            <CardBody className="relative group/card w-full lg:h-[464px] rounded-2xl max-lg:space-y-4 bg-[radial-gradient(172.27%_145.85%_at_-4.55%_-1.7%,rgba(89,106,197,0.30)0%,rgba(89,106,197,0.00)100%)] p-6 flex flex-col justify-between">
-              <div className="flex flex-col lg:flex-row items-start lg:items-end max-lg:gap-4 justify-between">
-                <div className="lg:w-2/3 space-y-5">
+            <CardBody className="relative group/card w-full md:h-[464px] rounded-2xl max-md:space-y-4 bg-[radial-gradient(172.27%_145.85%_at_-4.55%_-1.7%,rgba(89,106,197,0.30)0%,rgba(89,106,197,0.00)100%)] p-6 flex flex-col justify-between">
+              <div className="flex flex-col md:flex-row items-start md:items-end max-md:gap-4 justify-between">
+                <div className="md:w-2/3 space-y-5">
                   <CardItem
                     as="h5"
                     translateZ="100"

@@ -26,18 +26,18 @@ export default function Footer() {
           data-wf-ignore="true"
         />
       </video>
-      <div className="container pb-12 pt-16 flex flex-col lg:flex-row lg:items-start gap-12">
+      <div className="container pb-12 pt-16 flex flex-col md:flex-row md:items-start gap-12">
         <Image
           src={KultLogo3}
           alt="img"
           width={101}
           height={101}
-          className="w-20 lg:mt-5"
+          className="w-20 md:mt-5"
           draggable={false}
         />
         <div className="flex-grow space-y-10">
-          <div className="flex flex-col lg:flex-row gap-8 lg:items-center justify-between">
-            <div className="lg:w-1/3 space-y-5">
+          <div className="flex flex-col md:flex-row gap-8 md:items-center justify-between">
+            <div className="md:w-1/3 space-y-5">
               <h6 className="text-[25px] font-bold">KULT Games</h6>
               <p>
                 Kult Games is leading a revolution in the gaming industry by
@@ -63,8 +63,8 @@ export default function Footer() {
               </Link>
             </div>
           </div>
-          <div className="flex flex-col lg:flex-row items-center gap-4 justify-between text-sm">
-            <p className="text-[#CDBAF6] text-sm max-lg:text-center lg:text-base opacity-80">
+          <div className="flex flex-col md:flex-row items-center gap-4 justify-between text-sm">
+            <p className="text-[#CDBAF6] text-sm max-md:text-center md:text-base opacity-80">
               COPYRIGHT @2024 KULTGAMES LLC. | ALL RIGHTS RESERVED
             </p>
             {/* <div className="space-x-5 text-[#CDBAF6]">

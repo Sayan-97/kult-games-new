@@ -14,17 +14,10 @@ import Image from "next/image";
 
 export default function Partners() {
   return (
-    <section className="py-10 lg:py-16">
+    <section className="py-10 md:py-16">
       <div className="container space-y-12">
         <h2 className="text-center">Partners & Backers</h2>
-        <div className="grid grid-cols-2 lg:grid-cols-5 gap-y-8 gap-x-4 place-items-center">
-          <Image
-            src={PartnersImg11}
-            alt="img"
-            width={225.159}
-            height={68.716}
-            draggable={false}
-          />
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-y-8 gap-x-4 place-items-center">
           <Image
             src={PartnersImg12}
             alt="img"
@@ -32,6 +25,14 @@ export default function Partners() {
             height={68}
             draggable={false}
           />
+          <Image
+            src={PartnersImg11}
+            alt="img"
+            width={225.159}
+            height={68.716}
+            draggable={false}
+          />
+          
           <Image
             src={PartnersImg1}
             alt="img"

@@ -24,20 +24,20 @@ export default function Upcoming() {
   const [teaserPlay, setTeaserPlay] = useState<number | null>(null);
   const [showAll, setShowAll] = useState(false);
   return (
-    <section className="relative py-10 lg:py-16">
+    <section className="relative py-10 md:py-16">
       <Image src={GradImg} alt="img" className="absolute right-0 -z-10" draggable={false} />
       <div className="container space-y-12">
         <div className="flex items-center justify-between">
           <h2>Building the future of on-chain gaming</h2>
           <button
             onClick={() => setShowAll(!showAll)}
-            className="hidden lg:block text-muted hover:text-white transition-colors text-base font-medium"
+            className="hidden md:block text-muted hover:text-white transition-colors text-base font-medium"
           >
             {showAll ? "Show Less" : "Show More"}
           </button>
         </div>
         {/* Mobile Grid View */}
-        <div className="grid grid-cols-2 gap-4 lg:hidden">
+        <div className="grid grid-cols-2 gap-4 md:hidden">
           {upcomingGames.map((item, index) => (
             <div key={index} className="space-y-4">
               <Link
@@ -48,7 +48,7 @@ export default function Upcoming() {
                 <div
                   onMouseEnter={() => setShow(index)}
                   onMouseLeave={() => setShow(null)}
-                  className="relative w-full h-[160px] lg:h-[327px] overflow-hidden rounded-2xl"
+                  className="relative w-full h-[160px] md:h-[327px] overflow-hidden rounded-2xl"
                 >
                   <Image
                     src={item.image}
@@ -58,13 +58,13 @@ export default function Upcoming() {
                     priority
                     draggable={false}
                   />
-                  <div className="absolute bottom-2 left-0 lg:bottom-0 lg:left-0 bg-black/70 px-2 py-1 lg:px-3 lg:py-1.5 rounded-lg">
-                    <span className="text-xs lg:text-sm font-medium text-white">Coming Soon...</span>
+                  <div className="absolute bottom-2 left-0 md:bottom-0 md:left-0 bg-black/70 px-2 py-1 md:px-3 md:py-1.5 rounded-lg">
+                    <span className="text-xs md:text-sm font-medium text-white">Coming Soon...</span>
                   </div>
                 </div>
               </Link>
               <div
-                className={`max-lg:hidden absolute inset-x-0 flex justify-center ${show === index ? "bottom-4" : "-bottom-[100%]"
+                className={`max-md:hidden absolute inset-x-0 flex justify-center ${show === index ? "bottom-4" : "-bottom-[100%]"
                   } transition-all ease-in-out`}
               >
                 {item.trailer ? (
@@ -75,7 +75,7 @@ export default function Upcoming() {
                     </Button>
 
                     {teaserPlay === index && (
-                      <div className="bg-black/80 fixed inset-0 z-50 flex items-center justify-center max-lg:hidden">
+                      <div className="bg-black/80 fixed inset-0 z-50 flex items-center justify-center max-md:hidden">
                         <div className="w-[60%] flex flex-col items-end gap-4">
                           <CgClose
                             onClick={() => setTeaserPlay(null)}
@@ -118,10 +118,10 @@ export default function Upcoming() {
                   )}
               </div>
               <div className="flex flex-col gap-3">
-                <p className="lg:text-2xl font-bold leading-none truncate">
+                <p className="md:text-2xl font-bold leading-none truncate">
                   {item.name}
                 </p>
-                <p className="text-xs lg:text-sm text-muted whitespace-nowrap truncate">
+                <p className="text-xs md:text-sm text-muted whitespace-nowrap truncate">
                   {item.types.join(", ")}
                 </p>
                 <div className="flex items-center gap-4">
@@ -140,7 +140,7 @@ export default function Upcoming() {
                     </div>
                   )}
                 </div>
-                <div className="lg:hidden">
+                <div className="md:hidden">
                   {item.trailer ? (
                     <>
                       <Button
@@ -152,7 +152,7 @@ export default function Upcoming() {
                       </Button>
 
                       {teaserPlay === index && (
-                        <div className="bg-black/80 fixed inset-0 z-50 flex items-center justify-center lg:hidden">
+                        <div className="bg-black/80 fixed inset-0 z-50 flex items-center justify-center md:hidden">
                           <div className="w-[90%] flex flex-col items-end gap-4">
                             <CgClose
                               onClick={() => setTeaserPlay(null)}
@@ -201,7 +201,7 @@ export default function Upcoming() {
         </div>
 
         {/* Desktop Carousel View - when showAll is false */}
-        <div className={`hidden lg:block transition-all duration-500 ease-in-out ${showAll ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100'}`}>
+        <div className={`hidden md:block transition-all duration-500 ease-in-out ${showAll ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100'}`}>
           <Carousel
             opts={{ loop: true, align: "start" }}
             plugins={[
@@ -265,13 +265,17 @@ export default function Upcoming() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="-left-12 bg-[#191934] border-[#5F33D6] hover:bg-[#191934]/80" />
-            <CarouselNext className="-right-12 bg-[#191934] border-[#5F33D6] hover:bg-[#191934]/80" />
+            {upcomingGames.length > 4 && (
+              <>
+                <CarouselPrevious className="-left-12 bg-[#191934] border-[#5F33D6] hover:bg-[#191934]/80" />
+                <CarouselNext className="-right-12 bg-[#191934] border-[#5F33D6] hover:bg-[#191934]/80" />
+              </>
+            )}
           </Carousel>
         </div>
 
         {/* Desktop Grid View - when showAll is true */}
-        <div className={`hidden transition-all duration-500 ease-in-out ${showAll ? 'lg:block opacity-100' : 'opacity-0 h-0 overflow-hidden'}`}>
+        <div className={`hidden transition-all duration-500 ease-in-out ${showAll ? 'md:block opacity-100' : 'opacity-0 h-0 overflow-hidden'}`}>
           <div className="grid grid-cols-4 gap-8">
             {upcomingGames.map((item, index) => (
               <div key={index} className="space-y-4">

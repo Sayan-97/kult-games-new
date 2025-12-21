@@ -42,16 +42,16 @@ export default function OurTeams() {
   ];
 
   return (
-    <section id="team" className="container space-y-10 py-10 lg:py-16">
+    <section id="team" className="container space-y-10 py-10 md:py-16">
       <div className="flex flex-col items-center gap-6 text-center">
         <h2>Our Team</h2>
       </div>
-      <div className="grid lg:grid-cols-3 gap-x-20 gap-y-64 pt-44">
+      <div className="grid md:grid-cols-3 gap-x-20 gap-y-64 pt-44">
         {teams.map((item, index) => (
           <CardContainer key={index} className="w-full">
             <CardBody className="w-full h-auto">
               <div
-                className="relative p-3 pt-28 lg:p-8 lg:pt-28 rounded-[30px] flex flex-col items-center space-y-4 border border-[#8C16E9]"
+                className="relative p-3 pt-28 md:p-8 md:pt-28 rounded-[30px] flex flex-col items-center space-y-4 border border-[#8C16E9]"
                 style={{
                   background:
                     "radial-gradient(172.27% 145.85% at -4.55% -1.7%, rgba(89, 106, 197, 0.30) 0%, rgba(89, 106, 197, 0.00) 100%), #191934",
