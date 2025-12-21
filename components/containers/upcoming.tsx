@@ -29,12 +29,14 @@ export default function Upcoming() {
       <div className="container space-y-12">
         <div className="flex items-center justify-between">
           <h2>Building the future of on-chain gaming</h2>
-          <button
-            onClick={() => setShowAll(!showAll)}
-            className="hidden md:block text-muted hover:text-white transition-colors text-base font-medium"
-          >
-            {showAll ? "Show Less" : "Show More"}
-          </button>
+          {upcomingGames.length > 4 && (
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="hidden md:block text-muted hover:text-white transition-colors text-base font-medium"
+            >
+              {showAll ? "Show Less" : "Show More"}
+            </button>
+          )}
         </div>
         {/* Mobile Grid View */}
         <div className="grid grid-cols-2 gap-4 md:hidden">
