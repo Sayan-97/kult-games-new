@@ -14,10 +14,10 @@ import { CgClose } from "react-icons/cg";
 export default function KultOffers() {
   const [open, setOpen] = useState(false);
   return (
-    <section className="relative py-10 lg:py-16">
+    <section className="relative py-10 md:py-16">
       <div className="container space-y-12">
         <h2 className="text-center">Kult Offers</h2>
-        <div className="relative flex items-center justify-center max-lg:hidden">
+        <div className="relative flex items-center justify-center max-md:hidden">
           <Image
             src={OffersImg}
             alt="img"
@@ -43,7 +43,7 @@ export default function KultOffers() {
           </Button>
 
           {open && (
-            <div className="bg-black/80 fixed inset-0 z-50 flex items-center justify-center max-lg:hidden">
+            <div className="bg-black/80 fixed inset-0 z-50 flex items-center justify-center max-md:hidden">
               <div className="w-[60%] flex flex-col items-end gap-4">
                 <CgClose
                   onClick={() => setOpen(false)}
@@ -69,7 +69,7 @@ export default function KultOffers() {
           )}
         </div>
 
-        <div className="lg:hidden space-y-5">
+        <div className="md:hidden space-y-5">
           <div className="relative flex items-center justify-center">
             <Image src={OffersImgSm1} alt="img" priority draggable={false} />
             <Image
@@ -91,7 +91,7 @@ export default function KultOffers() {
           </Button>
 
           {open && (
-            <div className="bg-black/80 fixed inset-0 z-50 flex items-center justify-center lg:hidden">
+            <div className="bg-black/80 fixed inset-0 z-50 flex items-center justify-center md:hidden">
               <div className="w-[90%] flex flex-col items-end gap-4">
                 <CgClose
                   onClick={() => setOpen(false)}
