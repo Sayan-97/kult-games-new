@@ -7,6 +7,7 @@ import Game4Img from "@/public/imgs/game4.png";
 import BotanixImg from "@/public/imgs/botanix.png";
 import TroveImg from "@/public/imgs/trove.png";
 import OGImg from "@/public/imgs/OG.png";
+import SomniaImg from "@/public/imgs/somnia.png";
 
 import UpcomingGameImg1 from "@/public/imgs/upcoming1.png";
 import UpcomingGameImg2 from "@/public/imgs/upcoming2.png";
@@ -22,7 +23,7 @@ export const games = [
     image: Game1Img,
     name: "Zero G Pool",
     des: "Your favorite 8-ball, now with a cosmic twist.",
-    plat: TroveImg,
+    plat: OGImg,
     mobile: true,
     web: true,
     link: "https://zerogpool.xyz/",
@@ -31,7 +32,9 @@ export const games = [
     image: Game2Img,
     name: "Guess The AI",
     des: "Challenge your mind, Beat the AI",
-    plat: TroveImg,
+    plat: OGImg,
+    width: 110,
+    height: 68,
     mobile: true,
     web: true,
     link: "https://guesstheai.xyz/",
@@ -40,7 +43,7 @@ export const games = [
     image: Game3Img,
     name: "Warzone Warriors",
     des: "Enter the war,prove your skill. Show what you're made of",
-    plat: TroveImg,
+    plat: SomniaImg,
     mobile: true,
     web: true,
     link: "https://warzonewarriors.xyz/",
@@ -49,7 +52,7 @@ export const games = [
     image: Game4Img,
     name: "Highway Hustle",
     des: "Race through chaos, dodge traffic, and own the streets",
-    plat: TroveImg,
+    plat: SomniaImg,
     mobile: true,
     web: true,
     link: "https://highwayhustle.xyz/",
