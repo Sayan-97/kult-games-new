@@ -19,19 +19,20 @@ export default function Partners() {
         <h2 className="text-center">Partners & Backers</h2>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-y-8 gap-x-4 place-items-center">
           <Image
-            src={PartnersImg11}
-            alt="img"
-            width={225.159}
-            height={68.716}
-            draggable={false}
-          />
-          <Image
             src={PartnersImg12}
             alt="img"
             width={110}
             height={68}
             draggable={false}
           />
+          <Image
+            src={PartnersImg11}
+            alt="img"
+            width={225.159}
+            height={68.716}
+            draggable={false}
+          />
+          
           <Image
             src={PartnersImg1}
             alt="img"
