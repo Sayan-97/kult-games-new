@@ -15,8 +15,8 @@ import UpcomingGameImg3 from "@/public/imgs/upcoming3.png";
 import UpcomingGameImg4 from "@/public/imgs/upcoming4.png";
 import UpcomingGameImg5 from "@/public/imgs/upcoming5.png";
 import UpcomingGameImg6 from "@/public/imgs/upcoming6.png";
-import UpcomingGameImg7 from "@/public/imgs/upcoming7.png";
-import UpcomingGameImg8 from "@/public/imgs/upcoming8.png";
+// import UpcomingGameImg7 from "@/public/imgs/upcoming7.png";
+// import UpcomingGameImg8 from "@/public/imgs/upcoming8.png";
 
 export const games = [
   {
@@ -33,8 +33,6 @@ export const games = [
     name: "Guess The AI",
     des: "Challenge your mind, Beat the AI",
     plat: OGImg,
-    width: 110,
-    height: 68,
     mobile: true,
     web: true,
     link: "https://guesstheai.xyz/",
