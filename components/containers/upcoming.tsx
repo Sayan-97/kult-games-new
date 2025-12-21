@@ -203,14 +203,14 @@ export default function Upcoming() {
         {/* Desktop Carousel View - when showAll is false */}
         <div className={`hidden md:block transition-all duration-500 ease-in-out ${showAll ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100'}`}>
           <Carousel
-            opts={{ loop: true, align: "start" }}
+            opts={{ loop: upcomingGames.length > 4, align: upcomingGames.length < 4 ? "center" : "start" }}
             plugins={[
               Autoplay({
                 delay: 4000,
               }),
             ]}
           >
-            <CarouselContent>
+            <CarouselContent className={upcomingGames.length < 4 ? "justify-center" : ""}>
               {upcomingGames.map((item, index) => (
                 <CarouselItem key={index} className="basis-1/4">
                   <div className="space-y-4">
