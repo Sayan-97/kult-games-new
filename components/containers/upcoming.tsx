@@ -214,7 +214,7 @@ export default function Upcoming() {
           >
             <CarouselContent className={upcomingGames.length < 4 ? "justify-center" : ""}>
               {upcomingGames.map((item, index) => (
-                <CarouselItem key={index} className="basis-1/4">
+                <CarouselItem key={index} className={upcomingGames.length <= 3 ? "basis-1/3" : "basis-1/4"}>
                   <div className="space-y-4">
                     <Link
                       href={item.link || "#"}
