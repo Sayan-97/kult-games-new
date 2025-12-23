@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import PartnersImg1 from "@/public/imgs/partners-1.png";
 import PartnersImg2 from "@/public/imgs/partners-2.png";
 import PartnersImg3 from "@/public/imgs/partners-3.png";
@@ -10,110 +13,77 @@ import PartnersImg9 from "@/public/imgs/partners-9.png";
 import PartnersImg10 from "@/public/imgs/partners-10.png";
 import PartnersImg11 from "@/public/imgs/partners-11.png";
 import PartnersImg12 from "@/public/imgs/partners-12.png";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+};
+
+const staggerContainer = {
+  hidden: { opacity: 1 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.08, delayChildren: 0.2 } }
+};
+
+const staggerItem = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.4, ease: "easeOut" } }
+};
+
+const partners: { src: StaticImageData; width: number; height: number; className?: string }[] = [
+  { src: PartnersImg12, width: 110, height: 68 },
+  { src: PartnersImg11, width: 225.159, height: 68.716 },
+  { src: PartnersImg1, width: 220.159, height: 68.716 },
+  { src: PartnersImg10, width: 220.159, height: 68.716 },
+  { src: PartnersImg3, width: 220.159, height: 68.716 },
+  { src: PartnersImg4, width: 220.159, height: 68.716 },
+  { src: PartnersImg5, width: 220.159, height: 68.716 },
+  { src: PartnersImg6, width: 220.159, height: 68.716 },
+  { src: PartnersImg2, width: 220.159, height: 68.716 },
+  { src: PartnersImg7, width: 220.159, height: 68.716 },
+  { src: PartnersImg8, width: 220.159, height: 68.716 },
+  { src: PartnersImg9, width: 220.159, height: 68.716, className: "w-32 justify-self-center place-self-center" },
+];
 
 export default function Partners() {
   return (
-    <section className="py-10 md:py-16">
+    <section className="py-10 md:py-16 overflow-hidden">
       <div className="container space-y-12">
-        <h2 className="text-center">Partners & Backers</h2>
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-y-8 gap-x-4 place-items-center">
-          <Image
-            src={PartnersImg12}
-            alt="img"
-            width={110}
-            height={68}
-            draggable={false}
-          />
-          <Image
-            src={PartnersImg11}
-            alt="img"
-            width={225.159}
-            height={68.716}
-            draggable={false}
-          />
-          
-          <Image
-            src={PartnersImg1}
-            alt="img"
-            width={220.159}
-            height={68.716}
-            priority
-            draggable={false}
-          />
-          <Image
-            src={PartnersImg10}
-            alt="img"
-            width={220.159}
-            height={68.716}
-            draggable={false}
-          />
-          <Image
-            src={PartnersImg3}
-            alt="img"
-            width={220.159}
-            height={68.716}
-            priority
-            draggable={false}
-          />
-          <Image
-            src={PartnersImg4}
-            alt="img"
-            width={220.159}
-            height={68.716}
-            priority
-            draggable={false}
-          />
-          <Image
-            src={PartnersImg5}
-            alt="img"
-            width={220.159}
-            height={68.716}
-            priority
-            draggable={false}
-          />
-          <Image
-            src={PartnersImg6}
-            alt="img"
-            width={220.159}
-            height={68.716}
-            priority
-            draggable={false}
-          />
-          <Image
-            src={PartnersImg2}
-            alt="img"
-            width={220.159}
-            height={68.716}
-            priority
-            draggable={false}
-          />
-          <Image
-            src={PartnersImg7}
-            alt="img"
-            width={220.159}
-            height={68.716}
-            priority
-            draggable={false}
-          />
-          <Image
-            src={PartnersImg8}
-            alt="img"
-            width={220.159}
-            height={68.716}
-            priority
-            draggable={false}
-          />
-          <Image
-            src={PartnersImg9}
-            alt="img"
-            width={220.159}
-            height={68.716}
-            priority
-            className="w-32 justify-self-center place-self-center"
-            draggable={false}
-          />
-        </div>
+        <motion.h2
+          className="text-left font-ethnocentric"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={fadeInUp}
+        >
+          Partners & Backers
+        </motion.h2>
+        <motion.div
+          className="grid grid-cols-2 md:grid-cols-5 gap-y-8 gap-x-4 place-items-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={staggerContainer}
+        >
+          {partners.map((partner, index) => (
+            <motion.div
+              key={index}
+              variants={staggerItem}
+              whileHover={{ scale: 1.1, transition: { duration: 0.2 } }}
+              className="cursor-pointer"
+            >
+              <Image
+                src={partner.src}
+                alt="partner"
+                width={partner.width}
+                height={partner.height}
+                priority={index < 5}
+                draggable={false}
+                className={partner.className || ""}
+              />
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

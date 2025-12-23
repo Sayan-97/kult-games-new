@@ -9,10 +9,10 @@ export default function EarlyAccess() {
         <div className="relative">
           <Image src={BgImg} alt="img" className="max-md:hidden" priority draggable={false} />
           <div className="md:absolute inset-0 flex flex-col items-center justify-center text-center gap-8">
-            <h3 className="capitalize text-[32px] font-bold">
+            <h3 className="capitalize text-[32px] font-ethnocentric">
               Join the early access
             </h3>
-            <p>
+            <p className="font-semibold text-[15px]">
               Join the waitlist to access all our games early with exciting
               rewards and benefits
             </p>

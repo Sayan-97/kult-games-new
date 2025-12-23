@@ -27,6 +27,7 @@ const config: Config = {
       fontFamily: {
         quicksand: "var(--font-quicksand)",
         generalSans: "var(--font-generalSans)",
+        ethnocentric: "var(--font-ethnocentric)",
       },
       borderRadius: {
         lg: "var(--radius)",
