@@ -60,12 +60,14 @@ export default function KultOffers() {
             draggable={false}
           />
           <motion.div
+            className="absolute left-5 bottom-5"
+            style={{ transformOrigin: "left bottom" }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <Button
               onClick={() => setOpen(true)}
-              className="absolute left-5 bottom-5 font-medium px-1 py-1 text-xs sm:text-sm"
+              className="font-medium px-1 py-1 text-xs sm:text-sm"
             >
               <SlArrowRightCircle />
               Discover <br /> Kult
