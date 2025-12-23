@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import {
   Carousel,
   CarouselContent,
@@ -19,35 +20,68 @@ import { MdMonitor } from "react-icons/md";
 import ButtonSecondary from "../shared/button-secondary";
 import Autoplay from "embla-carousel-autoplay";
 
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+};
+
+const fadeInLeft = {
+  hidden: { opacity: 0, x: -60 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } }
+};
+
+const fadeInRight = {
+  hidden: { opacity: 0, x: 60 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut", delay: 0.2 } }
+};
+
 export default function OurGames() {
   return (
-    <section className="relative py-10 md:py-16">
+    <section className="relative py-10 md:py-16 overflow-hidden">
       <Image src={GradImg} alt="img" className="absolute left-0 -z-10" draggable={false} />
       <div className="container space-y-12">
-        <h2>Experience our games</h2>
+        <motion.h2
+          className="font-ethnocentric"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={fadeInUp}
+        >
+          Experience our games
+        </motion.h2>
         <Carousel
           opts={{ loop: true }}
-          plugins={[
-            Autoplay({
-              delay: 4000,
-            }),
-          ]}
+          plugins={[Autoplay({ delay: 4000 })]}
         >
           <CarouselContent className="-ml-8">
             {games.map((item, index) => (
               <CarouselItem key={index} className="pl-8 w-full">
                 <div className="flex flex-col md:flex-row items-stretch gap-4 md:gap-8">
-                  <Link href={item.link} target="_blank" className="relative md:w-2/3 h-[279px] md:h-[579px] rounded-3xl overflow-hidden block cursor-pointer hover:opacity-90 transition-opacity">
-                    <Image
-                      src={item.image}
-                      alt="img"
-                      fill
-                      className="object-cover object-top"
-                      draggable={false}
-                      priority
-                    />
-                  </Link>
-                  <div className="flex-grow flex flex-col gap-8">
+                  <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                    variants={fadeInLeft}
+                    className="md:w-2/3"
+                  >
+                    <Link href={item.link} target="_blank" className="relative h-[279px] md:h-[579px] rounded-3xl overflow-hidden block cursor-pointer hover:opacity-90 transition-opacity">
+                      <Image
+                        src={item.image}
+                        alt="img"
+                        fill
+                        className="object-cover object-top"
+                        draggable={false}
+                        priority
+                      />
+                    </Link>
+                  </motion.div>
+                  <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                    variants={fadeInRight}
+                    className="flex-grow flex flex-col gap-8"
+                  >
                     <div className="relative max-md:h-[320px] bg-[#191934] flex-grow rounded-2xl overflow-hidden">
                       <div className="absolute inset-0 bg-[radial-gradient(217.24%_242.87%_at_217.75%_107.58%,rgba(127,139,210,0.30)0%,rgba(89,106,197,0.00)100%)] p-6 flex flex-col justify-between items-start">
                         <div className="space-y-2">
@@ -55,7 +89,7 @@ export default function OurGames() {
                           <p className="text-muted">{item.des}</p>
                           <Image src={item.plat} alt="alt" draggable={false} width={item.platWidth} height={item.platHeight} />
                         </div>
-                        <div className="w-full flex items-center justify-between">
+                        <div className="w-full flex items-center justify-between font-ethnocentric">
                           <Link href={item.link} target="_blank">
                             <Button>
                               <FaRegCirclePlay />
@@ -90,7 +124,7 @@ export default function OurGames() {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
               </CarouselItem>
             ))}

@@ -12,6 +12,12 @@ const generalSans = GeneralSans({
   display: "swap",
   variable: "--font-generalSans",
 });
+const ethnocentric = GeneralSans({
+  src: "../public/fonts/Ethnocentric-Regular.otf",
+  weight: "400",
+  display: "swap",
+  variable: "--font-ethnocentric",
+});
 const quicksand = Quicksand({
   subsets: ["latin"],
   variable: "--font-quicksand",
@@ -31,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${generalSans.variable} ${quicksand.variable} antialiased`}
+        className={`${generalSans.variable} ${quicksand.variable} ${ethnocentric.variable} antialiased`}
       >
         <Header />
         {children}

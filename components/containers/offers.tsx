@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import OffersImg from "@/public/imgs/offers-img.png";
 import OffersImgSm1 from "@/public/imgs/offers-img-sm-1.png";
 import OffersImgSm2 from "@/public/imgs/offers-img-sm-2.png";
@@ -11,13 +12,37 @@ import Button from "../shared/button";
 import { SlArrowRightCircle } from "react-icons/sl";
 import { CgClose } from "react-icons/cg";
 
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+};
+
+const scaleIn = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.7, ease: "easeOut" } }
+};
+
 export default function KultOffers() {
   const [open, setOpen] = useState(false);
   return (
-    <section className="relative py-10 md:py-16">
+    <section className="relative py-10 md:py-16 overflow-hidden">
       <div className="container space-y-12">
-        <h2 className="text-center">Kult Offers</h2>
-        <div className="relative flex items-center justify-center max-md:hidden">
+        <motion.h2
+          className="text-center font-ethnocentric"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={fadeInUp}
+        >
+          Kult Offers
+        </motion.h2>
+        <motion.div
+          className="relative flex items-center justify-center max-md:hidden"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={scaleIn}
+        >
           <Image
             src={OffersImg}
             alt="img"
@@ -34,42 +59,65 @@ export default function KultOffers() {
             priority
             draggable={false}
           />
-          <Button
-            onClick={() => setOpen(true)}
-            className="absolute left-5 bottom-5 font-medium px-1 py-1 text-xs sm:text-sm"
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <SlArrowRightCircle />
-            Discover <br /> Kult
-          </Button>
+            <Button
+              onClick={() => setOpen(true)}
+              className="absolute left-5 bottom-5 font-medium px-1 py-1 text-xs sm:text-sm"
+            >
+              <SlArrowRightCircle />
+              Discover <br /> Kult
+            </Button>
+          </motion.div>
 
-          {open && (
-            <div className="bg-black/80 fixed inset-0 z-50 flex items-center justify-center max-md:hidden">
-              <div className="w-[60%] flex flex-col items-end gap-4">
-                <CgClose
-                  onClick={() => setOpen(false)}
-                  className="text-2xl cursor-pointer"
-                />
-                <video
-                  autoPlay
-                  loop
-                  controls
-                  playsInline
-                  data-wf-ignore="true"
-                  data-object-fit="cover"
-                  className=""
+          <AnimatePresence>
+            {open && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="bg-black/80 fixed inset-0 z-50 flex items-center justify-center max-md:hidden"
+              >
+                <motion.div
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.9, opacity: 0 }}
+                  className="w-[60%] flex flex-col items-end gap-4"
                 >
-                  <source
-                    src="/videos/Kultfinalvfx.mp4"
-                    type="video/mp4"
-                    data-wf-ignore="true"
+                  <CgClose
+                    onClick={() => setOpen(false)}
+                    className="text-2xl cursor-pointer"
                   />
-                </video>
-              </div>
-            </div>
-          )}
-        </div>
+                  <video
+                    autoPlay
+                    loop
+                    controls
+                    playsInline
+                    data-wf-ignore="true"
+                    data-object-fit="cover"
+                    className=""
+                  >
+                    <source
+                      src="/videos/Kultfinalvfx.mp4"
+                      type="video/mp4"
+                      data-wf-ignore="true"
+                    />
+                  </video>
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.div>
 
-        <div className="md:hidden space-y-5">
+        <motion.div
+          className="md:hidden space-y-5"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={scaleIn}
+        >
           <div className="relative flex items-center justify-center">
             <Image src={OffersImgSm1} alt="img" priority draggable={false} />
             <Image
@@ -90,32 +138,44 @@ export default function KultOffers() {
             Discover Kult
           </Button>
 
-          {open && (
-            <div className="bg-black/80 fixed inset-0 z-50 flex items-center justify-center md:hidden">
-              <div className="w-[90%] flex flex-col items-end gap-4">
-                <CgClose
-                  onClick={() => setOpen(false)}
-                  className="text-2xl cursor-pointer"
-                />
-                <video
-                  autoPlay
-                  loop
-                  controls
-                  playsInline
-                  data-wf-ignore="true"
-                  data-object-fit="cover"
-                  className=""
+          <AnimatePresence>
+            {open && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="bg-black/80 fixed inset-0 z-50 flex items-center justify-center md:hidden"
+              >
+                <motion.div
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.9, opacity: 0 }}
+                  className="w-[90%] flex flex-col items-end gap-4"
                 >
-                  <source
-                    src="/videos/Kultfinalvfx.mp4"
-                    type="video/mp4"
-                    data-wf-ignore="true"
+                  <CgClose
+                    onClick={() => setOpen(false)}
+                    className="text-2xl cursor-pointer"
                   />
-                </video>
-              </div>
-            </div>
-          )}
-        </div>
+                  <video
+                    autoPlay
+                    loop
+                    controls
+                    playsInline
+                    data-wf-ignore="true"
+                    data-object-fit="cover"
+                    className=""
+                  >
+                    <source
+                      src="/videos/Kultfinalvfx.mp4"
+                      type="video/mp4"
+                      data-wf-ignore="true"
+                    />
+                  </video>
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.div>
       </div>
       <Image
         src={OffersGrad}
