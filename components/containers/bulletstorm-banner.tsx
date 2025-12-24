@@ -1,27 +1,37 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef, useState, useEffect } from "react";
+import { motion, useInView, TargetAndTransition } from "framer-motion";
 import Image from "next/image";
 import Button from "../shared/button";
 import Link from "next/link";
 import bg from "@/public/imgs/bg.png";
-
-const scaleIn = {
-  hidden: { opacity: 0, scale: 0.95 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.7, ease: "easeOut" } }
-};
+import { AnimatedSection, scaleIn, staggerItem } from "../shared/animations";
+import { useScrollDirection } from "@/hooks/use-scroll-direction";
 
 export default function BulletStormBanner() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.3 });
+  const direction = useScrollDirection();
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    if (isInView && direction === "down") {
+      setHasAnimated(true);
+    } else if (!isInView && direction === "up") {
+      setHasAnimated(false);
+    }
+  }, [isInView, direction]);
+
+  const isVisible = hasAnimated || isInView;
+  const isScrollingUp = direction === "up";
+
   return (
-    <section className="container overflow-hidden">
-      <motion.div
-        draggable={false}
+    <section ref={ref} className="container overflow-hidden py-10">
+      <AnimatedSection
+        variant={scaleIn}
+        threshold={0.3}
         className="relative rounded-2xl overflow-hidden bg-[#04080C] md:min-h-[650px] sm:h-[200px] md:h-[510px] flex flex-col justify-end"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={scaleIn}
       >
         <Link href="https://zerogpool.xyz/" target="_blank" draggable={false} className="bottom-0 w-[100%] h-[100%] right-0 max-md:hidden absolute cursor-pointer hover:opacity-90 transition-opacity">
           <Image
@@ -35,12 +45,21 @@ export default function BulletStormBanner() {
         <Link href="https://highwayhustle.xyz/" target="_blank" draggable={false} className="md:hidden cursor-pointer hover:opacity-90 transition-opacity">
           <Image src={bg} alt="img" priority draggable={false} />
         </Link>
+
         <motion.div
           className="absolute flex justify-center w-full bottom-10 hidden md:flex"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          initial="hidden"
+          animate={isVisible ? "visible" : "hidden"}
+          variants={{
+            ...staggerItem,
+            visible: {
+              ...staggerItem.visible,
+              transition: {
+                ...(staggerItem.visible as TargetAndTransition)?.transition,
+                ...(isScrollingUp ? { duration: 0, delay: 0 } : { delay: 0.3 })
+              }
+            }
+          }}
         >
           <Link href="https://zerogpool.xyz/" target="_blank" draggable={false}>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -53,10 +72,18 @@ export default function BulletStormBanner() {
 
         <motion.div
           className="absolute flex justify-center w-full bottom-1 md:hidden"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          initial="hidden"
+          animate={isVisible ? "visible" : "hidden"}
+          variants={{
+            ...staggerItem,
+            visible: {
+              ...staggerItem.visible,
+              transition: {
+                ...(staggerItem.visible as TargetAndTransition)?.transition,
+                ...(isScrollingUp ? { duration: 0, delay: 0 } : { delay: 0.3 })
+              }
+            }
+          }}
         >
           <Link href="https://zerogpool.xyz/" target="_blank" draggable={false}>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -66,7 +93,7 @@ export default function BulletStormBanner() {
             </motion.div>
           </Link>
         </motion.div>
-      </motion.div>
+      </AnimatedSection>
     </section>
   );
 }

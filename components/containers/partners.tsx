@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import PartnersImg1 from "@/public/imgs/partners-1.png";
 import PartnersImg2 from "@/public/imgs/partners-2.png";
 import PartnersImg3 from "@/public/imgs/partners-3.png";
@@ -14,16 +13,8 @@ import PartnersImg10 from "@/public/imgs/partners-10.png";
 import PartnersImg11 from "@/public/imgs/partners-11.png";
 import PartnersImg12 from "@/public/imgs/partners-12.png";
 import Image, { StaticImageData } from "next/image";
-
-const fadeInUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
-};
-
-const staggerContainer = {
-  hidden: { opacity: 1 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.08, delayChildren: 0.2 } }
-};
+import { AnimatedSection, fadeInUp, StaggeredContainer } from "../shared/animations";
+import { motion } from "framer-motion";
 
 const staggerItem = {
   hidden: { opacity: 0, scale: 0.8 },
@@ -49,22 +40,10 @@ export default function Partners() {
   return (
     <section className="py-10 md:py-16 overflow-hidden">
       <div className="container space-y-12">
-        <motion.h2
-          className="text-left font-ethnocentric"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          variants={fadeInUp}
-        >
-          Partners & Backers
-        </motion.h2>
-        <motion.div
-          className="grid grid-cols-2 md:grid-cols-5 gap-y-8 gap-x-4 place-items-center"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={staggerContainer}
-        >
+        <AnimatedSection variant={fadeInUp}>
+          <h2 className="text-left font-ethnocentric">Partners & Backers</h2>
+        </AnimatedSection>
+        <StaggeredContainer className="grid grid-cols-2 md:grid-cols-5 gap-y-8 gap-x-4 place-items-center">
           {partners.map((partner, index) => (
             <motion.div
               key={index}
@@ -83,7 +62,7 @@ export default function Partners() {
               />
             </motion.div>
           ))}
-        </motion.div>
+        </StaggeredContainer>
       </div>
     </section>
   );

@@ -19,21 +19,7 @@ import {
   CarouselNext,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-
-const fadeInUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
-};
-
-const staggerContainer = {
-  hidden: { opacity: 1 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.2 } }
-};
-
-const staggerItem = {
-  hidden: { opacity: 0, y: 30, scale: 0.95 },
-  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: "easeOut" } }
-};
+import { AnimatedSection, StaggeredContainer, StaggeredItem, fadeInUp } from "../shared/animations";
 
 // Platform Icons Component
 const PlatformIcons = ({ web, mobile }: { web?: boolean; mobile?: boolean }) => (
@@ -100,12 +86,7 @@ const GameCard = ({
   const typeClass = isMobile ? 'text-xs md:text-sm text-muted whitespace-nowrap truncate' : 'text-sm text-muted whitespace-nowrap truncate';
 
   return (
-    <motion.div
-      className="space-y-4"
-      variants={staggerItem}
-      whileHover={{ y: -5 }}
-      transition={{ duration: 0.2 }}
-    >
+    <StaggeredItem className="space-y-4">
       <Link href={item.link || "#"} target="_blank" className="block cursor-pointer group">
         <div className={`relative w-full ${imageHeight} overflow-hidden rounded-2xl transition-transform duration-300 group-hover:scale-[1.02]`}>
           <Image src={item.image} alt="img" fill className="object-cover object-top transition-transform duration-500 group-hover:scale-105" priority draggable={false} />
@@ -133,7 +114,7 @@ const GameCard = ({
           </div>
         )}
       </div>
-    </motion.div>
+    </StaggeredItem>
   );
 };
 
@@ -146,15 +127,11 @@ export default function Upcoming() {
       <Image src={GradImg} alt="img" className="absolute right-0 -z-10" draggable={false} />
       <div className="container space-y-12">
         <div className="flex items-center justify-between">
-          <motion.h2
-            className="font-ethnocentric"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            variants={fadeInUp}
-          >
-            Building the future of on-chain gaming
-          </motion.h2>
+          <AnimatedSection variant={fadeInUp}>
+            <h2 className="font-ethnocentric">
+              Building the future of on-chain gaming
+            </h2>
+          </AnimatedSection>
           {upcomingGames.length > 4 && (
             <motion.button
               onClick={() => setShowAll(!showAll)}
@@ -168,26 +145,14 @@ export default function Upcoming() {
         </div>
 
         {/* Mobile Grid View */}
-        <motion.div
-          className="grid grid-cols-2 gap-4 md:hidden"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-          variants={staggerContainer}
-        >
+        <StaggeredContainer className="grid grid-cols-2 gap-4 md:hidden">
           {upcomingGames.map((item, index) => (
             <GameCard key={index} item={item} index={index} variant="mobile" teaserPlay={teaserPlay} setTeaserPlay={setTeaserPlay} />
           ))}
-        </motion.div>
+        </StaggeredContainer>
 
         {/* Desktop Carousel View */}
-        <motion.div
-          className={`hidden md:block transition-all duration-500 ease-in-out ${showAll ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100'}`}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={staggerContainer}
-        >
+        <StaggeredContainer className={`hidden md:block transition-all duration-500 ease-in-out ${showAll ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100'}`}>
           <Carousel
             opts={{ loop: upcomingGames.length > 4, align: upcomingGames.length < 4 ? "center" : "start" }}
             plugins={[Autoplay({ delay: 4000 })]}
@@ -206,22 +171,16 @@ export default function Upcoming() {
               </>
             )}
           </Carousel>
-        </motion.div>
+        </StaggeredContainer>
 
         {/* Desktop Grid View */}
-        <motion.div
-          className={`hidden transition-all duration-500 ease-in-out ${showAll ? 'md:block opacity-100' : 'opacity-0 h-0 overflow-hidden'}`}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-          variants={staggerContainer}
-        >
+        <StaggeredContainer className={`hidden transition-all duration-500 ease-in-out ${showAll ? 'md:block opacity-100' : 'opacity-0 h-0 overflow-hidden'}`}>
           <div className="grid grid-cols-4 gap-8">
             {upcomingGames.map((item, index) => (
               <GameCard key={index} item={item} index={index} teaserPlay={teaserPlay} setTeaserPlay={setTeaserPlay} />
             ))}
           </div>
-        </motion.div>
+        </StaggeredContainer>
       </div>
     </section>
   );

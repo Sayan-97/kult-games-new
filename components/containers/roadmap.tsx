@@ -1,61 +1,63 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { motion, useInView, TargetAndTransition } from "framer-motion";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
 import { roadmap } from "@/constants";
-
-const fadeInUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
-};
+import { AnimatedSection, fadeInUp, StaggeredContainer, staggerItem } from "../shared/animations";
+import { useScrollDirection } from "@/hooks/use-scroll-direction";
 
 const lineGrow = {
   hidden: { scaleX: 0 },
   visible: { scaleX: 1, transition: { duration: 1, ease: "easeOut" } }
 };
 
-const staggerContainer = {
-  hidden: { opacity: 1 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.15, delayChildren: 0.5 } }
-};
-
-const staggerItem = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
-};
-
 export default function Roadmap() {
+  const lineRef = useRef(null);
+  const isLineInView = useInView(lineRef, { amount: 0.3, once: false });
+  const direction = useScrollDirection();
+  const [lineHasAnimated, setLineHasAnimated] = useState(false);
+
+  useEffect(() => {
+    if (isLineInView && direction === "down") {
+      setLineHasAnimated(true);
+    } else if (!isLineInView && direction === "up") {
+      setLineHasAnimated(false);
+    }
+  }, [isLineInView, direction]);
+
+  const lineIsVisible = lineHasAnimated || isLineInView;
+  const isScrollingUp = direction === "up";
+
   return (
     <section className="py-10 md:py-16 overflow-hidden">
       <div className="container space-y-12">
-        <motion.h2
-          className="font-ethnocentric"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          variants={fadeInUp}
-        >
-          Roadmap
-        </motion.h2>
+        <AnimatedSection variant={fadeInUp}>
+          <h2 className="font-ethnocentric">Roadmap</h2>
+        </AnimatedSection>
         <Carousel opts={{ dragFree: true }} className="mt-10">
           <motion.div
-            className="w-full h-1 bg-[linear-gradient(90deg,#FFE0FC_2.92%,#E064F7_11.58%,#8C16E9_44.58%)] absolute top-14 origin-left"
+            ref={lineRef}
+            className="w-full h-1 bg-[linear-gradient(90deg,#FFE0FC_2.92%,#E064F7_11.58%,#8C16E9_44.58%)] absolute top-24 origin-left"
             initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={lineGrow}
+            animate={lineIsVisible ? "visible" : "hidden"}
+            variants={{
+              ...lineGrow,
+              visible: {
+                ...lineGrow.visible,
+                transition: {
+                  ...(lineGrow.visible as TargetAndTransition)?.transition,
+                  ...(isScrollingUp ? { duration: 0, delay: 0 } : {})
+                }
+              }
+            }}
           />
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-            variants={staggerContainer}
-          >
-            <CarouselContent className="-ml-8 mt-16">
+          <StaggeredContainer className="mt-16">
+            <CarouselContent className="-ml-8 pt-12">
               {roadmap.map((item, index) => (
                 <CarouselItem key={index} className="pl-8 md:basis-1/4 select-none">
                   <motion.div
@@ -113,7 +115,7 @@ export default function Roadmap() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-          </motion.div>
+          </StaggeredContainer>
         </Carousel>
       </div>
     </section>

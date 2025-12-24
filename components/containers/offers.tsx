@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState, useRef } from "react";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import OffersImg from "@/public/imgs/offers-img.png";
 import OffersImgSm1 from "@/public/imgs/offers-img-sm-1.png";
 import OffersImgSm2 from "@/public/imgs/offers-img-sm-2.png";
@@ -11,38 +11,38 @@ import OffersGrad from "@/public/imgs/offers-grad.png";
 import Button from "../shared/button";
 import { SlArrowRightCircle } from "react-icons/sl";
 import { CgClose } from "react-icons/cg";
-
-const fadeInUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
-};
-
-const scaleIn = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.7, ease: "easeOut" } }
-};
+import Magnetic from "../shared/magnetic";
+import { AnimatedSection, scaleIn, fadeInUp } from "../shared/animations";
 
 export default function KultOffers() {
   const [open, setOpen] = useState(false);
+  const containerRef = useRef<HTMLElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const clipPath = useTransform(
+    scrollYProgress,
+    [0, 0.5, 1],
+    ["circle(0% at 50% 50%)", "circle(100% at 50% 50%)", "circle(100% at 50% 50%)"]
+  );
+
+  const logoY = useTransform(scrollYProgress, [0, 1], [-50, 50]);
+
   return (
-    <section className="relative py-10 md:py-16 overflow-hidden">
-      <div className="container space-y-12">
-        <motion.h2
-          className="text-center font-ethnocentric"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          variants={fadeInUp}
-        >
+    <section ref={containerRef} data-birds data-no-flames className="relative py-10 md:py-16 overflow-hidden">
+      <motion.div
+        className="absolute inset-0 bg-[#040719]"
+        style={{ clipPath }}
+      />
+      <AnimatedSection threshold={0.1} className="container space-y-12">
+        <motion.h2 className="text-center font-ethnocentric" variants={fadeInUp}>
           Kult Offers
         </motion.h2>
-        <motion.div
-          className="relative flex items-center justify-center max-md:hidden"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={scaleIn}
-        >
+
+        <AnimatedSection variant={scaleIn} threshold={0.3} className="relative flex items-center justify-center max-lg:hidden">
           <Image
             src={OffersImg}
             alt="img"
@@ -52,26 +52,28 @@ export default function KultOffers() {
             priority
             draggable={false}
           />
-          <Image
-            src={KultLogo}
-            alt="img"
-            className="absolute animate-spin"
-            priority
-            draggable={false}
-          />
+          <motion.div style={{ y: logoY }} className="absolute">
+            <Image
+              src={KultLogo}
+              alt="img"
+              className="animate-spin"
+              priority
+              draggable={false}
+            />
+          </motion.div>
           <motion.div
             className="absolute left-5 bottom-5"
             style={{ transformOrigin: "left bottom" }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
           >
-            <Button
-              onClick={() => setOpen(true)}
-              className="font-medium px-1 py-1 text-xs sm:text-sm"
-            >
-              <SlArrowRightCircle />
-              Discover <br /> Kult
-            </Button>
+            <Magnetic>
+              <Button
+                onClick={() => setOpen(true)}
+                className="font-medium px-4 py-3"
+              >
+                <SlArrowRightCircle className="text-xl" />
+                Discover <br /> Kult
+              </Button>
+            </Magnetic>
           </motion.div>
 
           <AnimatePresence>
@@ -80,7 +82,7 @@ export default function KultOffers() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="bg-black/80 fixed inset-0 z-50 flex items-center justify-center max-md:hidden"
+                className="bg-black/80 fixed inset-0 z-50 flex items-center justify-center max-lg:hidden"
               >
                 <motion.div
                   initial={{ scale: 0.9, opacity: 0 }}
@@ -111,34 +113,30 @@ export default function KultOffers() {
               </motion.div>
             )}
           </AnimatePresence>
-        </motion.div>
+        </AnimatedSection>
 
-        <motion.div
-          className="md:hidden space-y-5"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={scaleIn}
-        >
+        <AnimatedSection variant={scaleIn} threshold={0.2} className="lg:hidden space-y-5">
           <div className="relative flex items-center justify-center">
-            <Image src={OffersImgSm1} alt="img" priority draggable={false} />
+            <Image src={OffersImgSm1} alt="img" priority draggable={false} className="w-full md:w-[80%] mx-auto" />
             <Image
               src={KultLogo}
               alt="img"
-              className="w-[50%] absolute animate-spin"
+              className="w-[40%] md:w-[30%] absolute animate-spin"
               priority
               draggable={false}
             />
           </div>
-          <Image src={OffersImgSm2} alt="img" priority draggable={false} />
+          <Image src={OffersImgSm2} alt="img" priority draggable={false} className="w-full md:w-[80%] mx-auto" />
 
-          <Button
-            onClick={() => setOpen(true)}
-            className="absolute max-xs:right-7 right-10 max-xs:bottom-[100px] bottom-[110px] py-3"
-          >
-            <SlArrowRightCircle />
-            Discover Kult
-          </Button>
+          <Magnetic>
+            <Button
+              onClick={() => setOpen(true)}
+              className="absolute max-xs:right-7 right-10 md:right-[15%] max-xs:bottom-[100px] bottom-[110px] md:bottom-[130px] py-3"
+            >
+              <SlArrowRightCircle />
+              Discover Kult
+            </Button>
+          </Magnetic>
 
           <AnimatePresence>
             {open && (
@@ -146,13 +144,13 @@ export default function KultOffers() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="bg-black/80 fixed inset-0 z-50 flex items-center justify-center md:hidden"
+                className="bg-black/80 fixed inset-0 z-50 flex items-center justify-center lg:hidden"
               >
                 <motion.div
                   initial={{ scale: 0.9, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   exit={{ scale: 0.9, opacity: 0 }}
-                  className="w-[90%] flex flex-col items-end gap-4"
+                  className="w-[90%] md:w-[70%] flex flex-col items-end gap-4"
                 >
                   <CgClose
                     onClick={() => setOpen(false)}
@@ -177,8 +175,8 @@ export default function KultOffers() {
               </motion.div>
             )}
           </AnimatePresence>
-        </motion.div>
-      </div>
+        </AnimatedSection>
+      </AnimatedSection>
       <Image
         src={OffersGrad}
         alt="img"
