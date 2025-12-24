@@ -29,6 +29,12 @@ export const metadata: Metadata = {
     "Kult Games is leading a revolution in the gaming industry by introducing a visionary Play & Earn & Engage ecosystem that integrates Socialfi and multichain interoperability.",
 };
 
+import SmoothScroll from "@/components/shared/smooth-scroll";
+import ScrollProgress from "@/components/shared/scroll-progress";
+import AmbientBackground from "@/components/shared/ambient-background";
+
+// ... (skipping metadata)
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -39,9 +45,13 @@ export default function RootLayout({
       <body
         className={`${generalSans.variable} ${quicksand.variable} ${ethnocentric.variable} antialiased`}
       >
-        <Header />
-        {children}
-        <Footer />
+        <ScrollProgress />
+        <AmbientBackground />
+        <SmoothScroll>
+          <Header />
+          {children}
+          <Footer />
+        </SmoothScroll>
         {/* <GamePopup /> */}
       </body>
     </html>

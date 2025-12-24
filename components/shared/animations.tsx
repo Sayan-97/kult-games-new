@@ -1,7 +1,8 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
-import { ReactNode } from "react";
+import { motion, Variants, useInView, TargetAndTransition } from "framer-motion";
+import { ReactNode, useRef, useEffect, useState } from "react";
+import { useScrollDirection } from "@/hooks/use-scroll-direction";
 
 // Animation variants for different effects
 export const fadeInUp: Variants = {
@@ -77,28 +78,55 @@ export const staggerItem: Variants = {
     }
 };
 
-// Reusable animated wrapper component
+// Reusable animated wrapper component with directional logic
 interface AnimatedSectionProps {
     children: ReactNode;
     className?: string;
     variant?: Variants;
     delay?: number;
+    threshold?: number;
 }
 
 export function AnimatedSection({
     children,
     className = "",
     variant = fadeInUp,
-    delay = 0
+    delay = 0,
+    threshold = 0.2
 }: AnimatedSectionProps) {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { amount: threshold, once: false });
+    const direction = useScrollDirection();
+    const [hasAnimated, setHasAnimated] = useState(false);
+
+    useEffect(() => {
+        if (isInView && direction === "down") {
+            setHasAnimated(true);
+        } else if (!isInView && direction === "up") {
+            // Reset only if it leaves from the bottom
+            setHasAnimated(false);
+        }
+    }, [isInView, direction]);
+
+    const isVisible = hasAnimated || isInView;
+    const isScrollingUp = direction === "up";
+
     return (
         <motion.div
+            ref={ref}
             initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={variant}
+            animate={isVisible ? "visible" : "hidden"}
+            variants={{
+                ...variant,
+                visible: {
+                    ...variant.visible,
+                    transition: {
+                        ...(variant.visible as TargetAndTransition)?.transition,
+                        ...(isScrollingUp ? { duration: 0, delay: 0 } : { delay })
+                    }
+                }
+            }}
             className={className}
-            style={{ transitionDelay: `${delay}s` }}
         >
             {children}
         </motion.div>
@@ -114,15 +142,9 @@ export function AnimatedHeading({
     className?: string
 }) {
     return (
-        <motion.h2
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            variants={fadeInUp}
-            className={className}
-        >
+        <AnimatedSection className={className}>
             {children}
-        </motion.h2>
+        </AnimatedSection>
     );
 }
 
@@ -134,12 +156,37 @@ export function StaggeredContainer({
     children: ReactNode;
     className?: string
 }) {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { amount: 0.1, once: false });
+    const direction = useScrollDirection();
+    const [hasAnimated, setHasAnimated] = useState(false);
+
+    useEffect(() => {
+        if (isInView && direction === "down") {
+            setHasAnimated(true);
+        } else if (!isInView && direction === "up") {
+            setHasAnimated(false);
+        }
+    }, [isInView, direction]);
+
+    const isVisible = hasAnimated || isInView;
+    const isScrollingUp = direction === "up";
+
     return (
         <motion.div
+            ref={ref}
             initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-            variants={staggerContainer}
+            animate={isVisible ? "visible" : "hidden"}
+            variants={{
+                ...staggerContainer,
+                visible: {
+                    ...staggerContainer.visible,
+                    transition: {
+                        ...(staggerContainer.visible as TargetAndTransition)?.transition,
+                        ...(isScrollingUp ? { staggerChildren: 0, delayChildren: 0 } : {})
+                    }
+                }
+            }}
             className={className}
         >
             {children}
