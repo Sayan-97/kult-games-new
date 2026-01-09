@@ -113,7 +113,7 @@ export default function Hero() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <Magnetic strength={0.2}>
-            <WaitlistForm />
+            <WaitlistForm largeMessage />
           </Magnetic>
         </motion.div>
       </motion.div>
