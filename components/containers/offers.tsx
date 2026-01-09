@@ -62,7 +62,7 @@ export default function KultOffers() {
             />
           </motion.div>
           <motion.div
-            className="absolute left-12 bottom-12"
+            className="absolute left-16 bottom-16"
             style={{ transformOrigin: "left bottom" }}
           >
             <Magnetic>
@@ -131,9 +131,9 @@ export default function KultOffers() {
           <Magnetic>
             <Button
               onClick={() => setOpen(true)}
-              className="absolute max-xs:right-7 right-10 md:right-[15%] max-xs:bottom-[100px] bottom-[110px] md:bottom-[130px] py-3"
+              className="absolute max-xs:right-4 right-6 md:right-[15%] max-xs:bottom-[80px] bottom-[90px] md:bottom-[130px] text-sm px-2 py-2 md:text-base md:px-4 md:py-3"
             >
-              <SlArrowRightCircle />
+              <SlArrowRightCircle className="text-sm md:text-base" />
               Discover Kult
             </Button>
           </Magnetic>
