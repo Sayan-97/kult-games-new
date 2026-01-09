@@ -62,7 +62,7 @@ export default function KultOffers() {
             />
           </motion.div>
           <motion.div
-            className="absolute left-5 bottom-5"
+            className="absolute left-12 bottom-12"
             style={{ transformOrigin: "left bottom" }}
           >
             <Magnetic>
@@ -71,7 +71,7 @@ export default function KultOffers() {
                 className="font-medium px-4 py-3"
               >
                 <SlArrowRightCircle className="text-xl" />
-                Discover <br /> Kult
+                Discover Kult
               </Button>
             </Magnetic>
           </motion.div>
