@@ -1,7 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
-import { motion, useInView, TargetAndTransition } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   Carousel,
   CarouselContent,
@@ -9,29 +8,8 @@ import {
 } from "@/components/ui/carousel";
 import { roadmap } from "@/constants";
 import { AnimatedSection, fadeInUp, StaggeredContainer, staggerItem } from "../shared/animations";
-import { useScrollDirection } from "@/hooks/use-scroll-direction";
-
-const lineGrow = {
-  hidden: { scaleX: 0 },
-  visible: { scaleX: 1, transition: { duration: 1, ease: "easeOut" } }
-};
 
 export default function Roadmap() {
-  const lineRef = useRef(null);
-  const isLineInView = useInView(lineRef, { amount: 0.3, once: false });
-  const direction = useScrollDirection();
-  const [lineHasAnimated, setLineHasAnimated] = useState(false);
-
-  useEffect(() => {
-    if (isLineInView && direction === "down") {
-      setLineHasAnimated(true);
-    } else if (!isLineInView && direction === "up") {
-      setLineHasAnimated(false);
-    }
-  }, [isLineInView, direction]);
-
-  const lineIsVisible = lineHasAnimated || isLineInView;
-  const isScrollingUp = direction === "up";
 
   return (
     <section className="py-10 md:py-16 overflow-hidden">
@@ -40,22 +18,6 @@ export default function Roadmap() {
           <h2 className="font-ethnocentric">Roadmap</h2>
         </AnimatedSection>
         <Carousel opts={{ dragFree: true }} className="mt-10">
-          <motion.div
-            ref={lineRef}
-            className="w-full h-1 bg-[linear-gradient(90deg,#FFE0FC_2.92%,#E064F7_11.58%,#8C16E9_44.58%)] absolute top-24 origin-left"
-            initial="hidden"
-            animate={lineIsVisible ? "visible" : "hidden"}
-            variants={{
-              ...lineGrow,
-              visible: {
-                ...lineGrow.visible,
-                transition: {
-                  ...(lineGrow.visible as TargetAndTransition)?.transition,
-                  ...(isScrollingUp ? { duration: 0, delay: 0 } : {})
-                }
-              }
-            }}
-          />
           <StaggeredContainer className="mt-16">
             <CarouselContent className="-ml-8 pt-12">
               {roadmap.map((item, index) => (
