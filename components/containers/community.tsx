@@ -12,6 +12,7 @@ import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 import { ScrollArea } from "../ui/scroll-area";
 import TwitterPostImg from "@/public/imgs/twitter-post.png";
 import { AnimatedSection, StaggeredContainer, StaggeredItem, fadeInUp, fadeInLeft, fadeInRight } from "../shared/animations";
+import { trackClarityEvent } from "@/lib/clarity";
 
 export default function OurCommunity() {
   return (
@@ -41,7 +42,11 @@ export default function OurCommunity() {
                     of gamers
                   </CardItem>
                   <CardItem translateZ="50">
-                    <Link href="https://discord.gg/Cge7rrCyUB" target="_blank">
+                    <Link
+                      href="https://discord.gg/Cge7rrCyUB"
+                      target="_blank"
+                      onClick={() => trackClarityEvent("community_discord_click")}
+                    >
                       <Button className="font-ethnocentric whitespace-nowrap">
                         <HiOutlineArrowRightCircle />
                         Join Now
@@ -64,7 +69,11 @@ export default function OurCommunity() {
               <StaggeredItem>
                 <CardContainer className="inter-var w-full py-0">
                   <CardBody className="w-full h-auto group/card">
-                    <Link href="https://t.me/KultGamesOfficial" target="_blank">
+                    <Link
+                      href="https://t.me/KultGamesOfficial"
+                      target="_blank"
+                      onClick={() => trackClarityEvent("community_telegram_click")}
+                    >
                       <div className="bg-[radial-gradient(172.27%_145.85%_at_-4.55%_-1.7%,rgba(89,106,197,0.30)0%,rgba(89,106,197,0.00)100%)] p-4 rounded-2xl flex flex-col items-center justify-between gap-2 hover:bg-[rgba(89,106,197,0.20)] transition-colors">
                         <Image
                           src={TelegramImg}
@@ -85,7 +94,11 @@ export default function OurCommunity() {
                 </CardContainer>
               </StaggeredItem>
               <StaggeredItem>
-                <Link href="https://www.instagram.com/kult_games_/?igsh=dzAxNnJ3eWQ4NmUz&utm_source=qr" target="_blank">
+                <Link
+                  href="https://www.instagram.com/kult_games_/?igsh=dzAxNnJ3eWQ4NmUz&utm_source=qr"
+                  target="_blank"
+                  onClick={() => trackClarityEvent("community_instagram_click")}
+                >
                   <div className="bg-[radial-gradient(172.27%_145.85%_at_-4.55%_-1.7%,rgba(89,106,197,0.30)0%,rgba(89,106,197,0.00)100%)] p-4 rounded-2xl flex flex-col items-center justify-between gap-2 hover:bg-[rgba(89,106,197,0.20)] transition-colors">
                     <Image
                       src={InstagramImg}
@@ -98,7 +111,11 @@ export default function OurCommunity() {
                 </Link>
               </StaggeredItem>
               <StaggeredItem>
-                <Link href="https://medium.com/@kult_games" target="_blank">
+                <Link
+                  href="https://twitter.com/_KultGames"
+                  target="_blank"
+                  onClick={() => trackClarityEvent("community_announcement_click")}
+                >
                   <div className="bg-[radial-gradient(172.27%_145.85%_at_-4.55%_-1.7%,rgba(89,106,197,0.30)0%,rgba(89,106,197,0.00)100%)] p-4 rounded-2xl flex flex-col items-center justify-between gap-2 hover:bg-[rgba(89,106,197,0.20)] transition-colors">
                     <Image
                       src={AnnouncementImg}
@@ -123,14 +140,18 @@ export default function OurCommunity() {
                       translateZ="100"
                       className="text-xl md:text-2xl lg:text-[27px] font-ethnocentric"
                     >
-                      Follow us on Twitter
+                      Follow us on X(Twitter)
                     </CardItem>
                     <p className="text-muted font-semibold">
-                      Follow us on twitter to get latest updates and announcements
+                      Follow us on X(Twitter) to get latest updates and announcements
                     </p>
                   </div>
                   <CardItem translateZ="50">
-                    <Link href="https://twitter.com/_KultGames" target="_blank">
+                    <Link
+                      href="https://twitter.com/_KultGames"
+                      target="_blank"
+                      onClick={() => trackClarityEvent("community_twitter_click")}
+                    >
                       <Button className="font-ethnocentric whitespace-nowrap">
                         <HiOutlineArrowRightCircle />
                         Follow Now

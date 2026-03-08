@@ -9,6 +9,7 @@ import DiscordImg from "@/public/imgs/discord.png";
 import InstagramImg from "@/public/imgs/instagram.png";
 import TwitterImg from "@/public/imgs/twitter.png";
 import MediumImg from "@/public/imgs/medium.png";
+import { trackClarityEvent } from "@/lib/clarity";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -26,11 +27,11 @@ const staggerItem = {
 };
 
 const socialLinks = [
-  { href: "https://t.me/KultGamesOfficial", img: TelegramImg },
-  { href: "https://discord.gg/Cge7rrCyUB", img: DiscordImg },
-  { href: "https://www.instagram.com/kult_games_/?igsh=dzAxNnJ3eWQ4NmUz&utm_source=qr", img: InstagramImg },
-  { href: "https://twitter.com/_KultGames", img: TwitterImg },
-  { href: "https://medium.com/@kult_games", img: MediumImg },
+  { href: "https://t.me/KultGamesOfficial", img: TelegramImg, event: "footer_telegram_click" },
+  { href: "https://discord.gg/Cge7rrCyUB", img: DiscordImg, event: "footer_discord_click" },
+  { href: "https://www.instagram.com/kult_games_/?igsh=dzAxNnJ3eWQ4NmUz&utm_source=qr", img: InstagramImg, event: "footer_instagram_click" },
+  { href: "https://twitter.com/_KultGames", img: TwitterImg, event: "footer_twitter_click" },
+  { href: "https://medium.com/@kult_games", img: MediumImg, event: "footer_medium_click" },
 ];
 
 export default function Footer() {
@@ -101,7 +102,11 @@ export default function Footer() {
                   whileHover={{ scale: 1.2, y: -3 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <Link href={social.href} target="_blank">
+                  <Link
+                    href={social.href}
+                    target="_blank"
+                    onClick={() => trackClarityEvent(social.event)}
+                  >
                     <Image src={social.img} alt="social" className="w-12" draggable={false} />
                   </Link>
                 </motion.div>

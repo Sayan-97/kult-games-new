@@ -4,8 +4,7 @@ import GeneralSans from "next/font/local";
 import "./globals.css";
 import Footer from "@/components/shared/footer";
 import Header from "@/components/shared/header";
-// import GamePopup from "@/components/shared/game-popup";
-
+import ClarityTracker from "@/components/shared/clarity-tracker";
 const generalSans = GeneralSans({
   src: "../public/fonts/GeneralSans-Bold.otf",
   weight: "700",
@@ -63,6 +62,7 @@ export default function RootLayout({
       <body
         className={`${generalSans.variable} ${quicksand.variable} ${ethnocentric.variable} antialiased`}
       >
+        <ClarityTracker />
         <ScrollProgress />
         <AmbientBackground />
         <SmoothScroll>

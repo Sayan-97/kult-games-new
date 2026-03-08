@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Button from "../shared/button";
 import constants from "@/constants/constants.json";
+import { setClarityTag, trackClarityEvent } from "@/lib/clarity";
 
 const API_URL = constants.API_URL;
 
@@ -30,11 +31,14 @@ export default function WaitlistForm({ largeMessage = false }: WaitlistFormProps
     e.preventDefault();
 
     if (!email) {
+      trackClarityEvent("waitlist_submit_empty_email");
       setStatus("error");
       setMessage("Please enter your email");
       return;
     }
 
+    setClarityTag("waitlist_email_domain", email.split("@")[1] || "unknown");
+    trackClarityEvent("waitlist_submit_started");
     setStatus("loading");
     setMessage("");
 
@@ -50,14 +54,17 @@ export default function WaitlistForm({ largeMessage = false }: WaitlistFormProps
       const data = await response.json();
 
       if (response.ok) {
+        trackClarityEvent("waitlist_submit_success");
         setStatus("success");
         setMessage(data.message || "Successfully added to the waitlist!");
         setEmail("");
       } else {
+        trackClarityEvent("waitlist_submit_error");
         setStatus("error");
         setMessage(data.message || "Something went wrong. Please try again.");
       }
     } catch (error) {
+      trackClarityEvent("waitlist_submit_network_error");
       setStatus("error");
       setMessage("Unable to connect. Please try again later.");
     }

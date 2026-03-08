@@ -13,6 +13,7 @@ import { SlArrowRightCircle } from "react-icons/sl";
 import { CgClose } from "react-icons/cg";
 import Magnetic from "../shared/magnetic";
 import { AnimatedSection, scaleIn, fadeInUp } from "../shared/animations";
+import { trackClarityEvent } from "@/lib/clarity";
 
 export default function KultOffers() {
   const [open, setOpen] = useState(false);
@@ -67,7 +68,10 @@ export default function KultOffers() {
           >
             <Magnetic>
               <Button
-                onClick={() => setOpen(true)}
+                onClick={() => {
+                  trackClarityEvent("kult_video_opened");
+                  setOpen(true);
+                }}
                 className="font-medium px-4 py-3"
               >
                 <SlArrowRightCircle className="text-xl" />
@@ -91,7 +95,10 @@ export default function KultOffers() {
                   className="w-[60%] flex flex-col items-end gap-4"
                 >
                   <CgClose
-                    onClick={() => setOpen(false)}
+                    onClick={() => {
+                      trackClarityEvent("kult_video_closed");
+                      setOpen(false);
+                    }}
                     className="text-2xl cursor-pointer"
                   />
                   <video
@@ -130,7 +137,10 @@ export default function KultOffers() {
 
           <Magnetic>
             <Button
-              onClick={() => setOpen(true)}
+              onClick={() => {
+                trackClarityEvent("kult_video_opened");
+                setOpen(true);
+              }}
               className="absolute max-xs:right-4 right-6 md:right-[15%] max-xs:bottom-[80px] bottom-[90px] md:bottom-[130px] text-sm px-2 py-2 md:text-base md:px-4 md:py-3"
             >
               <SlArrowRightCircle className="text-sm md:text-base" />
@@ -153,7 +163,10 @@ export default function KultOffers() {
                   className="w-[90%] md:w-[70%] flex flex-col items-end gap-4"
                 >
                   <CgClose
-                    onClick={() => setOpen(false)}
+                    onClick={() => {
+                      trackClarityEvent("kult_video_closed");
+                      setOpen(false);
+                    }}
                     className="text-2xl cursor-pointer"
                   />
                   <video

@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { AnimatedSection, StaggeredContainer, StaggeredItem, fadeInUp } from "../shared/animations";
+import { trackClarityEvent } from "@/lib/clarity";
 
 // Platform Icons Component
 const PlatformIcons = ({ web, mobile }: { web?: boolean; mobile?: boolean }) => (
@@ -54,7 +55,13 @@ const VideoModal = ({ src, onClose, isMobile }: { src?: string; onClose: () => v
       animate={{ scale: 1, opacity: 1 }}
       className={`${isMobile ? 'w-[90%]' : 'w-[60%]'} flex flex-col items-end gap-4`}
     >
-      <CgClose onClick={onClose} className="text-2xl cursor-pointer" />
+      <CgClose
+        onClick={() => {
+          trackClarityEvent("upcoming_teaser_closed");
+          onClose();
+        }}
+        className="text-2xl cursor-pointer"
+      />
       <video autoPlay loop controls playsInline data-wf-ignore="true" data-object-fit="cover" className={isMobile ? '' : 'w-full'}>
         <source src={src} type="video/mp4" data-wf-ignore="true" />
       </video>
@@ -87,7 +94,12 @@ const GameCard = ({
 
   return (
     <StaggeredItem className="space-y-4">
-      <Link href={item.link || "#"} target="_blank" className="block cursor-pointer group">
+      <Link
+        href={item.link || "#"}
+        target="_blank"
+        onClick={() => trackClarityEvent(`upcoming_game_click:${item.name.toLowerCase().replaceAll(" ", "_")}`)}
+        className="block cursor-pointer group"
+      >
         <div className={`relative w-full ${imageHeight} overflow-hidden rounded-2xl transition-transform duration-300 group-hover:scale-[1.02]`}>
           <Image src={item.image} alt="img" fill className="object-cover object-top transition-transform duration-500 group-hover:scale-105" priority draggable={false} />
           <div className={badgeClass}>
@@ -103,7 +115,13 @@ const GameCard = ({
           <div className="md:hidden">
             {item.trailer ? (
               <>
-                <Button className="w-full" onClick={() => setTeaserPlay(index)}>
+                <Button
+                  className="w-full"
+                  onClick={() => {
+                    trackClarityEvent(`upcoming_teaser_opened:${item.name.toLowerCase().replaceAll(" ", "_")}`);
+                    setTeaserPlay(index);
+                  }}
+                >
                   <FaRegCirclePlay /> Watch Teaser
                 </Button>
                 {teaserPlay === index && <VideoModal src={item.trailerVid} onClose={() => setTeaserPlay(null)} isMobile />}
@@ -134,7 +152,10 @@ export default function Upcoming() {
           </AnimatedSection>
           {upcomingGames.length > 4 && (
             <motion.button
-              onClick={() => setShowAll(!showAll)}
+              onClick={() => {
+                trackClarityEvent(showAll ? "upcoming_show_less" : "upcoming_show_more");
+                setShowAll(!showAll);
+              }}
               className="hidden md:block text-muted hover:text-white transition-colors text-base font-medium"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -166,8 +187,14 @@ export default function Upcoming() {
             </CarouselContent>
             {upcomingGames.length > 4 && (
               <>
-                <CarouselPrevious className="-left-12 bg-[#191934] border-[#5F33D6] hover:bg-[#191934]/80" />
-                <CarouselNext className="-right-12 bg-[#191934] border-[#5F33D6] hover:bg-[#191934]/80" />
+                <CarouselPrevious
+                  className="-left-12 bg-[#191934] border-[#5F33D6] hover:bg-[#191934]/80"
+                  onClick={() => trackClarityEvent("upcoming_carousel_previous")}
+                />
+                <CarouselNext
+                  className="-right-12 bg-[#191934] border-[#5F33D6] hover:bg-[#191934]/80"
+                  onClick={() => trackClarityEvent("upcoming_carousel_next")}
+                />
               </>
             )}
           </Carousel>

@@ -8,6 +8,7 @@ import Link from "next/link";
 import bg from "@/public/imgs/bg.png";
 import { AnimatedSection, scaleIn, staggerItem } from "../shared/animations";
 import { useScrollDirection } from "@/hooks/use-scroll-direction";
+import { trackClarityEvent } from "@/lib/clarity";
 
 export default function BulletStormBanner() {
   const ref = useRef(null);
@@ -33,7 +34,13 @@ export default function BulletStormBanner() {
         threshold={0.3}
         className="relative rounded-2xl overflow-hidden bg-[#04080C] md:min-h-[650px] sm:h-[200px] md:h-[510px] flex flex-col justify-end"
       >
-        <Link href="https://zerogpool.xyz/" target="_blank" draggable={false} className="bottom-0 w-[100%] h-[100%] right-0 max-md:hidden absolute cursor-pointer hover:opacity-90 transition-opacity">
+        <Link
+          href="https://zerogpool.xyz/"
+          target="_blank"
+          draggable={false}
+          onClick={() => trackClarityEvent("bulletstorm_banner_click")}
+          className="bottom-0 w-[100%] h-[100%] right-0 max-md:hidden absolute cursor-pointer hover:opacity-90 transition-opacity"
+        >
           <Image
             src={bg}
             alt="img"
@@ -42,7 +49,13 @@ export default function BulletStormBanner() {
             draggable={false}
           />
         </Link>
-        <Link href="https://highwayhustle.xyz/" target="_blank" draggable={false} className="md:hidden cursor-pointer hover:opacity-90 transition-opacity">
+        <Link
+          href="https://highwayhustle.xyz/"
+          target="_blank"
+          draggable={false}
+          onClick={() => trackClarityEvent("bulletstorm_banner_click")}
+          className="md:hidden cursor-pointer hover:opacity-90 transition-opacity"
+        >
           <Image src={bg} alt="img" priority draggable={false} />
         </Link>
 
@@ -61,7 +74,12 @@ export default function BulletStormBanner() {
             }
           }}
         >
-          <Link href="https://zerogpool.xyz/" target="_blank" draggable={false}>
+          <Link
+            href="https://zerogpool.xyz/"
+            target="_blank"
+            draggable={false}
+            onClick={() => trackClarityEvent("bulletstorm_cta_click")}
+          >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button className="w-32 md:w-40 h-11">
                 <p className="text-xs md:text-sm font-ethnocentric whitespace-nowrap">Start Game</p>
@@ -85,7 +103,12 @@ export default function BulletStormBanner() {
             }
           }}
         >
-          <Link href="https://zerogpool.xyz/" target="_blank" draggable={false}>
+          <Link
+            href="https://zerogpool.xyz/"
+            target="_blank"
+            draggable={false}
+            onClick={() => trackClarityEvent("bulletstorm_cta_click")}
+          >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button className="w-32 md:w-40 h-11">
                 <p className="text-xs md:text-sm font-ethnocentric whitespace-nowrap">Start Game</p>

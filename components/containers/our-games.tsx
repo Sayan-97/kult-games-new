@@ -21,6 +21,7 @@ import ButtonSecondary from "../shared/button-secondary";
 import Autoplay from "embla-carousel-autoplay";
 import React from "react";
 import { AnimatedSection, fadeInLeft, fadeInRight } from "../shared/animations";
+import { trackClarityEvent } from "@/lib/clarity";
 
 export default function OurGames() {
   const mouseX = useMotionValue(0);
@@ -59,7 +60,12 @@ export default function OurGames() {
                     style={{ background: spotlightBackground }}
                   />
                   <AnimatedSection variant={fadeInLeft} threshold={0.3} className="md:w-2/3">
-                    <Link href={item.link} target="_blank" className="relative h-[279px] md:h-[579px] rounded-3xl overflow-hidden block cursor-pointer hover:opacity-90 transition-opacity border border-white/5 group-hover:border-white/10 transition-colors duration-500">
+                    <Link
+                      href={item.link}
+                      target="_blank"
+                      onClick={() => trackClarityEvent(`game_card_click:${item.name.toLowerCase().replaceAll(" ", "_")}`)}
+                      className="relative h-[279px] md:h-[579px] rounded-3xl overflow-hidden block cursor-pointer hover:opacity-90 transition-opacity border border-white/5 group-hover:border-white/10 transition-colors duration-500"
+                    >
                       <Image
                         src={item.image}
                         alt="img"
@@ -79,7 +85,11 @@ export default function OurGames() {
                           <Image src={item.plat} alt="alt" draggable={false} width={item.platWidth} height={item.platHeight} />
                         </div>
                         <div className="w-full flex items-center justify-between font-ethnocentric">
-                          <Link href={item.link} target="_blank">
+                          <Link
+                            href={item.link}
+                            target="_blank"
+                            onClick={() => trackClarityEvent(`play_game_click:${item.name.toLowerCase().replaceAll(" ", "_")}`)}
+                          >
                             <Button>
                               <FaRegCirclePlay />
                               Play Game
@@ -118,8 +128,14 @@ export default function OurGames() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden md:flex -left-4 md:-left-12 bg-[#191934] border-[#5F33D6] hover:bg-[#191934]/80" />
-          <CarouselNext className="hidden md:flex -right-4 md:-right-12 bg-[#191934] border-[#5F33D6] hover:bg-[#191934]/80" />
+          <CarouselPrevious
+            className="hidden md:flex -left-4 md:-left-12 bg-[#191934] border-[#5F33D6] hover:bg-[#191934]/80"
+            onClick={() => trackClarityEvent("games_carousel_previous")}
+          />
+          <CarouselNext
+            className="hidden md:flex -right-4 md:-right-12 bg-[#191934] border-[#5F33D6] hover:bg-[#191934]/80"
+            onClick={() => trackClarityEvent("games_carousel_next")}
+          />
         </Carousel>
       </div>
     </section>

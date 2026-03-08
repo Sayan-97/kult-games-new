@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import AppLogo from "@/public/imgs/kult-games-logo.png";
 import AppLogo2 from "@/public/imgs/kult-logo-3.png";
@@ -15,6 +17,8 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
+
+import { trackClarityEvent } from "@/lib/clarity";
 // import TopBar from "./top-bar";
 
 export default function Header() {
@@ -22,17 +26,22 @@ export default function Header() {
     return (
       <ul className="flex items-center gap-5">
         {[
-          { img: TelegramImg, link: "https://t.me/KultGamesOfficial" },
-          { img: DiscordImg, link: "https://discord.gg/Cge7rrCyUB" },
+          { img: TelegramImg, link: "https://t.me/KultGamesOfficial", event: "header_telegram_click" },
+          { img: DiscordImg, link: "https://discord.gg/Cge7rrCyUB", event: "header_discord_click" },
           {
             img: InstagramImg,
             link: "https://www.instagram.com/kult_games_/?igsh=dzAxNnJ3eWQ4NmUz&utm_source=qr",
+            event: "header_instagram_click",
           },
-          { img: TwitterImg, link: "https://twitter.com/_KultGames" },
-          { img: MediumImg, link: "https://medium.com/@kult_games" },
+          { img: TwitterImg, link: "https://twitter.com/_KultGames", event: "header_twitter_click" },
+          { img: MediumImg, link: "https://medium.com/@kult_games", event: "header_medium_click" },
         ].map((item, index) => (
           <li key={index}>
-            <Link href={item.link} target="_blank">
+            <Link
+              href={item.link}
+              target="_blank"
+              onClick={() => trackClarityEvent(item.event)}
+            >
               <Image src={item.img} alt="img" className="w-12 h-auto" priority draggable={false} />
             </Link>
           </li>
@@ -58,7 +67,10 @@ export default function Header() {
           </div>
 
           <Sheet>
-            <SheetTrigger className="md:hidden">
+            <SheetTrigger
+              className="md:hidden"
+              onClick={() => trackClarityEvent("mobile_menu_opened")}
+            >
               <TfiMenu className="text-2xl" />
             </SheetTrigger>
             <SheetContent className="md:hidden bg-violet-950 border-none flex flex-col gap-8 pt-14">
