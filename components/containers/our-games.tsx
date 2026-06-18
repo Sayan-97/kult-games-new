@@ -44,7 +44,7 @@ export default function OurGames() {
       <div className="container space-y-12">
         <AnimatedSection threshold={0.5}>
           <h2 className="font-ethnocentric">
-            Experience our games
+            Explore Intelligent Experiences
           </h2>
         </AnimatedSection>
         <Carousel

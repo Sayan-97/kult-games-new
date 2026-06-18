@@ -146,9 +146,11 @@ export default function Upcoming() {
       <div className="container space-y-12">
         <div className="flex items-center justify-between">
           <AnimatedSection variant={fadeInUp}>
-            <h2 className="font-ethnocentric">
-              Building the future of on-chain gaming
+            <h2 className="font-ethnocentric ">
+              Building the Future of Intelligent Gaming
             </h2>
+            <span>Games are becoming intelligent. Agents are becoming autonomous. Experiences are becoming connected.KULT brings them together.
+</span>
           </AnimatedSection>
           {upcomingGames.length > 4 && (
             <motion.button

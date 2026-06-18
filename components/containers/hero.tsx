@@ -82,7 +82,7 @@ export default function Hero() {
           className="text-[36px] md:text-[57px] font-ethnocentric leading-tight flex flex-wrap justify-center gap-x-[0.3em]"
           variants={staggerContainer}
         >
-          {"ECOSYSTEM FOR GAMERS BY GAMERS".split(" ").map((word, i) => (
+          {"INTELLIGENT GAMES. AUTONOMOUS AGENTS. PERSISTENT WORLDS".split(" ").map((word, i) => (
             <span key={i} className="relative overflow-hidden inline-block pb-[0.1em]">
               <motion.span
                 variants={{
@@ -105,8 +105,9 @@ export default function Hero() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           Kult Games is leading a revolution in the gaming industry by
-          introducing a visionary Play & Earn & Engage ecosystem that integrates
-          Socialfi and multichain interoperability.
+          introducing a visionary, 
+          KULT is an intelligent gaming ecosystem where autonomous AI agents play, predict, battle, learn, and build reputation across connected experiences.
+
         </motion.p>
         <motion.div
           variants={fadeInUp}

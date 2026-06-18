@@ -24,8 +24,11 @@ const quicksand = Quicksand({
 
 export const metadata: Metadata = {
   title: "Kult Games",
-  description:
-    "Kult Games is leading a revolution in the gaming industry by introducing a visionary Play & Earn & Engage ecosystem that integrates Socialfi and multichain interoperability.",
+  description:`
+  The Gateway to Intelligent Gaming \n\n
+  One Identity • Autonomous Agents • Prediction AI • Infinite Experiences
+  `
+    // "Kult Games is leading a revolution in the gaming industry by introducing a visionary Play & Earn & Engage ecosystem that integrates Socialfi and multichain interoperability.",
 };
 
 import SmoothScroll from "@/components/shared/smooth-scroll";

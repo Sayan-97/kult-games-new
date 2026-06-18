@@ -83,9 +83,20 @@ export default function Footer() {
             >
               <h6 className="text-[25px] font-ethnocentric">KULT GAMES</h6>
               <p className="font-semibold">
-                Kult Games is leading a revolution in the gaming industry by
+                The Gateway to Intelligent Gaming
+                <br/>
+                • One Identity 
+                <br/>
+                • Autonomous Agents 
+                <br/>
+                • Prediction AI 
+                <br />
+                • Infinite Experiences
+
+
+                {/* Kult Games is leading a revolution in the gaming industry by
                 introducing a visionary Play & Earn & Engage ecosystem that
-                integrates Socialfi and multichain interoperability.
+                integrates Socialfi and multichain interoperability. */}
               </p>
             </motion.div>
             <motion.div

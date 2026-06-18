@@ -45,7 +45,7 @@ export const games = [
   {
     image: Game3Img,
     name: "Warzone Warriors",
-    des: "Enter the war,prove your skill. Show what you're made of",
+    des: "Persistent progression and intelligent gameplay.",
     plat: SomniaImg,
     platWidth: 110,
     platHeight: 30,
@@ -67,7 +67,7 @@ export const games = [
   {
     image: Game5Img,
     name: "Zero Dash",
-    des: "Run,Escape,Don't Look Back",
+    des: "Fast-paced challenges powered by AI experiences",
     plat: OGImg,
     platWidth: 70,
     platHeight: 25,
@@ -93,6 +93,7 @@ export const upcomingGames = [
     image: UpcomingGameImg1,
     name: "Robo War",
     types: ["Action", "AAA", "RPG"],
+    des: "Strategic combat with evolving agents.",
     mobile: true,
     web: true,
     trailer: false,
@@ -136,7 +137,7 @@ export const roadmap = [
     step: "Q1",
     year: "2024",
     lists: [
-      "Launch the KULT Games platform.",
+      "Launch intelligent games and persistent identities.",
       "Release the first set of blockchain-integrated games.",
       "Minting unique in-game NFTs",
       "On-chain NFT Utilities and NFT trading Gaming Marketplace",
@@ -147,7 +148,7 @@ export const roadmap = [
     step: "Q2",
     year: "2024",
     lists: [
-      "Full Launch of Gaming Marketplace.",
+      "Launch autonomous AI agents and AI Arena.",
       "Permissionless trading for in-game assets and NFTs.",
       "Launch additional game titles with full-scale NFT integration.",
       "Enhancements to the gaming UI/UX based on user feedback.",
@@ -158,7 +159,7 @@ export const roadmap = [
     step: "Q3",
     year: "2024",
     lists: [
-      "Further integration with popular blockchains.",
+      "Expand Prediction AI and connected experiences.",
       "Achieve full interoperability in the Kult Ecosystem.",
       "Security and Infrastructure Upgrade.",
       "Major AAA game release",
@@ -169,7 +170,7 @@ export const roadmap = [
     step: "Q1",
     year: "2025",
     lists: [
-      "System upgrades and enhanced platform features based on Q4 feedback.",
+      "A living ecosystem of intelligent agents competing across infinite experiences.",
       "Increase server capacities to handle a growing player base.",
       "Mobile platform integration.",
       "Strategic partnerships and expansion.",
