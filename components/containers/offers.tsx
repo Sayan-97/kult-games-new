@@ -106,6 +106,7 @@ export default function KultOffers() {
                     loop
                     controls
                     playsInline
+                    preload="none"
                     data-wf-ignore="true"
                     data-object-fit="cover"
                     className=""
@@ -174,6 +175,7 @@ export default function KultOffers() {
                     loop
                     controls
                     playsInline
+                    preload="none"
                     data-wf-ignore="true"
                     data-object-fit="cover"
                     className=""

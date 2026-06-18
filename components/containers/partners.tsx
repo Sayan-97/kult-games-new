@@ -56,7 +56,7 @@ export default function Partners() {
                 alt="partner"
                 width={partner.width}
                 height={partner.height}
-                priority={index < 5}
+                loading="lazy"
                 draggable={false}
                 className={partner.className || ""}
               />

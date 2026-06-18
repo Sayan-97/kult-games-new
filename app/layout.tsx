@@ -5,6 +5,7 @@ import "./globals.css";
 import Footer from "@/components/shared/footer";
 import Header from "@/components/shared/header";
 import ClarityTracker from "@/components/shared/clarity-tracker";
+import Script from "next/script";
 const generalSans = GeneralSans({
   src: "../public/fonts/GeneralSans-Bold.otf",
   weight: "700",
@@ -44,24 +45,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        {/* Google tag (gtag.js) */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-5976995PZE"
-        ></script>
-        <script
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{
-            __html: `
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-5976995PZE');
-        `,
-          }}
-        />
-      </head>
+      <head />
       <body
         className={`${generalSans.variable} ${quicksand.variable} ${ethnocentric.variable} antialiased`}
       >
@@ -74,6 +58,18 @@ export default function RootLayout({
           <Footer />
         </SmoothScroll>
         {/* <GamePopup /> */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-5976995PZE"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5976995PZE');
+          `}
+        </Script>
       </body>
     </html>
   );

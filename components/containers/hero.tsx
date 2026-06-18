@@ -1,10 +1,12 @@
 "use client";
 
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import { motion, useScroll, useTransform, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import WaitlistForm from "./form";
 import Magnetic from "../shared/magnetic";
 import { useScrollDirection } from "@/hooks/use-scroll-direction";
+import { CgClose } from "react-icons/cg";
+import { SlArrowRightCircle } from "react-icons/sl";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -24,6 +26,7 @@ export default function Hero() {
   const isInView = useInView(ref, { amount: 0.2 });
   const direction = useScrollDirection();
   const [hasAnimated, setHasAnimated] = useState(false);
+  const [demoOpen, setDemoOpen] = useState(false);
 
   useEffect(() => {
     if (isInView && direction === "down") {
@@ -51,6 +54,7 @@ export default function Hero() {
           muted
           loop
           playsInline
+          preload="none"
           data-wf-ignore="true"
           data-object-fit="cover"
           className="w-full h-screen object-cover rounded-b-[64px]"
@@ -82,7 +86,7 @@ export default function Hero() {
           className="text-[36px] md:text-[57px] font-ethnocentric leading-tight flex flex-wrap justify-center gap-x-[0.3em]"
           variants={staggerContainer}
         >
-          {"INTELLIGENT GAMES. AUTONOMOUS AGENTS. PERSISTENT WORLDS".split(" ").map((word, i) => (
+          {"THE GATEWAY TO INTELLIGENT GAMING".split(" ").map((word, i) => (
             <span key={i} className="relative overflow-hidden inline-block pb-[0.1em]">
               <motion.span
                 variants={{
@@ -104,20 +108,58 @@ export default function Hero() {
           variants={fadeInUp}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          Kult Games is leading a revolution in the gaming industry by
-          introducing a visionary, 
-          KULT is an intelligent gaming ecosystem where autonomous AI agents play, predict, battle, learn, and build reputation across connected experiences.
-
+          Create autonomous AI agents that play, predict, compete, and evolve across connected gaming experiences.
         </motion.p>
         <motion.div
           variants={fadeInUp}
           transition={{ duration: 0.6, ease: "easeOut" }}
+          className="flex flex-col items-center gap-4"
         >
           <Magnetic strength={0.2}>
             <WaitlistForm largeMessage />
           </Magnetic>
+          <button
+            onClick={() => setDemoOpen(true)}
+            className="flex items-center gap-2 text-sm font-semibold text-white/70 hover:text-white transition-colors underline underline-offset-4"
+          >
+            <SlArrowRightCircle className="text-base" />
+            Watch Demo
+          </button>
         </motion.div>
       </motion.div>
+
+      <AnimatePresence>
+        {demoOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="bg-black/80 fixed inset-0 z-50 flex items-center justify-center"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="w-[90%] md:w-[60%] flex flex-col items-end gap-4"
+            >
+              <CgClose
+                onClick={() => setDemoOpen(false)}
+                className="text-2xl cursor-pointer"
+              />
+              <video
+                autoPlay
+                loop
+                controls
+                playsInline
+                preload="none"
+                className="w-full rounded-xl"
+              >
+                <source src="/videos/Kultfinalvfx.mp4" type="video/mp4" />
+              </video>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

@@ -1,15 +1,13 @@
 import Game1Img from "@/public/imgs/game1.png";
-import Game2Img from "@/public/imgs/game2.png";
-import Game3Img from "@/public/imgs/game3.png";
-import Game4Img from "@/public/imgs/game4.png";
+import Game2Img from "@/public/imgs/game2.jpg";
+import Game3Img from "@/public/imgs/game3.jpg";
+import Game4Img from "@/public/imgs/game4.jpg";
 import Game5Img from "@/public/imgs/game5.png";
 
 // import BNBImg from "@/public/imgs/bnb.png";
 import BotanixImg from "@/public/imgs/botanix.png";
 import TroveImg from "@/public/imgs/trove.png";
 import OGImg from "@/public/imgs/OG.png";
-import SomniaImg from "@/public/imgs/somnia.png";
-
 import UpcomingGameImg1 from "@/public/imgs/upcoming1.png";
 import UpcomingGameImg2 from "@/public/imgs/upcoming2.png";
 // import UpcomingGameImg3 from "@/public/imgs/upcoming3.png";
@@ -46,12 +44,12 @@ export const games = [
     image: Game3Img,
     name: "Warzone Warriors",
     des: "Persistent progression and intelligent gameplay.",
-    plat: SomniaImg,
-    platWidth: 110,
-    platHeight: 30,
+    plat: OGImg,
+    platWidth: 70,
+    platHeight: 25,
     mobile: true,
     web: true,
-    link: "https://warzonewarriors.xyz/",
+    link: "https://0g.warzonewarriors.xyz/",
   },
   {
     image: Game4Img,
@@ -175,6 +173,28 @@ export const roadmap = [
       "Mobile platform integration.",
       "Strategic partnerships and expansion.",
       "Partnerships with gaming studios.",
+    ],
+  },
+  {
+    step: "Q2",
+    year: "2025",
+    lists: [
+      "Launch AI Arena — agents that battle, learn, and build rivalries.",
+      "Expand mobile ecosystem with new intelligent game titles.",
+      "Agent staking and on-chain reputation systems.",
+      "Prediction AI: real-time agent debates and forecasts.",
+      "Grow KULT intelligent gaming community to 1M+ players.",
+    ],
+  },
+  {
+    step: "Q1",
+    year: "2026",
+    lists: [
+      "Autonomous agent network spanning multiple game universes.",
+      "AI arena economy with prediction markets and leaderboards.",
+      "KULT as the operating system for intelligent gaming.",
+      "Cross-game persistent agent identities and reputation.",
+      "KULT token launch and decentralized governance.",
     ],
   },
 ];

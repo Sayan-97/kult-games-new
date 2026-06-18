@@ -10,6 +10,7 @@ import InstagramImg from "@/public/imgs/instagram.png";
 import TwitterImg from "@/public/imgs/twitter.png";
 import MediumImg from "@/public/imgs/medium.png";
 import { trackClarityEvent } from "@/lib/clarity";
+import { useRef, useEffect, useState } from "react";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -35,24 +36,44 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const footerRef = useRef<HTMLElement>(null);
+  const [videoSrc, setVideoSrc] = useState<string | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVideoSrc("/videos/Footer-Video.mp4");
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+    if (footerRef.current) observer.observe(footerRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <footer className="relative overflow-hidden">
+    <footer ref={footerRef} className="relative overflow-hidden">
       <div className="absolute w-full -top-16 h-[200px] bg-[linear-gradient(180deg,#040719_52%,rgba(4,7,25,0.00)100%)] -z-10"></div>
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        data-wf-ignore="true"
-        data-object-fit="cover"
-        className="absolute w-full h-full object-cover object-bottom opacity-[0.15] -z-20"
-      >
-        <source
-          src="/videos/Footer-Video.mp4"
-          type="video/mp4"
+      {videoSrc && (
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="none"
           data-wf-ignore="true"
-        />
-      </video>
+          data-object-fit="cover"
+          className="absolute w-full h-full object-cover object-bottom opacity-[0.15] -z-20"
+        >
+          <source
+            src={videoSrc}
+            type="video/mp4"
+            data-wf-ignore="true"
+          />
+        </video>
+      )}
       <motion.div
         className="container pb-12 pt-16 flex flex-col md:flex-row md:items-start gap-12"
         initial="hidden"

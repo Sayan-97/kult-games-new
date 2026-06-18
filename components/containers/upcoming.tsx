@@ -62,7 +62,7 @@ const VideoModal = ({ src, onClose, isMobile }: { src?: string; onClose: () => v
         }}
         className="text-2xl cursor-pointer"
       />
-      <video autoPlay loop controls playsInline data-wf-ignore="true" data-object-fit="cover" className={isMobile ? '' : 'w-full'}>
+      <video autoPlay loop controls playsInline preload="none" data-wf-ignore="true" data-object-fit="cover" className={isMobile ? '' : 'w-full'}>
         <source src={src} type="video/mp4" data-wf-ignore="true" />
       </video>
     </motion.div>
@@ -101,7 +101,7 @@ const GameCard = ({
         className="block cursor-pointer group"
       >
         <div className={`relative w-full ${imageHeight} overflow-hidden rounded-2xl transition-transform duration-300 group-hover:scale-[1.02]`}>
-          <Image src={item.image} alt="img" fill className="object-cover object-top transition-transform duration-500 group-hover:scale-105" priority draggable={false} />
+          <Image src={item.image} alt="img" fill className="object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy" draggable={false} />
           <div className={badgeClass}>
             <span className={badgeTextClass}>Coming Soon...</span>
           </div>
@@ -149,8 +149,7 @@ export default function Upcoming() {
             <h2 className="font-ethnocentric ">
               Building the Future of Intelligent Gaming
             </h2>
-            <span>Games are becoming intelligent. Agents are becoming autonomous. Experiences are becoming connected.KULT brings them together.
-</span>
+            <span>Games are becoming intelligent. Agents are becoming autonomous. Experiences are becoming connected.KULT brings them together.</span>
           </AnimatedSection>
           {upcomingGames.length > 4 && (
             <motion.button

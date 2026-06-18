@@ -165,7 +165,7 @@ export default function OurCommunity() {
                       src={TwitterPostImg}
                       alt="img"
                       className="w-full h-auto bg-black rounded-xl"
-                      priority
+                      loading="lazy"
                       draggable={false}
                     />
                   </ScrollArea>

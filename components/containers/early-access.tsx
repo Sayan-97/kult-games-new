@@ -10,7 +10,7 @@ export default function EarlyAccess() {
     <section className="py-10 md:py-16">
       <div className="container">
         <AnimatedSection variant={scaleIn} threshold={0.3} className="relative">
-          <Image src={BgImg} alt="img" className="max-md:hidden" priority draggable={false} />
+          <Image src={BgImg} alt="img" className="max-md:hidden" loading="lazy" draggable={false} />
           <div className="md:absolute inset-0 flex flex-col items-center justify-center text-center gap-4 md:gap-5 lg:gap-8 md:px-8 lg:px-0">
             <h3 className="capitalize text-[28px] md:text-[26px] lg:text-[32px] font-ethnocentric">
               Join the early access
